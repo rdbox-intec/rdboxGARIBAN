@@ -1,7 +1,7 @@
 {
-  "name": "balena-etcher",
+  "name": "flash-gui",
   "private": true,
-  "displayName": "balenaEtcher",
+  "displayName": "flashGUI",
   "version": "1.5.56",
   "packageType": "local",
   "updates": {
@@ -11,12 +11,12 @@
   },
   "main": "lib/start.js",
   "description": "Flash OS images to SD cards and USB drives, safely and easily.",
-  "productDescription": "Etcher is a powerful OS image flasher built with web technologies to ensure flashing an SDCard or USB drive is a pleasant and safe experience. It protects you from accidentally writing to your hard-drives, ensures every byte of data was written correctly and much more.",
-  "homepage": "https://github.com/balena-io/etcher",
+  "productDescription": "performs two processes of creating the configuration file of RDBOX and writing the SD image file to the SD card",
+  "homepage": "https://github.com/rdbox-intec/flashGUI",
   "gypfile": true,
   "repository": {
     "type": "git",
-    "url": "git@github.com:balena-io/etcher.git"
+    "url": "git@github.com:rdbox-intec/flashGUI.git"
   },
   "scripts": {
     "test": "make lint test sanity-checks",
@@ -32,7 +32,7 @@
     "concourse-test": "npx npm@6.7.0 test",
     "concourse-test-electron": "npx npm@6.7.0 test"
   },
-  "author": "Balena Inc. <hello@etcher.io>",
+  "author": "INTEC Inc. <info-rdbox@intec.co.jp>",
   "license": "Apache-2.0",
   "platformSpecificDependencies": [
     "fsevents",

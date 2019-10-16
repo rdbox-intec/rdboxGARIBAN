@@ -33,8 +33,6 @@ const { Txt } = require('rendition')
 const middleEllipsis = require('../../utils/middle-ellipsis')
 const { bytesToClosestUnit } = require('../../../../shared/units')
 
-
-
 const InputSetter = (props) => {
   return (
     <ThemedProvider>

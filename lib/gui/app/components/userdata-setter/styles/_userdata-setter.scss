@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-.modal-config-setter-modal .modal-content {
+.modal-userdata-setter-modal .modal-content {
   width: 720px;
   height: 400px;
 }
 
-.modal-config-setter-modal .modal-body {
+.modal-userdata-setter-modal .modal-body {
   padding-top: 0;
   padding-bottom: 0;
 }
 
-.modal-config-setter-modal .list-group-item[disabled] {
+.modal-userdata-setter-modal .list-group-item[disabled] {
   cursor: not-allowed;
 }
 
-.modal-config-setter-modal {
+.modal-userdata-setter-modal {
 
   .list-group-item-footer:has(span) {
     margin-top: 8px;

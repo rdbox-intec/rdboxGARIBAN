@@ -33,20 +33,20 @@ const { Txt } = require('rendition')
 const middleEllipsis = require('../../utils/middle-ellipsis')
 const { bytesToClosestUnit } = require('../../../../shared/units')
 
-const InputSetter = (props) => {
+const UdSetter = (props) => {
   return (
     <ThemedProvider>
       <StepButton
-        onClick={props.openConfigSetter}
+        onClick={props.openUserdataSetter}
       >
-        Configure
+        Set user-data
       </StepButton>
     </ThemedProvider>
   )
 }
 
-InputSetter.propTypes = {
-  openConfigSetter: propTypes.func
+UdSetter.propTypes = {
+  openUserdataSetter: propTypes.func
 }
 
-module.exports = InputSetter
+module.exports = UdSetter

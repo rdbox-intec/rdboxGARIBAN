@@ -29,7 +29,7 @@ if (!entrypoint) {
 
 describe('Spectron', function () {
   // Mainly for CI jobs
-  this.timeout(40000)
+  this.timeout(400000)
 
   let app = null
 

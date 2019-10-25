@@ -6358,6 +6358,36 @@ body {
 .modal-userdata-setter-modal .word-keep {
   word-break: keep-all; }
 
+.modal-body #contents {
+  width: 650px;
+  margin: 10px auto 0; }
+
+.modal-body .sub-title {
+  padding: 10px 0px 20px 0px; }
+
+.modal-body .rdbox-userdata {
+  display: table; }
+  .modal-body .rdbox-userdata dl {
+    display: table-row; }
+  .modal-body .rdbox-userdata dt {
+    display: table-cell;
+    vertical-align: middle;
+    width: 150px;
+    padding: 0px 20px 16px;
+    font-size: 14px;
+    font-size: 1.4rem;
+    letter-spacing: 1px; }
+  .modal-body .rdbox-userdata dd {
+    display: table-cell;
+    width: 485px;
+    padding: 0px 0px 15px 0px;
+    font-size: 14px;
+    font-size: 1.4rem; }
+  .modal-body .rdbox-userdata .input_inq1 {
+    width: 400px; }
+  .modal-body .rdbox-userdata .input_inq2 {
+    width: 330px; }
+
 svg-icon {
   display: inline-block; }
   svg-icon img {

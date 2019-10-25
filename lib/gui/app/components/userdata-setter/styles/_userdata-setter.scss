@@ -95,7 +95,7 @@
 
   .list-group-item-heading {
     font-size: 13px;
-  }
+  } 
 
   .list-group-item-text {
     line-height: 1;
@@ -108,3 +108,40 @@
   }
 }
 
+.modal-body {
+  #contents {
+    width: 650px;
+    margin: 10px auto 0;
+  }
+  .sub-title {
+    padding: 10px 0px 20px 0px;
+  }
+  .rdbox-userdata {
+    display: table;
+    dl {
+      display: table-row;
+    }
+    dt {
+      display: table-cell;
+      vertical-align: middle;
+      width: 150px;
+      padding: 0px 20px 16px;
+      font-size: 14px;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+    }
+    dd {
+      display: table-cell;
+      width: 485px;
+      padding: 0px 0px 15px 0px;
+      font-size: 14px;
+      font-size: 1.4rem;
+    }
+    .input_inq1 {
+      width: 400px;
+    }
+    .input_inq2 {
+      width: 330px;
+    }
+  }
+}

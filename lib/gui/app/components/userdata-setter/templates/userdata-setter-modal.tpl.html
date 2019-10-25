@@ -4,6 +4,32 @@
 </div>
 
 <div class="modal-body">
+  <div id="contents">
+    <h3 class="sub-title">User info (1/2)</h3>
+    <div class="rdbox-userdata">
+      <dl>
+        <dt>hostname</dt>
+        <dd><input type="text" class="input_inq1" id="hostname" ng-model="modal.currentUserData.hostname"></dd>
+      </dl>
+      <dl>
+        <dt>root-user</dt>
+        <dd><input type="text" class="input_inq1" id="root-user" ng-model="modal.currentUserData.username"></dd>
+      </dl>
+      <dl>
+        <dt>public key</dt>
+        <dd>
+          <input type="text"
+                 class="input_inq2"
+                 id="public-key"
+                 placeholder="Select id_rsa.pub"
+                 ng-model="modal.currentUserData.publicKey">
+          <button ng-click="modal.openSecretSelector(this)">
+            Open
+          </button>
+        </dd>
+      </dl>
+    </div>
+  </div>
 </div>
 
 <div class="modal-footer">
@@ -12,5 +38,5 @@
   <button class="button button-primary"
     ng-click="modal.closeModal()">Next</button>
   <button class="button button-primary"
-    ng-click="modal.saveUserdataAndClose(modal.getUserdata())">Complete</button>
+    ng-click="modal.saveUserdataAndClose()">Complete</button>
 </div>

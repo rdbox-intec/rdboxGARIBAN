@@ -9,22 +9,22 @@
     <div class="rdbox-userdata">
       <dl>
         <dt>hostname</dt>
-        <dd><input type="text" class="input_inq1" id="hostname" ng-model="modal.currentUserData.hostname"></dd>
+        <dd><input type="text" class="input_inq1" id="hostname" ng-model="modal.currentUserData.userDatas[modal.currentUserData.currentCluster].cloudInit.hostname"></dd>
       </dl>
       <dl>
         <dt>root-user</dt>
-        <dd><input type="text" class="input_inq1" id="root-user" ng-model="modal.currentUserData.username"></dd>
+        <dd><input type="text" class="input_inq1" id="root-user" ng-model="modal.currentUserData.userDatas[modal.currentUserData.currentCluster].cloudInit.users[0].name"></dd>
       </dl>
       <dl>
         <dt>public key</dt>
         <dd>
-          <input type="text"
+          <input disabled type="text"
                  class="input_inq2"
                  id="public-key"
                  placeholder="Select id_rsa.pub"
-                 ng-model="modal.currentUserData.publicKey">
-          <button ng-click="modal.openSecretSelector(this)">
-            Open
+                 ng-model="modal.currentUserData.userDatas[modal.currentUserData.currentCluster].rdbox.files[modal.getIndexOfFiles('publicKey')].from_path">
+          <button ng-click="modal.openSecretSelector(this, 'publicKey')">
+            Select
           </button>
         </dd>
       </dl>

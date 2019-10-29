@@ -37,6 +37,7 @@ const UdSetter = (props) => {
   return (
     <ThemedProvider>
       <StepButton
+        disabled={props.disabled}
         onClick={props.openUserdataSetter}
       >
         Set user-data
@@ -46,6 +47,7 @@ const UdSetter = (props) => {
 }
 
 UdSetter.propTypes = {
+  disabled: propTypes.bool,
   openUserdataSetter: propTypes.func
 }
 

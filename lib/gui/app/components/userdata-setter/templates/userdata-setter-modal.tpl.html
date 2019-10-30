@@ -6,29 +6,48 @@
 <div class="modal-body">
   <div id="contents">
     <h3 class="sub-title">User info (1/2)</h3>
-    <div class="rdbox-userdata">
-      <dl>
-        <dt>hostname</dt>
-        <dd><input type="text" class="input_inq1" id="hostname" ng-model="modal.currentUserData.userDatas[modal.currentUserData.currentCluster].cloudInit.hostname"></dd>
-      </dl>
-      <dl>
-        <dt>root-user</dt>
-        <dd><input type="text" class="input_inq1" id="root-user" ng-model="modal.currentUserData.userDatas[modal.currentUserData.currentCluster].cloudInit.users[0].name"></dd>
-      </dl>
-      <dl>
-        <dt>public key</dt>
-        <dd>
-          <input disabled type="text"
-                 class="input_inq2"
-                 id="public-key"
-                 placeholder="Select id_rsa.pub"
-                 ng-model="modal.currentUserData.userDatas[modal.currentUserData.currentCluster].rdbox.files[modal.getIndexOfFiles('publicKey')].from_path">
-          <button ng-click="modal.openSecretSelector(this, 'publicKey')">
-            Select
-          </button>
-        </dd>
-      </dl>
-    </div>
+    <form name="rdbox" novalidate>
+      <div class="rdbox-userdata">
+        <dl>
+          <dt>hostname</dt>
+          <dd>
+            <input required type="text"
+                  class="input_inq1"
+                  id="hostname"
+                  name="hostname"
+                  ng-class="{'has-error': rdbox.hostname.$invalid}"
+                  ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
+                  ng-model="modal.currentUserData.userDatas[modal.currentUserData.currentCluster].cloudInit.hostname">
+            <p ng-show="rdbox.hostname.$error.required">Required fields.</p>
+            <p ng-show="rdbox.hostname.$error.pattern">invalid pattern.</p>
+          </dd>
+        </dl>
+        <dl>
+          <dt>root user</dt>
+          <dd><input required disabled type="text"
+                    class="input_inq1"
+                    id="rootUser"
+                    name="rootUser"
+                    ng-model="modal.currentUserData.userDatas[modal.currentUserData.currentCluster].cloudInit.users[0].name"></dd>
+        </dl>
+        <dl>
+          <dt>public key</dt>
+          <dd>
+            <input required disabled type="text"
+                  class="input_inq2"
+                  id="publicKey"
+                  name="publicKey"
+                  placeholder="Select id_rsa.pub"
+                  ng-class="{'has-error': rdbox.publicKey.$invalid}"
+                  ng-model="modal.currentUserData.userDatas[modal.currentUserData.currentCluster].rdbox.files[modal.getIndexOfFiles('publicKey')].from_path">
+            <button ng-click="modal.openSecretSelector(this, 'publicKey')">
+              Select
+            </button>
+            <p ng-show="rdbox.publicKey.$error.required">Required fields.</p>
+          </dd>
+        </dl>
+      </div>
+    <form>
   </div>
 </div>
 

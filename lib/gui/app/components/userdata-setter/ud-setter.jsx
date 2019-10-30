@@ -34,6 +34,27 @@ const middleEllipsis = require('../../utils/middle-ellipsis')
 const { bytesToClosestUnit } = require('../../../../shared/units')
 
 const UdSetter = (props) => {
+  if (props.hasUserdata) {
+    return (
+      <ThemedProvider>
+        <StepNameButton
+          plain
+        >
+          {/* eslint-disable no-magic-numbers */}
+          { middleEllipsis('OK', 20) }
+        </StepNameButton>
+        { !props.flashing &&
+          <ChangeButton
+            plain
+            mb={14}
+            onClick={props.reselectUserdata}
+          >
+            Change
+          </ChangeButton>
+        }
+      </ThemedProvider>
+    )
+  }
   return (
     <ThemedProvider>
       <StepButton
@@ -48,7 +69,9 @@ const UdSetter = (props) => {
 
 UdSetter.propTypes = {
   disabled: propTypes.bool,
-  openUserdataSetter: propTypes.func
+  openUserdataSetter: propTypes.func,
+  reselectUserdata: propTypes.func,
+  hasUserdata: propTypes.bool
 }
 
 module.exports = UdSetter

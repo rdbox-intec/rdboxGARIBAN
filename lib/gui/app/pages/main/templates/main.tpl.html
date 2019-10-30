@@ -64,8 +64,10 @@
       </div>
       <div class="space-vertical-large">
         <ud-setter
+          has-userdata="main.selection.hasUserdata()"
           disabled="main.shouldUserdataStepBeDisabled()"
           open-userdata-setter="userdata.openUserdataSetter"
+          reselect-userdata="userdata.reselectUserdata"
         >
         </ud-setter>
       </div>

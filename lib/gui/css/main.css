@@ -6373,20 +6373,27 @@ body {
     display: table-cell;
     vertical-align: middle;
     width: 150px;
-    padding: 0px 20px 16px;
+    padding: 0px 20px 25px;
     font-size: 14px;
     font-size: 1.4rem;
     letter-spacing: 1px; }
   .modal-body .rdbox-userdata dd {
     display: table-cell;
     width: 485px;
-    padding: 0px 0px 15px 0px;
+    height: 48px;
     font-size: 14px;
     font-size: 1.4rem; }
+  .modal-body .rdbox-userdata p {
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    font-size: 11px;
+    color: #FFC100; }
   .modal-body .rdbox-userdata .input_inq1 {
     width: 400px; }
   .modal-body .rdbox-userdata .input_inq2 {
-    width: 330px; }
+    width: 340px; }
+  .modal-body .rdbox-userdata .has-error {
+    box-shadow: #FFC100 0px 0px 3px 1px inset; }
 
 svg-icon {
   display: inline-block; }

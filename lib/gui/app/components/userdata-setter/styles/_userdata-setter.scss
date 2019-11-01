@@ -16,7 +16,11 @@
 
 .modal-userdata-setter-modal .modal-content {
   width: 720px;
-  height: 400px;
+  height: 500px;
+}
+
+.modal-body {
+  max-height: 350px;
 }
 
 .modal-userdata-setter-modal .modal-body {

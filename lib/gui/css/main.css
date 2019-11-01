@@ -6062,12 +6062,12 @@ body {
   color: #b3b3b3; }
 
 .button-primary {
-  background-color: #2297de;
+  background-color: #13B3C7;
   color: #fff; }
 
 .button-primary:focus,
 .button-primary:hover {
-  background-color: #1b79b2;
+  background-color: #0f8998;
   color: #fff; }
 
 .button-danger {
@@ -6166,7 +6166,7 @@ body {
   max-height: 250px;
   overflow: auto; }
   .modal-body a {
-    color: #2297de; }
+    color: #13B3C7; }
   .modal-body > p {
     white-space: pre-line; }
   .modal-body > p:last-child {
@@ -6265,8 +6265,8 @@ body {
     border: none;
     outline: none; }
   .modal-drive-selector-modal .list-group-item progress::-webkit-progress-value {
-    border-bottom: 1px solid #176a9c;
-    background-color: #2297de; }
+    border-bottom: 1px solid #0c7481;
+    background-color: #13B3C7; }
 
 .modal-drive-selector-modal .list-group-item-heading {
   font-size: 13px; }
@@ -6296,7 +6296,10 @@ body {
  */
 .modal-userdata-setter-modal .modal-content {
   width: 720px;
-  height: 400px; }
+  height: 500px; }
+
+.modal-body {
+  max-height: 350px; }
 
 .modal-userdata-setter-modal .modal-body {
   padding-top: 0;
@@ -6344,8 +6347,8 @@ body {
     border: none;
     outline: none; }
   .modal-userdata-setter-modal .list-group-item progress::-webkit-progress-value {
-    border-bottom: 1px solid #176a9c;
-    background-color: #2297de; }
+    border-bottom: 1px solid #0c7481;
+    background-color: #13B3C7; }
 
 .modal-userdata-setter-modal .list-group-item-heading {
   font-size: 13px; }
@@ -6569,7 +6572,7 @@ svg-icon > img[disabled] {
 
 .page-main .button.step-footer {
   font-size: 14px;
-  color: #2297de;
+  color: #13B3C7;
   border-radius: 0;
   padding: 0;
   width: 100%;

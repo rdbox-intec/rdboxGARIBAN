@@ -56,6 +56,15 @@ const commonConfig = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.(gif|png|jpe?g|)$/,
+        loader: 'file-loader',
+        options: {
+          publicPath: (pat) => {
+            return `../../../generated/${pat}`
+          }
+        }
       }
     ]
   },

@@ -115,10 +115,17 @@
 .modal-body {
   #contents {
     width: 650px;
+    height: 340px;
     margin: 10px auto 0;
   }
   .sub-title {
     padding: 10px 0px 20px 0px;
+  }
+  .form-all {
+    height: 100%;
+  }
+  .rdbox-userdatas {
+    height: 100%;
   }
   .rdbox-userdata {
     display: table;
@@ -131,7 +138,6 @@
       width: 150px;
       padding: 0px 20px 25px;
       font-size: 14px;
-      font-size: 1.4rem;
       letter-spacing: 1px;
     }
     dd {
@@ -139,7 +145,6 @@
       width: 485px;
       height: 48px;
       font-size: 14px;
-      font-size: 1.4rem;
     }
     p {
       margin: 0px 0px 0px 0px;
@@ -148,13 +153,136 @@
       color: #FFC100;
     }
     .input_inq1 {
-      width: 400px;
+      width: 460px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+    }
+    .input_inq1:focus {
+      border: 1px solid #64BCC1;
     }
     .input_inq2 {
-      width: 340px;
+      width: 400px;
+      border: 1px solid #ccc;
+    }
+    .input_inq2:focus {
+      border: 1px solid #64BCC1;
     }
     .has-error {
-      box-shadow: #FFC100 0px 0px 3px 1px inset;
+      border: 1px solid #FFC100;
+    }
+    .has-error:focus {
+      border: 1px solid #FFC100;
+    }
+  }
+  .rdbox-type-hw {
+    height: 100%;
+  }
+  .rdbox-type-hw {
+    .sub-title-div {
+      height: 15%;
+    }
+    .outer-table-div {
+      height: 85%;
+      .outer-table {
+        height: 100%;
+      }
+    }
+    .rdbox-type-equipment {
+      table {
+        width: 100%;
+        table-layout: fixed;
+        word-wrap: break-word;
+      }
+      td.rdbox-hardware {
+        border: 2px solid #ddd;
+        border-color: #fff #ddd;
+        border-width: 2px 2px 2px 2px;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+      }
+      td.rdbox-hardware:hover {
+        background-color: #ddd;
+      }
+      td.selectedHW {
+        border-color: #64BCC1;
+        border-width: 2px 2px 2px 3px;
+        background-color: #E0F2F3;
+      }
+      p {
+        margin: 0px 0px 0px 0px;
+        padding: 0px;
+        font-size: 11px;
+        color: #FFC100;
+      }
+      img {
+        padding: 10px;
+        width: 100%;
+      }
+    }
+  }
+
+  .rdbox-type-role {
+    height: 100%;
+  }
+  .rdbox-type-role {
+    .sub-title-div {
+      height: 15%;
+    }
+    .outer-table-div {
+      height: 85%;
+      .outer-table {
+        height: 100%;
+      }
+      .rdbox-role-equipment {
+        height: 88%;
+      }
+      .rdbox-role-equipment {
+        table {
+          width: 100%;
+          height: 100%;
+          table-layout: fixed;
+          word-wrap: break-word;
+        }
+        td.rdbox-role {
+          border: 2px solid #ddd;
+          border-color: #ddd #ddd #ddd #ddd;
+          border-width: 2px 2px 2px 2px;
+          text-align: center;
+          padding: 10px;
+          cursor: pointer;
+        }
+        td.rdbox-roleexp {
+          border: 2px solid #ddd;
+          border-color: #ddd #ddd #ddd #ddd;
+          border-width: 2px 2px 2px 2px;
+          text-align: center;
+          padding: 10px;
+        }
+        td.rdbox-role:hover {
+          background-color: #ddd;
+        }
+        td.selectRole1Line {
+          border-color: #64BCC1;
+          border-width: 0px 3px 3px 3px;
+          background-color: #E0F2F3;
+        }
+        .hoverRole {
+          background-color: #ddd;
+        }
+        td.selectRole2Line {
+          border-color: #64BCC1;
+          border-width: 2px 2px 0px 3px;
+          background-color: #E0F2F3;
+        }
+        .inner-table-1line {
+          height: 50%;
+        }
+        .inner-table-2line {
+          height: 50%;
+        }
+      }
     }
   }
 }

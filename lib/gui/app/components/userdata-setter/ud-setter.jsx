@@ -21,17 +21,12 @@
 // eslint-disable-next-line no-unused-vars
 const React = require('react')
 const propTypes = require('prop-types')
-const { default: styled } = require('styled-components')
 const {
   ChangeButton,
-  DetailsText,
-  StepButton,
   StepNameButton,
   ThemedProvider
 } = require('../../styled-components')
-const { Txt } = require('rendition')
 const middleEllipsis = require('../../utils/middle-ellipsis')
-const { bytesToClosestUnit } = require('../../../../shared/units')
 
 const UdSetter = (props) => {
   if (props.hasUserdata) {
@@ -57,12 +52,12 @@ const UdSetter = (props) => {
   }
   return (
     <ThemedProvider>
-      <StepButton
+      <button className="button button-primary"
         disabled={props.disabled}
         onClick={props.openUserdataSetter}
       >
         Set user-data
-      </StepButton>
+      </button>
     </ThemedProvider>
   )
 }

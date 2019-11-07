@@ -5,69 +5,212 @@
 
 <div class="modal-body">
   <div id="contents">
-    <form name="rdbox" novalidate>
-      <div class="rdbox-userdata">
+    <form class="form-all" name="rdbox" novalidate>
+      <div class="rdbox-userdatas">
 
-        <div class="rdbox_type_01" ng-show="modal.currentPage === 1">
-          <h3 class="sub-title">RDBOX Type</h3>
-          <dl>
-            <dt>hostname</dt>
-            <dd>
-              <input required type="text"
-                    class="input_inq1"
-                    id="hostname"
-                    name="hostname"
-                    ng-class="{'has-error': rdbox.hostname.$invalid}"
-                    ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
-                    ng-model="modal.currentUserData.userDatas[modal.currentUserData.currentCluster].cloudInit.hostname">
-              <p ng-show="rdbox.hostname.$error.required">Required fields.</p>
-              <p ng-show="rdbox.hostname.$error.pattern">invalid pattern.</p>
-            </dd>
-          </dl>
+        <!-- H/W Type -->
+        <div class="rdbox-type-hw" ng-show="modal.currentPage === 0">
+          <div class="sub-title-div">
+            <h3 class="sub-title">Select Hardware configuration of this RDBOX</h3>
+          </div>
+          <div class="outer-table-div">
+            <table class="outer-table">
+              <tr>
+                <td valign="middle">
+                  <div class="rdbox-type-equipment">
+                  <table class="inner-table" align="center">
+                    <tr>
+                      <td class="rdbox-hardware"
+                          ng-click="modal.selectHW('APOnly')"
+                          ng-class="{selectedHW: modal.rdboxHardWare==='APOnly'}"
+                          >
+                        <h5>Plan1: APOnly(No Mesh)</h5>
+                        <img src="../../../../assets/P1_ApOnly.png">
+                        <p>It's used only a RaspberryPi</p>
+                      </td>
+                      <td class="rdbox-hardware"
+                          ng-click="modal.selectHW('SimpleMesh')"
+                          ng-class="{selectedHW: modal.rdboxHardWare==='SimpleMesh'}"
+                          >
+                        <h5>Plan2: SimpleMesh</h5>
+                        <img src="../../../../assets/P2_SimpleMesh.png">
+                        <p>Add one Wi-Fi USB Dongle</p>
+                      </td>
+                      <td class="rdbox-hardware"
+                          ng-click="modal.selectHW('FullMesh')"
+                          ng-class="{selectedHW: modal.rdboxHardWare==='FullMesh'}"
+                          >
+                        <h5>Plan3: FullMesh</h5>
+                        <img src="../../../../assets/P3_Full.png">
+                        <p>Add four Wi-Fi USB Dongles</p>
+                      </td>
+                    </tr>
+                  </table>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
         </div>
 
-        <div class="userinfo_01" ng-show="modal.currentPage === 2">
-          <h3 class="sub-title">User info (1/2)</h3>
-          <dl>
-            <dt>root user</dt>
-            <dd><input required disabled type="text"
+        <!-- Role Type -->
+        <div class="rdbox-type-role" ng-show="modal.currentPage === 1">
+          <div class="sub-title-div">
+            <h3 class="sub-title">Select Role of this RDBOX</h3>
+          </div>
+          <div class="outer-table-div">
+            <table class="outer-table">
+              <tr>
+                <td valign="middle">
+                  <div class="rdbox-role-equipment">
+                    <table class="inner-table" align="center">
+                      <tr class="inner-table-2line">
+                        <td class="inner-table-2line">
+                          <table class="inner-table-roleexp" align="center">
+                            <tr ng-class="{hoverRole: modal.lastHoverRole >= 0}">
+                              <td class="rdbox-roleexp"
+                                  ng-class="{selectRole2Line: modal.rdboxRole >= 0}"
+                                  ng-show="modal.lastHoverRole === 0 || modal.rdboxRole === 0">
+                                  Leader Master
+                              </td>
+                              <td class="rdbox-roleexp"
+                                  ng-class="{selectRole2Line: modal.rdboxRole >= 0}"
+                                  ng-show="modal.lastHoverRole === 1 || modal.rdboxRole === 1">
+                                  Branch Master
+                              </td>
+                              <td class="rdbox-roleexp"
+                                  ng-class="{selectRole2Line: modal.rdboxRole >= 0}"
+                                  ng-show="modal.lastHoverRole === 2 || modal.rdboxRole === 2">
+                                  Slave
+                              </td>
+                              <td class="rdbox-roleexp"
+                                  ng-class="{selectRole2Line: modal.rdboxRole >= 0}"
+                                  ng-show="modal.lastHoverRole === 3 || modal.rdboxRole === 3">
+                                  Other (Robot, IoT, etc)
+                              </td>
+                              <td class="rdbox-roleexp"
+                                  ng-class="{selectRole2Line: modal.rdboxRole >= 0}"
+                                  ng-show="modal.lastHoverRole === 4  || modal.rdboxRole === 4">
+                                  VPN Bridge
+                              </td>
+                              <td class="rdbox-roleexp"
+                                  ng-class="{selectRole2Line: modal.rdboxRole >= 0}"
+                                  ng-show="modal.lastHoverRole < 0">
+                                  <h4>Not selected</h4>
+                                  <p>A description of each role is displayed when the mouse is over it.</p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr class="inner-table-1line">
+                        <td class="inner-table-1line">
+                          <table class="inner-table-rolerole" align="center">
+                            <tr>
+                              <td ng-class="{hoverRole: modal.lastHoverRole === 0, selectRole1Line: modal.rdboxRole === 0}"
+                                  class="rdbox-role"
+                                  ng-click="modal.selectRole1Line(0)"
+                                  ng-mouseover="modal.hoverRole1Line(0)">
+                                  Leader Master
+                              </td>
+                              <td ng-class="{hoverRole: modal.lastHoverRole === 1, selectRole1Line: modal.rdboxRole === 1}"
+                                  class="rdbox-role"
+                                  ng-click="modal.selectRole1Line(1)"
+                                  ng-mouseover="modal.hoverRole1Line(1)">
+                                  Branch Master
+                              </td>
+                              <td ng-class="{hoverRole: modal.lastHoverRole === 2, selectRole1Line: modal.rdboxRole === 2}"
+                                  class="rdbox-role"
+                                  ng-click="modal.selectRole1Line(2)"
+                                  ng-mouseover="modal.hoverRole1Line(2)">
+                                  Slave
+                              </td>
+                              <td ng-class="{hoverRole: modal.lastHoverRole === 3, selectRole1Line: modal.rdboxRole === 3}"
+                                  class="rdbox-role"
+                                  ng-click="modal.selectRole1Line(3)"
+                                  ng-mouseover="modal.hoverRole1Line(3)">
+                                  Other (Robot, IoT, etc)
+                              </td>
+                              <td ng-class="{hoverRole: modal.lastHoverRole === 4, selectRole1Line: modal.rdboxRole === 4}"
+                                  class="rdbox-role"
+                                  ng-click="modal.selectRole1Line(4)"
+                                  ng-mouseover="modal.hoverRole1Line(4)">
+                                  VPN Bridge
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="rdbox-userdata">
+          <div class="rdbox-hostname" ng-show="modal.currentPage === 2">
+            <h3 class="sub-title">RDBOX Type</h3>
+            <dl>
+              <dt>hostname</dt>
+              <dd>
+                <input required type="text"
                       class="input_inq1"
-                      id="rootUser"
-                      name="rootUser"
-                      ng-model="modal.currentUserData.userDatas[modal.currentUserData.currentCluster].cloudInit.users[0].name"></dd>
-          </dl>
-          <dl>
-            <dt>public key</dt>
-            <dd>
-              <input required disabled type="text"
-                    class="input_inq2"
-                    id="publicKey"
-                    name="publicKey"
-                    placeholder="Select id_rsa.pub"
-                    ng-class="{'has-error': rdbox.publicKey.$invalid}"
-                    ng-model="modal.currentUserData.userDatas[modal.currentUserData.currentCluster].rdbox.files[modal.getIndexOfFiles('publicKey')].from_path">
-              <button ng-click="modal.openSecretSelector(this, 'publicKey')">
-                Select
-              </button>
-              <p ng-show="rdbox.publicKey.$error.required">Required fields.</p>
-            </dd>
-          </dl>
-          <dl>
-            <dt>secret key</dt>
-            <dd>
-              <input required disabled type="text"
-                    class="input_inq2"
-                    id="secretKey"
-                    name="secretKey"
-                    placeholder="Select id_rsa.pub"
-                    ng-class="{'has-error': rdbox.secretKey.$invalid}"
-                    ng-model="modal.currentUserData.userDatas[modal.currentUserData.currentCluster].rdbox.files[modal.getIndexOfFiles('secretKey')].from_path">
-              <button ng-click="modal.openSecretSelector(this, 'secretKey')">
-                Select
-              </button>
-              <p ng-show="rdbox.secretKey.$error.required">Required fields.</p>
-            </dd>
-          </dl>
+                      id="hostname"
+                      name="hostname"
+                      ng-class="{'has-error': rdbox.hostname.$invalid}"
+                      ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
+                      ng-model="modal.currentUserData.userDatas[modal.currentUserData.currentCluster].cloudInit.hostname">
+                <p ng-show="rdbox.hostname.$error.required">Required fields.</p>
+                <p ng-show="rdbox.hostname.$error.pattern">invalid pattern.</p>
+              </dd>
+            </dl>
+          </div>
+
+          <div class="rdbox-userinfo" ng-show="modal.currentPage === 3">
+            <h3 class="sub-title">User info (1/2)</h3>
+            <dl>
+              <dt>root user</dt>
+              <dd><input required disabled type="text"
+                        class="input_inq1"
+                        id="rootUser"
+                        name="rootUser"
+                        ng-model="modal.currentUserData.userDatas[modal.currentUserData.currentCluster].cloudInit.users[0].name"></dd>
+            </dl>
+            <dl>
+              <dt>public key</dt>
+              <dd>
+                <input required disabled type="text"
+                      class="input_inq2"
+                      id="publicKey"
+                      name="publicKey"
+                      placeholder="Select id_rsa.pub"
+                      ng-class="{'has-error': rdbox.publicKey.$invalid}"
+                      ng-model="modal.currentUserData.userDatas[modal.currentUserData.currentCluster].rdbox.files[modal.getIndexOfFiles('publicKey')].from_path">
+                <button ng-click="modal.openSecretSelector(this, 'publicKey')">
+                  Select
+                </button>
+                <p ng-show="rdbox.publicKey.$error.required">Required fields.</p>
+              </dd>
+            </dl>
+            <dl>
+              <dt>secret key</dt>
+              <dd>
+                <input required disabled type="text"
+                      class="input_inq2"
+                      id="secretKey"
+                      name="secretKey"
+                      placeholder="Select id_rsa.pub"
+                      ng-class="{'has-error': rdbox.secretKey.$invalid}"
+                      ng-model="modal.currentUserData.userDatas[modal.currentUserData.currentCluster].rdbox.files[modal.getIndexOfFiles('secretKey')].from_path">
+                <button ng-click="modal.openSecretSelector(this, 'secretKey')">
+                  Select
+                </button>
+                <p ng-show="rdbox.secretKey.$error.required">Required fields.</p>
+              </dd>
+            </dl>
+          </div>
         </div>
       </div>
     <form>

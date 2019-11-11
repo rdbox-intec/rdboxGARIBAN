@@ -6483,25 +6483,47 @@ body {
   .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.rdbox-roleexp {
     border: 2px solid #ddd;
     border-color: #ddd #ddd #ddd #ddd;
-    border-width: 2px 2px 2px 2px;
+    border-width: 0px 2px 2px 2px;
     text-align: center;
     padding: 10px; }
   .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.rdbox-role:hover {
     background-color: #ddd; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.rdbox-role:hover p {
+      color: #64BCC1; }
   .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.selectRole1Line {
+    border-color: #64BCC1;
+    border-width: 3px 3px 0px 3px;
+    background-color: #E0F2F3; }
+  .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.unSelectRole1Line {
+    border-color: #ddd #ddd #64BCC1 #ddd;
+    border-width: 2px 2px 6px 2px; }
+  .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.selectRole2Line {
     border-color: #64BCC1;
     border-width: 0px 3px 3px 3px;
     background-color: #E0F2F3; }
   .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .hoverRole {
     background-color: #ddd; }
-  .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.selectRole2Line {
-    border-color: #64BCC1;
-    border-width: 2px 2px 0px 3px;
-    background-color: #E0F2F3; }
+  .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .role-name {
+    margin: 5px 0px 0px 0px;
+    padding: 0px;
+    font-size: 11px;
+    color: #666; }
+  .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .roleexp-exp {
+    height: 100%; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .roleexp-exp .roleexp-icon-box {
+      width: 28.2%; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .roleexp-exp .roleexp-title-box {
+      text-align: left;
+      margin: 5px;
+      color: #12b3c7; }
+      .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .roleexp-exp .roleexp-title-box .roleexp-title {
+        text-decoration: underline; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .roleexp-exp .roleexp-li-box {
+      text-align: left; }
   .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .inner-table-1line {
-    height: 50%; }
+    height: 28.2%; }
   .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .inner-table-2line {
-    height: 50%; }
+    height: 71.8%; }
 
 svg-icon {
   display: inline-block; }

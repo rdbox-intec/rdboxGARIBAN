@@ -21,24 +21,24 @@
                   <table class="inner-table" align="center">
                     <tr>
                       <td class="rdbox-hardware"
-                          ng-click="modal.selectHW('APOnly')"
-                          ng-class="{selectedHW: modal.rdboxHardWare==='APOnly'}"
+                          ng-click="modal.selectHW(modal.indexOfRdboxHW.APOnly)"
+                          ng-class="{selectedHW: modal.rdboxHardWare === modal.indexOfRdboxHW.APOnly}"
                           >
                         <h5>Plan1: APOnly(No Mesh)</h5>
                         <img src="../../../../assets/P1_ApOnly.png">
                         <p>It's used only a RaspberryPi</p>
                       </td>
                       <td class="rdbox-hardware"
-                          ng-click="modal.selectHW('SimpleMesh')"
-                          ng-class="{selectedHW: modal.rdboxHardWare==='SimpleMesh'}"
+                          ng-click="modal.selectHW(modal.indexOfRdboxHW.SimpleMesh)"
+                          ng-class="{selectedHW: modal.rdboxHardWare === modal.indexOfRdboxHW.SimpleMesh}"
                           >
                         <h5>Plan2: SimpleMesh</h5>
                         <img src="../../../../assets/P2_SimpleMesh.png">
                         <p>Add one Wi-Fi USB Dongle</p>
                       </td>
                       <td class="rdbox-hardware"
-                          ng-click="modal.selectHW('FullMesh')"
-                          ng-class="{selectedHW: modal.rdboxHardWare==='FullMesh'}"
+                          ng-click="modal.selectHW(modal.indexOfRdboxHW.FullMesh)"
+                          ng-class="{selectedHW: modal.rdboxHardWare === modal.indexOfRdboxHW.FullMesh}"
                           >
                         <h5>Plan3: FullMesh</h5>
                         <img src="../../../../assets/P3_Full.png">
@@ -64,6 +64,71 @@
                 <td valign="middle">
                   <div class="rdbox-role-equipment">
                     <table class="inner-table" align="center">
+                      <!-- Role Type(Tab) -->
+                      <tr class="inner-table-1line">
+                        <td class="inner-table-1line">
+                          <table class="inner-table-rolerole" align="center">
+                            <tr>
+                              <td ng-class="{hoverRole: modal.lastHoverRole === modal.indexOfRdboxRole.LeaderMaster,
+                                            selectRole1Line: modal.rdboxRole === modal.indexOfRdboxRole.LeaderMaster,
+                                            unSelectRole1Line: modal.rdboxRole != modal.indexOfRdboxRole.LeaderMaster && modal.rdboxRole >= 0}"
+                                  class="rdbox-role"
+                                  ng-click="modal.selectRole1Line(modal.indexOfRdboxRole.LeaderMaster)"
+                                  ng-mouseover="modal.hoverRole1Line(modal.indexOfRdboxRole.LeaderMaster)">
+                                  <div>
+                                    <svg-icon paths="[ '../../assets/00.svg' ]"></svg-icon>
+                                    <p class="role-name">Leader Master</p>
+                                  </div>
+                              </td>
+                              <td ng-class="{hoverRole: modal.lastHoverRole === modal.indexOfRdboxRole.BranchMaster,
+                                            selectRole1Line: modal.rdboxRole === modal.indexOfRdboxRole.BranchMaster,
+                                            unSelectRole1Line: modal.rdboxRole != modal.indexOfRdboxRole.BranchMaster && modal.rdboxRole >= 0}"
+                                  class="rdbox-role"
+                                  ng-click="modal.selectRole1Line(modal.indexOfRdboxRole.BranchMaster)"
+                                  ng-mouseover="modal.hoverRole1Line(modal.indexOfRdboxRole.BranchMaster)">
+                                <div>
+                                  <svg-icon paths="[ '../../assets/synapse.svg' ]"></svg-icon>
+                                  <p class="role-name">Branch Master</p>
+                                </div>
+                              </td>
+                              <td ng-class="{hoverRole: modal.lastHoverRole === modal.indexOfRdboxRole.Slave,
+                                            selectRole1Line: modal.rdboxRole === modal.indexOfRdboxRole.Slave,
+                                            unSelectRole1Line: modal.rdboxRole != modal.indexOfRdboxRole.Slave && modal.rdboxRole >= 0}"
+                                  class="rdbox-role"
+                                  ng-click="modal.selectRole1Line(modal.indexOfRdboxRole.Slave)"
+                                  ng-mouseover="modal.hoverRole1Line(modal.indexOfRdboxRole.Slave)">
+                                <div>
+                                  <svg-icon paths="[ '../../assets/wave.svg' ]"></svg-icon>
+                                  <p class="role-name">Slave</p>
+                                </div>
+                              </td>
+                              <td ng-class="{hoverRole: modal.lastHoverRole === modal.indexOfRdboxRole.Other,
+                                            selectRole1Line: modal.rdboxRole === modal.indexOfRdboxRole.Other,
+                                            unSelectRole1Line: modal.rdboxRole != modal.indexOfRdboxRole.Other && modal.rdboxRole >= 0}"
+                                  class="rdbox-role"
+                                  ng-click="modal.selectRole1Line(modal.indexOfRdboxRole.Other)"
+                                  ng-mouseover="modal.hoverRole1Line(modal.indexOfRdboxRole.Other)">
+                                <div>
+                                  <svg-icon paths="[ '../../assets/robot.svg' ]"></svg-icon>
+                                  <p class="role-name">Robot, IoT, etc</p>
+                                </div>
+                              </td>
+                              <td ng-class="{hoverRole: modal.lastHoverRole === modal.indexOfRdboxRole.VPNBridge,
+                                            selectRole1Line: modal.rdboxRole === modal.indexOfRdboxRole.VPNBridge,
+                                            unSelectRole1Line: modal.rdboxRole != modal.indexOfRdboxRole.VPNBridge && modal.rdboxRole >= 0}"
+                                  class="rdbox-role"
+                                  ng-click="modal.selectRole1Line(modal.indexOfRdboxRole.VPNBridge)"
+                                  ng-mouseover="modal.hoverRole1Line(modal.indexOfRdboxRole.VPNBridge)">
+                                <div>
+                                  <svg-icon paths="[ '../../assets/vpn.svg' ]"></svg-icon>
+                                  <p class="role-name">VPN Bridge</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <!-- Role Type(Explanation) -->
                       <tr class="inner-table-2line">
                         <td class="inner-table-2line">
                           <table class="inner-table-roleexp" align="center">
@@ -71,71 +136,143 @@
                               <td class="rdbox-roleexp"
                                   ng-class="{selectRole2Line: modal.rdboxRole >= 0}"
                                   ng-show="modal.lastHoverRole === 0 || modal.rdboxRole === 0">
-                                  Leader Master
+                                <div class="roleexp-exp">
+                                  <table>
+                                    <tr>
+                                      <td class="roleexp-icon-box">
+                                        <svg-icon class="roleexp-icon" paths="[ '../../assets/00.svg' ]" width="'120px'" height="'120px'"></svg-icon>
+                                      </td>
+                                      <td>
+                                        <div class="roleexp-title-box">
+                                          <h4 class="roleexp-title">Leader Master</h4>
+                                        </div>
+                                        <div class="roleexp-li-box">
+                                          <ul>
+                                            <li style="color: #d74c77">Only one representative RDBOX in the cluster.
+                                              <ul>
+                                                <li>Run DHCP/DNS/NTP Servers</li>
+                                              </ul>
+                                            </li>
+                                            <li>End node of multi-hop Wi-Fi
+                                              <ul>
+                                                <li>NAT with existing network.</li>
+                                              </ul>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
                               </td>
                               <td class="rdbox-roleexp"
                                   ng-class="{selectRole2Line: modal.rdboxRole >= 0}"
                                   ng-show="modal.lastHoverRole === 1 || modal.rdboxRole === 1">
-                                  Branch Master
+                                <div class="roleexp-exp">
+                                  <table>
+                                    <tr>
+                                      <td class="roleexp-icon-box">
+                                        <svg-icon class="roleexp-icon" paths="[ '../../assets/synapse.svg' ]" width="'120px'" height="'120px'"></svg-icon>
+                                      </td>
+                                      <td>
+                                        <div class="roleexp-title-box">
+                                          <h4 class="roleexp-title">Brunch Master</h4>
+                                        </div>
+                                        <div class="roleexp-li-box">
+                                          <ul>
+                                            <li style="color: #d74c77">Representative RDBOX of a remote location.
+                                              <ul>
+                                                <li>Assist DHCP/DNS/NTP server.</li>
+                                              </ul>
+                                            </li>
+                                            <li>End node of multi-hop Wi-Fi
+                                              <ul>
+                                                <li>NAT with existing network.</li>
+                                              </ul>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
                               </td>
                               <td class="rdbox-roleexp"
                                   ng-class="{selectRole2Line: modal.rdboxRole >= 0}"
                                   ng-show="modal.lastHoverRole === 2 || modal.rdboxRole === 2">
-                                  Slave
+                                <div class="roleexp-exp">
+                                  <table>
+                                    <tr>
+                                      <td class="roleexp-icon-box">
+                                        <svg-icon class="roleexp-icon" paths="[ '../../assets/wave.svg' ]" width="'120px'" height="'120px'"></svg-icon>
+                                      </td>
+                                      <td>
+                                        <div class="roleexp-title-box">
+                                          <h4 class="roleexp-title">Slave</h4>
+                                        </div>
+                                        <div class="roleexp-li-box">
+                                          <ul>
+                                            <li style="color: #d74c77">Mesh node of multi-hop Wi-Fi.</li>
+                                            <li>Run docker container(s).</li>
+                                          </ul>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
                               </td>
                               <td class="rdbox-roleexp"
                                   ng-class="{selectRole2Line: modal.rdboxRole >= 0}"
                                   ng-show="modal.lastHoverRole === 3 || modal.rdboxRole === 3">
-                                  Other (Robot, IoT, etc)
+                                <div class="roleexp-exp">
+                                  <table>
+                                    <tr>
+                                      <td class="roleexp-icon-box">
+                                        <svg-icon class="roleexp-icon" paths="[ '../../assets/robot.svg' ]" width="'120px'" height="'120px'"></svg-icon>
+                                      </td>
+                                      <td>
+                                        <div class="roleexp-title-box">
+                                          <h4 class="roleexp-title">Other (Robot, IoT, etc)</h4>
+                                        </div>
+                                        <div class="roleexp-li-box">
+                                          <ul>
+                                            <li style="color: #d74c77">Support client of WPA cupplicant and connect Wi-Fi network for RDBOX(Master/Slave)</li>
+                                            <li>Run docker container(s).</li>
+                                          </ul>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
                               </td>
                               <td class="rdbox-roleexp"
                                   ng-class="{selectRole2Line: modal.rdboxRole >= 0}"
                                   ng-show="modal.lastHoverRole === 4  || modal.rdboxRole === 4">
-                                  VPN Bridge
+                                <div class="roleexp-exp">
+                                  <table>
+                                    <tr>
+                                      <td class="roleexp-icon-box">
+                                        <svg-icon class="roleexp-icon" paths="[ '../../assets/vpn.svg' ]" width="'120px'" height="'120px'"></svg-icon>
+                                      </td>
+                                      <td>
+                                        <div class="roleexp-title-box">
+                                          <h4 class="roleexp-title">VPN Bridge</h4>
+                                        </div>
+                                        <div class="roleexp-li-box">
+                                          <ul>
+                                            <li style="color: #d74c77">Support softethervpn-bridge</li>
+                                            <li>End point of VPN connection</li>
+                                          </ul>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
                               </td>
                               <td class="rdbox-roleexp"
                                   ng-class="{selectRole2Line: modal.rdboxRole >= 0}"
                                   ng-show="modal.lastHoverRole < 0">
                                   <h4>Not selected</h4>
-                                  <p>A description of each role is displayed when the mouse is over it.</p>
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                      <tr class="inner-table-1line">
-                        <td class="inner-table-1line">
-                          <table class="inner-table-rolerole" align="center">
-                            <tr>
-                              <td ng-class="{hoverRole: modal.lastHoverRole === 0, selectRole1Line: modal.rdboxRole === 0}"
-                                  class="rdbox-role"
-                                  ng-click="modal.selectRole1Line(0)"
-                                  ng-mouseover="modal.hoverRole1Line(0)">
-                                  Leader Master
-                              </td>
-                              <td ng-class="{hoverRole: modal.lastHoverRole === 1, selectRole1Line: modal.rdboxRole === 1}"
-                                  class="rdbox-role"
-                                  ng-click="modal.selectRole1Line(1)"
-                                  ng-mouseover="modal.hoverRole1Line(1)">
-                                  Branch Master
-                              </td>
-                              <td ng-class="{hoverRole: modal.lastHoverRole === 2, selectRole1Line: modal.rdboxRole === 2}"
-                                  class="rdbox-role"
-                                  ng-click="modal.selectRole1Line(2)"
-                                  ng-mouseover="modal.hoverRole1Line(2)">
-                                  Slave
-                              </td>
-                              <td ng-class="{hoverRole: modal.lastHoverRole === 3, selectRole1Line: modal.rdboxRole === 3}"
-                                  class="rdbox-role"
-                                  ng-click="modal.selectRole1Line(3)"
-                                  ng-mouseover="modal.hoverRole1Line(3)">
-                                  Other (Robot, IoT, etc)
-                              </td>
-                              <td ng-class="{hoverRole: modal.lastHoverRole === 4, selectRole1Line: modal.rdboxRole === 4}"
-                                  class="rdbox-role"
-                                  ng-click="modal.selectRole1Line(4)"
-                                  ng-mouseover="modal.hoverRole1Line(4)">
-                                  VPN Bridge
                               </td>
                             </tr>
                           </table>
@@ -151,6 +288,39 @@
 
         <div class="rdbox-userdata">
           <div class="rdbox-hostname" ng-show="modal.currentPage === 2">
+            <h3 ng-show="modal.rdboxRole === modal.indexOfRdboxRole.BranchMaster" class="sub-title">Enter and Check the installation location.</h3>
+            <h3 ng-show="modal.rdboxRole === modal.indexOfRdboxRole.Slave" class="sub-title">Enter and Check the identifier suffix of hostname.</h3>
+            <dl>
+              <dt>
+                <span ng-show="modal.rdboxRole === modal.indexOfRdboxRole.BranchMaster">Location</span>
+                <span ng-show="modal.rdboxRole === modal.indexOfRdboxRole.Slave">Suffix</span>
+              </dt>
+              <dd>
+                <input required type="text"
+                      class="input_inq1"
+                      id="hostname"
+                      name="hostname"
+                      ng-class="{'has-error': rdbox.hostname.$invalid}"
+                      ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
+                      ng-maxlength="8"
+                      ng-change="modal.changeHostnameSuffix()"
+                      ng-model="modal.hostnameSuffix">
+                <p ng-show="rdbox.hostname.$error.required">Required fields.</p>
+                <p ng-show="rdbox.hostname.$error.pattern">invalid pattern.</p>
+                <p ng-show="rdbox.hostname.$error.maxlength">Enter within 8 characters.</p>
+              </dd>
+            </dl>
+            <dl>
+              <dt></dt>
+              <dd>
+                <pre>The hostname of RDBOX is
+                  <h3 style="text-align: center">{{modal.currentHostname}}</h3>
+                </pre>
+              </dd>
+            </dl>
+          </div>
+
+          <div class="rdbox-hostname" ng-show="modal.currentPage === 3">
             <h3 class="sub-title">RDBOX Type</h3>
             <dl>
               <dt>hostname</dt>
@@ -168,7 +338,7 @@
             </dl>
           </div>
 
-          <div class="rdbox-userinfo" ng-show="modal.currentPage === 3">
+          <div class="rdbox-userinfo" ng-show="modal.currentPage === 4">
             <h3 class="sub-title">User info (1/2)</h3>
             <dl>
               <dt>root user</dt>

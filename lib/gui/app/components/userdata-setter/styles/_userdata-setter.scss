@@ -256,14 +256,26 @@
         td.rdbox-roleexp {
           border: 2px solid #ddd;
           border-color: #ddd #ddd #ddd #ddd;
-          border-width: 2px 2px 2px 2px;
+          border-width: 0px 2px 2px 2px;
           text-align: center;
           padding: 10px;
         }
         td.rdbox-role:hover {
           background-color: #ddd;
+          p {
+            color: #64BCC1;
+          }
         }
         td.selectRole1Line {
+          border-color: #64BCC1;
+          border-width: 3px 3px 0px 3px;
+          background-color: #E0F2F3;
+        }
+        td.unSelectRole1Line {
+          border-color:  #ddd #ddd #64BCC1 #ddd;
+          border-width: 2px 2px 6px 2px;
+        }
+        td.selectRole2Line {
           border-color: #64BCC1;
           border-width: 0px 3px 3px 3px;
           background-color: #E0F2F3;
@@ -271,16 +283,34 @@
         .hoverRole {
           background-color: #ddd;
         }
-        td.selectRole2Line {
-          border-color: #64BCC1;
-          border-width: 2px 2px 0px 3px;
-          background-color: #E0F2F3;
+        .role-name {
+          margin: 5px 0px 0px 0px;
+          padding: 0px;
+          font-size: 11px;
+          color: #666;
+        }
+        .roleexp-exp {
+          height: 100%;
+          .roleexp-icon-box {
+            width: 28.2%;
+          }
+          .roleexp-title-box {
+            text-align: left;
+            margin: 5px;
+            color: #12b3c7;
+            .roleexp-title {
+              text-decoration: underline;
+            }
+          }
+          .roleexp-li-box {
+            text-align: left;
+          }
         }
         .inner-table-1line {
-          height: 50%;
+          height: 28.2%;
         }
         .inner-table-2line {
-          height: 50%;
+          height: 71.8%;
         }
       }
     }

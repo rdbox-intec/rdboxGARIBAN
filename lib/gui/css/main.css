@@ -5880,10 +5880,10 @@ button.close {
  * limitations under the License.
  */
 html {
-  background-color: #4d5057; }
+  background-color: #606161; }
 
 body {
-  background-color: #4d5057; }
+  background-color: #606161; }
 
 .checkbox input[type="checkbox"] {
   position: initial;
@@ -5961,7 +5961,7 @@ body {
   padding: 8px 25px; }
 
 .label-inset {
-  background-color: #35373c;
+  background-color: #474747;
   color: #919191; }
 
 .label-danger {
@@ -6333,8 +6333,6 @@ body {
     margin-left: 10px; }
   .modal-userdata-setter-modal .list-group-item > .tick {
     font-size: 11px; }
-  .modal-userdata-setter-modal .list-group-item:first-child {
-    border-top: 0; }
   .modal-userdata-setter-modal .list-group-item[disabled] .list-group-item-heading {
     color: #b3b3b3; }
   .modal-userdata-setter-modal .list-group-item progress {
@@ -6362,168 +6360,296 @@ body {
 .modal-userdata-setter-modal .word-keep {
   word-break: keep-all; }
 
-.modal-body #contents {
-  width: 650px;
-  height: 340px;
-  margin: 10px auto 0; }
-
-.modal-body .sub-title {
-  padding: 10px 0px 20px 0px; }
-
-.modal-body .form-all {
-  height: 100%; }
-
-.modal-body .rdbox-userdatas {
-  height: 100%; }
-
-.modal-body .rdbox-userdata {
-  display: table; }
-  .modal-body .rdbox-userdata dl {
-    display: table-row; }
-  .modal-body .rdbox-userdata dt {
-    display: table-cell;
-    vertical-align: middle;
-    width: 150px;
-    padding: 0px 20px 25px;
-    font-size: 14px;
-    letter-spacing: 1px; }
-  .modal-body .rdbox-userdata dd {
-    display: table-cell;
-    width: 485px;
-    height: 48px;
-    font-size: 14px; }
-  .modal-body .rdbox-userdata p {
-    margin: 0px 0px 0px 0px;
-    padding: 0px;
-    font-size: 11px;
-    color: #FFC100; }
-  .modal-body .rdbox-userdata .input_inq1 {
-    width: 460px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 2px 8px; }
-  .modal-body .rdbox-userdata .input_inq1:focus {
-    border: 1px solid #64BCC1; }
-  .modal-body .rdbox-userdata .input_inq2 {
-    width: 400px;
-    border: 1px solid #ccc; }
-  .modal-body .rdbox-userdata .input_inq2:focus {
-    border: 1px solid #64BCC1; }
-  .modal-body .rdbox-userdata .has-error {
-    border: 1px solid #FFC100; }
-  .modal-body .rdbox-userdata .has-error:focus {
-    border: 1px solid #FFC100; }
-
-.modal-body .rdbox-type-hw {
-  height: 100%; }
-
-.modal-body .rdbox-type-hw .sub-title-div {
-  height: 15%; }
-
-.modal-body .rdbox-type-hw .outer-table-div {
-  height: 85%; }
-  .modal-body .rdbox-type-hw .outer-table-div .outer-table {
-    height: 100%; }
-
-.modal-body .rdbox-type-hw .rdbox-type-equipment table {
-  width: 100%;
-  table-layout: fixed;
-  word-wrap: break-word; }
-
-.modal-body .rdbox-type-hw .rdbox-type-equipment td.rdbox-hardware {
-  border: 2px solid #ddd;
-  border-color: #fff #ddd;
-  border-width: 2px 2px 2px 2px;
-  text-align: center;
-  padding: 10px;
-  cursor: pointer; }
-
-.modal-body .rdbox-type-hw .rdbox-type-equipment td.rdbox-hardware:hover {
-  background-color: #ddd; }
-
-.modal-body .rdbox-type-hw .rdbox-type-equipment td.selectedHW {
-  border-color: #64BCC1;
-  border-width: 2px 2px 2px 3px;
-  background-color: #E0F2F3; }
-
-.modal-body .rdbox-type-hw .rdbox-type-equipment p {
-  margin: 0px 0px 0px 0px;
-  padding: 0px;
-  font-size: 11px;
-  color: #FFC100; }
-
-.modal-body .rdbox-type-hw .rdbox-type-equipment img {
-  padding: 10px;
-  width: 100%; }
-
-.modal-body .rdbox-type-role {
-  height: 100%; }
-
-.modal-body .rdbox-type-role .sub-title-div {
-  height: 15%; }
-
-.modal-body .rdbox-type-role .outer-table-div {
-  height: 85%; }
-  .modal-body .rdbox-type-role .outer-table-div .outer-table {
-    height: 100%; }
-  .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment {
-    height: 88%; }
-  .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment table {
-    width: 100%;
+.modal-body {
+  /*
+   * cluster welcome
+   */ }
+  .modal-body #contents {
+    width: 650px;
+    height: 340px;
+    margin: 10px auto 0; }
+  .modal-body .sub-title {
+    padding: 10px 0px 20px 0px; }
+  .modal-body .form-all {
     height: 100%;
+    cursor: default; }
+  .modal-body .rdbox-userdatas {
+    height: 100%; }
+  .modal-body .rdbox-cluster-welcom {
+    height: 100%; }
+    .modal-body .rdbox-cluster-welcom .sub-title-div {
+      height: 15%; }
+    .modal-body .rdbox-cluster-welcom .outer-div {
+      width: 100%;
+      height: 85%;
+      display: table;
+      align-items: center; }
+    .modal-body .rdbox-cluster-welcom .inner-div {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center; }
+      .modal-body .rdbox-cluster-welcom .inner-div .icon {
+        height: 150px;
+        margin: 10px; }
+      .modal-body .rdbox-cluster-welcom .inner-div .button-div {
+        margin: 10px; }
+  .modal-body .rdbox-cluster-previously {
+    height: 100%; }
+    .modal-body .rdbox-cluster-previously .list-group-item[disabled] {
+      cursor: not-allowed; }
+    .modal-body .rdbox-cluster-previously .sub-title-div {
+      height: 15%; }
+    .modal-body .rdbox-cluster-previously .inner-div {
+      margin: 10px auto;
+      width: 61.8%;
+      height: 93%;
+      border: 2px solid #ddd;
+      border-color: #ddd #ddd #ddd #ddd;
+      border-width: 2px 2px 2px 2px;
+      overflow: auto; }
+    .modal-body .rdbox-cluster-previously .outer-div {
+      width: 100%;
+      height: 80%; }
+      .modal-body .rdbox-cluster-previously .outer-div .note {
+        text-align: center;
+        margin: 0px 0px 0px 0px;
+        padding: 0px;
+        font-size: 11px;
+        color: #5fb835; }
+      .modal-body .rdbox-cluster-previously .outer-div .list-group-item-footer:has(span) {
+        margin-top: 8px; }
+      .modal-body .rdbox-cluster-previously .outer-div .list-group-item-heading,
+      .modal-body .rdbox-cluster-previously .outer-div .list-group-item-text {
+        word-break: break-all;
+        font-family: monospace; }
+      .modal-body .rdbox-cluster-previously .outer-div .list-group {
+        margin: 10px; }
+      .modal-body .rdbox-cluster-previously .outer-div .list-group-item {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
+        border-color: #ededed;
+        padding: 12px 0; }
+        .modal-body .rdbox-cluster-previously .outer-div .list-group-item .list-group-item-section-expanded {
+          flex-grow: 1; }
+        .modal-body .rdbox-cluster-previously .outer-div .list-group-item .list-group-item-section + .list-group-item-section {
+          margin-left: 10px; }
+        .modal-body .rdbox-cluster-previously .outer-div .list-group-item > .tick {
+          font-size: 11px; }
+        .modal-body .rdbox-cluster-previously .outer-div .list-group-item[disabled] .list-group-item-heading {
+          color: #b3b3b3; }
+        .modal-body .rdbox-cluster-previously .outer-div .list-group-item progress {
+          appearance: none;
+          width: 100%;
+          height: 2.5px;
+          border: none;
+          border-radius: 50% 50%; }
+        .modal-body .rdbox-cluster-previously .outer-div .list-group-item progress::-webkit-progress-bar {
+          background-color: #ececec;
+          border: none;
+          outline: none; }
+        .modal-body .rdbox-cluster-previously .outer-div .list-group-item progress::-webkit-progress-value {
+          border-bottom: 1px solid #3e969b;
+          background-color: #64BCC1; }
+      .modal-body .rdbox-cluster-previously .outer-div .selectedCluster {
+        border: 2px solid #64BCC1;
+        border-color: #64BCC1;
+        border-width: 2px 2px 2px 2px;
+        background-color: #E0F2F3; }
+      .modal-body .rdbox-cluster-previously .outer-div .list-group-item:hover {
+        background-color: #E0E0E0; }
+      .modal-body .rdbox-cluster-previously .outer-div .list-group-item-heading {
+        font-size: 13px; }
+      .modal-body .rdbox-cluster-previously .outer-div .list-group-item-text {
+        line-height: 1;
+        font-size: 11px;
+        color: #b3b3b3; }
+      .modal-body .rdbox-cluster-previously .outer-div .word-keep {
+        word-break: keep-all; }
+      .modal-body .rdbox-cluster-previously .outer-div .tooltip2 {
+        position: relative;
+        cursor: pointer;
+        display: inline-block; }
+      .modal-body .rdbox-cluster-previously .outer-div .tooltip2 p {
+        margin: 0;
+        padding: 0; }
+      .modal-body .rdbox-cluster-previously .outer-div .description2 {
+        display: none;
+        position: absolute;
+        padding: 10px;
+        font-size: 10px;
+        line-height: 1.6em;
+        color: #fff;
+        border-radius: 5px;
+        background: #000;
+        min-width: 100px;
+        max-width: 220px; }
+      .modal-body .rdbox-cluster-previously .outer-div .description2:before {
+        content: "";
+        position: absolute;
+        top: 0%;
+        right: 95%;
+        border: 15px solid transparent;
+        border-top: 15px solid #000;
+        margin-left: -15px;
+        transform: rotateZ(90deg); }
+      .modal-body .rdbox-cluster-previously .outer-div .tooltip2:hover .description2 {
+        display: inline-block;
+        top: 0px;
+        left: 80px; }
+      .modal-body .rdbox-cluster-previously .outer-div .icon {
+        margin: 0 0 0 auto; }
+  .modal-body .rdbox-userdata {
+    display: table; }
+    .modal-body .rdbox-userdata dl {
+      display: table-row; }
+    .modal-body .rdbox-userdata dt {
+      display: table-cell;
+      vertical-align: middle;
+      width: 150px;
+      padding: 0px 20px 25px;
+      font-size: 14px;
+      letter-spacing: 1px; }
+    .modal-body .rdbox-userdata dd {
+      display: table-cell;
+      width: 485px;
+      height: 48px;
+      font-size: 14px; }
+    .modal-body .rdbox-userdata p {
+      margin: 0px 0px 0px 0px;
+      padding: 0px;
+      font-size: 11px;
+      color: #FFC100; }
+    .modal-body .rdbox-userdata pre {
+      width: 460px; }
+    .modal-body .rdbox-userdata .input-inq1 {
+      width: 460px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px; }
+    .modal-body .rdbox-userdata .input-inq1:focus {
+      border: 1px solid #64BCC1; }
+    .modal-body .rdbox-userdata .inputarea-inq1 {
+      width: 460px;
+      height: 150px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px; }
+    .modal-body .rdbox-userdata .inputarea-inq1:focus {
+      outline: none !important;
+      border: 1px solid #64BCC1;
+      box-shadow: 0 0 0px #64BCC1; }
+    .modal-body .rdbox-userdata .input-inq2 {
+      width: 400px;
+      border: 1px solid #ccc; }
+    .modal-body .rdbox-userdata .input-inq2:focus {
+      border: 1px solid #64BCC1; }
+    .modal-body .rdbox-userdata .has-error {
+      border: 1px solid #FFC100; }
+    .modal-body .rdbox-userdata .has-error:focus {
+      border: 1px solid #FFC100; }
+  .modal-body .rdbox-type-hw {
+    height: 100%; }
+  .modal-body .rdbox-type-hw .sub-title-div {
+    height: 15%; }
+  .modal-body .rdbox-type-hw .outer-table-div {
+    height: 85%; }
+    .modal-body .rdbox-type-hw .outer-table-div .outer-table {
+      height: 100%; }
+  .modal-body .rdbox-type-hw .rdbox-type-equipment table {
+    width: 100%;
     table-layout: fixed;
     word-wrap: break-word; }
-  .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.rdbox-role {
+  .modal-body .rdbox-type-hw .rdbox-type-equipment td.rdbox-hardware {
     border: 2px solid #ddd;
-    border-color: #ddd #ddd #ddd #ddd;
+    border-color: #fff #ddd;
     border-width: 2px 2px 2px 2px;
     text-align: center;
     padding: 10px;
     cursor: pointer; }
-  .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.rdbox-roleexp {
-    border: 2px solid #ddd;
-    border-color: #ddd #ddd #ddd #ddd;
-    border-width: 0px 2px 2px 2px;
-    text-align: center;
-    padding: 10px; }
-  .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.rdbox-role:hover {
+  .modal-body .rdbox-type-hw .rdbox-type-equipment td.rdbox-hardware:hover {
     background-color: #ddd; }
-    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.rdbox-role:hover p {
-      color: #64BCC1; }
-  .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.selectRole1Line {
+  .modal-body .rdbox-type-hw .rdbox-type-equipment td.selectedHW {
     border-color: #64BCC1;
-    border-width: 3px 3px 0px 3px;
+    border-width: 2px 2px 2px 3px;
     background-color: #E0F2F3; }
-  .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.unSelectRole1Line {
-    border-color: #ddd #ddd #64BCC1 #ddd;
-    border-width: 2px 2px 6px 2px; }
-  .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.selectRole2Line {
-    border-color: #64BCC1;
-    border-width: 0px 3px 3px 3px;
-    background-color: #E0F2F3; }
-  .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .hoverRole {
-    background-color: #ddd; }
-  .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .role-name {
-    margin: 5px 0px 0px 0px;
+  .modal-body .rdbox-type-hw .rdbox-type-equipment p {
+    margin: 0px 0px 0px 0px;
     padding: 0px;
     font-size: 11px;
-    color: #666; }
-  .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .roleexp-exp {
+    color: #FFC100; }
+  .modal-body .rdbox-type-hw .rdbox-type-equipment img {
+    padding: 10px;
+    width: 100%; }
+  .modal-body .rdbox-type-role {
     height: 100%; }
-    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .roleexp-exp .roleexp-icon-box {
-      width: 28.2%; }
-    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .roleexp-exp .roleexp-title-box {
-      text-align: left;
-      margin: 5px;
-      color: #12b3c7; }
-      .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .roleexp-exp .roleexp-title-box .roleexp-title {
-        text-decoration: underline; }
-    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .roleexp-exp .roleexp-li-box {
-      text-align: left; }
-  .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .inner-table-1line {
-    height: 28.2%; }
-  .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .inner-table-2line {
-    height: 71.8%; }
+  .modal-body .rdbox-type-role .sub-title-div {
+    height: 15%; }
+  .modal-body .rdbox-type-role .outer-table-div {
+    height: 85%; }
+    .modal-body .rdbox-type-role .outer-table-div .outer-table {
+      height: 100%; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment {
+      height: 88%; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment table {
+      width: 100%;
+      height: 100%;
+      table-layout: fixed;
+      word-wrap: break-word; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.rdbox-role {
+      border: 2px solid #ddd;
+      border-color: #ddd #ddd #ddd #ddd;
+      border-width: 2px 2px 2px 2px;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.rdbox-roleexp {
+      border: 2px solid #ddd;
+      border-color: #ddd #ddd #ddd #ddd;
+      border-width: 0px 2px 2px 2px;
+      text-align: center;
+      padding: 10px; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.rdbox-role:hover {
+      background-color: #ddd; }
+      .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.rdbox-role:hover p {
+        color: #64BCC1; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.selectRole1Line {
+      border-color: #64BCC1;
+      border-width: 3px 3px 0px 3px;
+      background-color: #E0F2F3; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.unSelectRole1Line {
+      border-color: #ddd #ddd #64BCC1 #ddd;
+      border-width: 2px 2px 6px 2px; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.selectRole2Line {
+      border-color: #64BCC1;
+      border-width: 0px 3px 3px 3px;
+      background-color: #E0F2F3; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .hoverRole {
+      background-color: #ddd; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .role-name {
+      margin: 5px 0px 0px 0px;
+      padding: 0px;
+      font-size: 11px;
+      color: #666; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .roleexp-exp {
+      height: 100%; }
+      .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .roleexp-exp .roleexp-icon-box {
+        width: 28.2%; }
+      .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .roleexp-exp .roleexp-title-box {
+        text-align: left;
+        margin: 5px;
+        color: #12b3c7; }
+        .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .roleexp-exp .roleexp-title-box .roleexp-title {
+          text-decoration: underline; }
+      .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .roleexp-exp .roleexp-li-box {
+        text-align: left; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .inner-table-1line {
+      height: 28.2%; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .inner-table-2line {
+      height: 71.8%; }
 
 svg-icon {
   display: inline-block; }

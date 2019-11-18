@@ -99,7 +99,7 @@
                     <div class="tooltip2">
                     <div class="list-group-item-section list-group-item-section-expanded">
                       <h4 class="list-group-item-heading">{{ cluster.clusterData.id }}
-                        <span class="word-keep"> - {{ modal.getMeshMode(cluster) }} - Leader: {{ modal.getCountLeder(cluster) }} Branch: {{ modal.getCountBranch(cluster) }} Slave: {{ modal.getCountSlave(cluster) }}</span>
+                        <span class="word-keep"> - {{ modal.getStringMeshModePreviouslyCluster(cluster) }} - Leader: {{ modal.getCountPreviouslyClusterLeder(cluster) }} Branch: {{ modal.getCountPreviouslyClusterBranch(cluster) }} Slave: {{ modal.getCountPreviouslyClusterSlave(cluster) }}</span>
                       </h4>
                       <p class="list-group-item-text">Update: {{ cluster.info.updateDate }}</p>
                       <p class="list-group-item-text">Create: {{ cluster.info.createDate }}</p>
@@ -450,7 +450,8 @@
 
           <ng-form name="rdboxClusterHostname">
             <div class="rdbox-cluster-hostname" ng-show="modal.currentPage === 6">
-              <h3 class="sub-title">RDBOX Type</h3>
+              <h3 ng-show="modal.formDatas.hostname === ''" class="sub-title">Enter hostname.</h3>
+              <h3 ng-show="modal.formDatas.hostname !== ''" class="sub-title">Check hostname.</h3>
               <dl>
                 <dt>hostname</dt>
                 <dd>
@@ -461,6 +462,7 @@
                         ng-class="{'has-error': pages.rdboxClusterHostname.hostname.$invalid}"
                         ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
                         ng-change="modal.changeHostnameForOther()"
+                        ng-disabled="modal.formDatas.rdboxHardWare === modal.INDEX_OF_RDBOX_HW.APOnly || modal.formDatas.rdboxRole !== modal.INDEX_OF_RDBOX_ROLE.Other"
                         ng-model="modal.formDatas.hostname">
                   <p ng-show="pages.rdboxClusterHostname.hostname.$error.required">Required fields.</p>
                   <p ng-show="pages.rdboxClusterHostname.hostname.$error.pattern">invalid pattern.</p>
@@ -474,11 +476,25 @@
               <h3 class="sub-title">User info (1/2)</h3>
               <dl>
                 <dt>root user</dt>
-                <dd><input required disabled type="text"
-                          class="input-inq1"
-                          id="rootUser"
-                          name="rootUser"
-                          ng-model="modal.formDatas.username"></dd>
+                <dd>
+                  <input required disabled type="text"
+                        class="input-inq1"
+                        id="rootUser"
+                        name="rootUser"
+                        ng-model="modal.formDatas.username">
+                </dd>
+              </dl>
+              <dl>
+                <dt>password</dt>
+                <dd>
+                  <input required type="password"
+                        class="input-inq1"
+                        id="password"
+                        name="password"
+                        ng-class="{'has-error': pages.rdboxUserdataUserinfo.password.$invalid}"
+                        ng-model="modal.formDatas.password">
+                  <p ng-show="pages.rdboxUserdataUserinfo.password.$error.required">Required fields.</p>
+                </dd>
               </dl>
               <dl>
                 <dt>public key</dt>
@@ -487,7 +503,6 @@
                         class="input-inq2"
                         id="publicKey"
                         name="publicKey"
-                        placeholder="Select id_rsa.pub"
                         ng-class="{'has-error': pages.rdboxUserdataUserinfo.publicKey.$invalid}"
                         ng-model="modal.formDatas.publicKey">
                   <button ng-click="modal.openSecretSelector(this, 'publicKey')">
@@ -503,13 +518,25 @@
                         class="input-inq2"
                         id="secretKey"
                         name="secretKey"
-                        placeholder="Select id_rsa.pub"
                         ng-class="{'has-error': pages.rdboxUserdataUserinfo.secretKey.$invalid}"
                         ng-model="modal.formDatas.secretKey">
                   <button ng-click="modal.openSecretSelector(this, 'secretKey')">
                     Select
                   </button>
                   <p ng-show="pages.rdboxUserdataUserinfo.secretKey.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+              <dl>
+                <dt>authorized keys</dt>
+                <dd>
+                  <textarea required type="text"
+                        class="inputarea-inq2"
+                        id="authorizedKeys"
+                        name="authorizedKeys"
+                        ng-class="{'has-error': pages.rdboxUserdataUserinfo.authorizedKeys.$invalid}"
+                        ng-model="modal.formDatas.authorizedKeys">
+                  </textarea>
+                  <p ng-show="pages.rdboxUserdataUserinfo.authorizedKeys.$error.required">Required fields.</p>
                 </dd>
               </dl>
             </div>

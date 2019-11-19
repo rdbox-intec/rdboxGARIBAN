@@ -580,9 +580,43 @@
                   <p ng-show="pages.rdboxUserdataEnvinfo.locale.$error.required">Required fields.</p>
                 </dd>
               </dl>
-              <dl>
-                <dt>NTP Servers</dt>
+              <dl class="ntp-form">
+                <dt>NTP Pools</dt>
                 <dd>
+                  <dl ng-repeat="input in modal.formDatas.ntp.pools">
+                    <dd>
+                      <input required type="text"
+                            class="input-inq2"
+                            id="ntppools{{$index}}"
+                            name="ntppools{{$index}}"
+                            ng-class="{'has-error': pages.rdboxUserdataEnvinfo.ntppools.$invalid}"
+                            ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
+                            ng-model="input">
+                      <button>
+                        Add
+                      </button>
+                    </dd>
+                  </dl>
+                </dd>
+              </dl>
+              <dl class="ntp-form">
+                <dt>NTP Servers
+                </dt>
+                <dd>
+                  <dl ng-repeat="input in modal.formDatas.ntp.servers">
+                    <dd>
+                      <input required type="text"
+                            class="input-inq2"
+                            id="ntpservers{{$index}}"
+                            name="ntpservers{{$index}}"
+                            ng-class="{'has-error': pages.rdboxUserdataEnvinfo.ntpservers.$invalid}"
+                            ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
+                            ng-model="input">
+                      <button>
+                        Add
+                      </button>
+                    </dd>
+                  </dl>
                 </dd>
               </dl>
             </div>

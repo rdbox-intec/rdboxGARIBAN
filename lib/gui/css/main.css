@@ -6525,6 +6525,8 @@ body {
       color: #FFC100; }
     .modal-body .rdbox-userdata pre {
       width: 460px; }
+    .modal-body .rdbox-userdata .ntp-form {
+      height: 80px; }
     .modal-body .rdbox-userdata .input-inq1 {
       width: 460px;
       border: 1px solid #ccc;

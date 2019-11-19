@@ -326,6 +326,17 @@
     .input-inq1:focus {
       border: 1px solid #64BCC1;
     }
+    .select-inq1 {
+      box-shadow: none;
+      width: 460px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+    }
+    .select-inq1:focus {
+      box-shadow: none;
+      outline: 1px solid #64BCC1;
+    }
     .inputarea-inq1 {
       width: 460px;
       height: 150px;
@@ -356,6 +367,12 @@
     }
     .input-inq2:focus {
       border: 1px solid #64BCC1;
+    }
+    dd.authorized-keys {
+      display: table-cell;
+      width: 485px;
+      height: 87px;
+      font-size: 14px;
     }
     .has-error {
       border: 1px solid #FFC100;

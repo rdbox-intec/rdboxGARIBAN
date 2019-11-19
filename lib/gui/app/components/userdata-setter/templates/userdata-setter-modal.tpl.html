@@ -473,7 +473,7 @@
 
           <ng-form name="rdboxUserdataUserinfo">
             <div class="rdbox-userdata-userinfo" ng-show="modal.currentPage === 7">
-              <h3 class="sub-title">User info (1/2)</h3>
+              <h3 class="sub-title">Enter User info.</h3>
               <dl>
                 <dt>root user</dt>
                 <dd>
@@ -491,9 +491,11 @@
                         class="input-inq1"
                         id="password"
                         name="password"
+                        ng-minlength="8"
                         ng-class="{'has-error': pages.rdboxUserdataUserinfo.password.$invalid}"
                         ng-model="modal.formDatas.password">
                   <p ng-show="pages.rdboxUserdataUserinfo.password.$error.required">Required fields.</p>
+                  <p ng-show="pages.rdboxUserdataUserinfo.password.$error.minlength">Enter 8 characters or more.</p>
                 </dd>
               </dl>
               <dl>
@@ -528,15 +530,59 @@
               </dl>
               <dl>
                 <dt>authorized keys</dt>
-                <dd>
+                <dd class="authorized-keys">
                   <textarea required type="text"
                         class="inputarea-inq2"
                         id="authorizedKeys"
                         name="authorizedKeys"
+                        wrap="off"
+                        ng-pattern="/[ -~]+/"
                         ng-class="{'has-error': pages.rdboxUserdataUserinfo.authorizedKeys.$invalid}"
                         ng-model="modal.formDatas.authorizedKeys">
                   </textarea>
                   <p ng-show="pages.rdboxUserdataUserinfo.authorizedKeys.$error.required">Required fields.</p>
+                  <p ng-show="pages.rdboxUserdataUserinfo.authorizedKeys.$error.pattern">invalid pattern.</p>
+                </dd>
+              </dl>
+            </div>
+          </ng-form>
+
+          <ng-form name="rdboxUserdataEnvinfo">
+            <div class="rdbox-userdata-envinfo" ng-show="modal.currentPage === 8">
+              <h3 class="sub-title">Enter environment info.</h3>
+              <dl>
+                <dt>time zone</dt>
+                <dd>
+                  <select ng-options="name as name for (name, ditail) in modal.getAllTimezones()"
+                        class="select-inq1"
+                        id="timezone"
+                        name="timezone"
+                        ng-class="{'has-error': pages.rdboxUserdataEnvinfo.timezone.$invalid}"
+                        ng-model="modal.formDatas.timezone"
+                        ng-change="modal.monitorRdboxForm()"
+                        required>
+                  </select>
+                  <p ng-show="pages.rdboxUserdataEnvinfo.timezone.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+              <dl>
+                <dt>locale</dt>
+                <dd>
+                  <select ng-options="locale as locale for locale in modal.getSupportLocales()"
+                        class="select-inq1"
+                        id="locale"
+                        name="locale"
+                        ng-class="{'has-error': pages.rdboxUserdataEnvinfo.locale.$invalid}"
+                        ng-model="modal.formDatas.locale"
+                        ng-change="modal.monitorRdboxForm()"
+                        required>
+                  </select>
+                  <p ng-show="pages.rdboxUserdataEnvinfo.locale.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+              <dl>
+                <dt>NTP Servers</dt>
+                <dd>
                 </dd>
               </dl>
             </div>

@@ -30,6 +30,7 @@
                 </div>
                 <div class="button-div">
                   <button class="button button-primary"
+                    ng-disabled="modal.isFirstSetup()"
                     ng-click="modal.nextModal(modal.INDEX_OF_PAGE.rdboxClusterPreviously)">Apply previously ></button>
                 </div>
               </div>
@@ -65,7 +66,7 @@
               <dl>
                 <dt>comment</dt>
                 <dd>
-                  <textarea
+                  <textarea required
                         class="inputarea-inq1 input-inq1"
                         id="clustercomment"
                         name="clustercomment"
@@ -73,6 +74,7 @@
                         ng-class="{'has-error': pages.rdboxClusterNew.clustercomment.$invalid}"
                         ng-model="modal.formDatas.clustercomment">
                   </textarea>
+                  <p ng-show="pages.rdboxClusterNew.clustercomment.$error.required">Required fields.</p>
                   <p ng-show="pages.rdboxClusterNew.clustercomment.$error.maxlength">Enter within 30 characters.</p>
                 </dd>
               </dl>
@@ -192,60 +194,60 @@
                           <td class="inner-table-1line">
                             <table class="inner-table-rolerole" align="center">
                               <tr>
-                                <td ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.LeaderMaster,
+                                <td>
+                                  <button ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.LeaderMaster,
                                               selectRole1Line: modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.LeaderMaster,
                                               unSelectRole1Line: modal.formDatas.rdboxRole != modal.INDEX_OF_RDBOX_ROLE.LeaderMaster && modal.formDatas.rdboxRole !== ''}"
-                                    class="rdbox-role"
-                                    ng-click="modal.selectRole1Line(modal.INDEX_OF_RDBOX_ROLE.LeaderMaster)"
-                                    ng-mouseover="modal.hoverRole1Line(modal.INDEX_OF_RDBOX_ROLE.LeaderMaster)">
-                                    <div>
-                                      <svg-icon paths="[ '../../assets/00.svg' ]"></svg-icon>
-                                      <p class="role-name">Leader Master</p>
-                                    </div>
+                                          class="rdbox-role"
+                                          ng-click="modal.selectRole1Line(modal.INDEX_OF_RDBOX_ROLE.LeaderMaster)"
+                                          ng-mouseover="modal.hoverRole1Line(modal.INDEX_OF_RDBOX_ROLE.LeaderMaster)">
+                                    <svg-icon paths="[ '../../assets/00.svg' ]"></svg-icon>
+                                    <p class="role-name">Leader Master</p>
+                                  </button>
                                 </td>
-                                <td ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.BranchMaster,
+                                <td>
+                                  <button ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.BranchMaster,
                                               selectRole1Line: modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.BranchMaster,
                                               unSelectRole1Line: modal.formDatas.rdboxRole != modal.INDEX_OF_RDBOX_ROLE.BranchMaster && modal.formDatas.rdboxRole !== ''}"
-                                    class="rdbox-role"
-                                    ng-click="modal.selectRole1Line(modal.INDEX_OF_RDBOX_ROLE.BranchMaster)"
-                                    ng-mouseover="modal.hoverRole1Line(modal.INDEX_OF_RDBOX_ROLE.BranchMaster)">
-                                  <div>
+                                          class="rdbox-role"
+                                          ng-click="modal.selectRole1Line(modal.INDEX_OF_RDBOX_ROLE.BranchMaster)"
+                                          ng-mouseover="modal.hoverRole1Line(modal.INDEX_OF_RDBOX_ROLE.BranchMaster)">
                                     <svg-icon paths="[ '../../assets/synapse.svg' ]"></svg-icon>
                                     <p class="role-name">Branch Master</p>
-                                  </div>
+                                  </button>
                                 </td>
-                                <td ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.Slave,
+                                <td>
+                                  <button ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.Slave,
                                               selectRole1Line: modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.Slave,
                                               unSelectRole1Line: modal.formDatas.rdboxRole != modal.INDEX_OF_RDBOX_ROLE.Slave && modal.formDatas.rdboxRole !== ''}"
-                                    class="rdbox-role"
-                                    ng-click="modal.selectRole1Line(modal.INDEX_OF_RDBOX_ROLE.Slave)"
-                                    ng-mouseover="modal.hoverRole1Line(modal.INDEX_OF_RDBOX_ROLE.Slave)">
-                                  <div>
+                                          class="rdbox-role"
+                                          ng-click="modal.selectRole1Line(modal.INDEX_OF_RDBOX_ROLE.Slave)"
+                                          ng-mouseover="modal.hoverRole1Line(modal.INDEX_OF_RDBOX_ROLE.Slave)">
                                     <svg-icon paths="[ '../../assets/wave.svg' ]"></svg-icon>
                                     <p class="role-name">Slave</p>
-                                  </div>
+                                  </button>
                                 </td>
-                                <td ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.Other,
+                                <td>
+                                  <button ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.Other,
                                               selectRole1Line: modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.Other,
                                               unSelectRole1Line: modal.formDatas.rdboxRole != modal.INDEX_OF_RDBOX_ROLE.Other && modal.formDatas.rdboxRole !== ''}"
-                                    class="rdbox-role"
-                                    ng-click="modal.selectRole1Line(modal.INDEX_OF_RDBOX_ROLE.Other)"
-                                    ng-mouseover="modal.hoverRole1Line(modal.INDEX_OF_RDBOX_ROLE.Other)">
-                                  <div>
+                                          class="rdbox-role"
+                                          ng-click="modal.selectRole1Line(modal.INDEX_OF_RDBOX_ROLE.Other)"
+                                          ng-mouseover="modal.hoverRole1Line(modal.INDEX_OF_RDBOX_ROLE.Other)">
                                     <svg-icon paths="[ '../../assets/robot.svg' ]"></svg-icon>
                                     <p class="role-name">Robot, IoT, etc</p>
-                                  </div>
+                                  </button>
                                 </td>
-                                <td ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.VPNBridge,
+                                <td>
+                                  <button ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.VPNBridge,
                                               selectRole1Line: modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.VPNBridge,
                                               unSelectRole1Line: modal.formDatas.rdboxRole != modal.INDEX_OF_RDBOX_ROLE.VPNBridge && modal.formDatas.rdboxRole !== ''}"
-                                    class="rdbox-role"
-                                    ng-click="modal.selectRole1Line(modal.INDEX_OF_RDBOX_ROLE.VPNBridge)"
-                                    ng-mouseover="modal.hoverRole1Line(modal.INDEX_OF_RDBOX_ROLE.VPNBridge)">
-                                  <div>
+                                          class="rdbox-role"
+                                          ng-click="modal.selectRole1Line(modal.INDEX_OF_RDBOX_ROLE.VPNBridge)"
+                                          ng-mouseover="modal.hoverRole1Line(modal.INDEX_OF_RDBOX_ROLE.VPNBridge)">
                                     <svg-icon paths="[ '../../assets/vpn.svg' ]"></svg-icon>
                                     <p class="role-name">VPN Bridge</p>
-                                  </div>
+                                  </button>
                                 </td>
                               </tr>
                             </table>
@@ -583,40 +585,74 @@
               <dl class="ntp-form">
                 <dt>NTP Pools</dt>
                 <dd>
-                  <dl ng-repeat="input in modal.formDatas.ntp.pools">
-                    <dd>
-                      <input required type="text"
-                            class="input-inq2"
-                            id="ntppools{{$index}}"
-                            name="ntppools{{$index}}"
-                            ng-class="{'has-error': pages.rdboxUserdataEnvinfo.ntppools.$invalid}"
-                            ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
-                            ng-model="input">
-                      <button>
-                        Add
-                      </button>
-                    </dd>
-                  </dl>
+                  <div class="ntp-pools">
+                    <dl ng-repeat="input in modal.formDatas.ntp.pools track by $index">
+                      <dd>
+                        <input required type="text"
+                              class="input-inq2"
+                              id="ntppools{{$index}}"
+                              name="ntppools{{$index}}"
+                              ng-if="$index === 0"
+                              ng-class="{'has-error': pages.rdboxUserdataEnvinfo.ntppools{{$index}}.$invalid}"
+                              ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
+                              ng-model="modal.formDatas.ntp.pools[$index]">
+                        <input required type="text"
+                              class="input-inq3"
+                              id="ntppools{{$index}}"
+                              name="ntppools{{$index}}"
+                              ng-if="$index !== 0"
+                              ng-class="{'has-error': pages.rdboxUserdataEnvinfo.ntppools{{$index}}.$invalid}"
+                              ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
+                              ng-model="modal.formDatas.ntp.pools[$index]">
+                        <button ng-if="$index === 0"
+                                ng-click="modal.addInputOfNtpPools(modal)">
+                          Add
+                        </button>
+                        <button ng-if="$index !== 0"
+                                ng-click="modal.delInputOfNtpPools($index)">
+                          Del
+                        </button>
+                      </dd>
+                    </dl>
+                  </div>
                 </dd>
               </dl>
               <dl class="ntp-form">
                 <dt>NTP Servers
                 </dt>
                 <dd>
-                  <dl ng-repeat="input in modal.formDatas.ntp.servers">
-                    <dd>
-                      <input required type="text"
-                            class="input-inq2"
-                            id="ntpservers{{$index}}"
-                            name="ntpservers{{$index}}"
-                            ng-class="{'has-error': pages.rdboxUserdataEnvinfo.ntpservers.$invalid}"
-                            ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
-                            ng-model="input">
-                      <button>
-                        Add
-                      </button>
-                    </dd>
-                  </dl>
+                  <div class="ntp-servers">
+                    <dl ng-repeat="input in modal.formDatas.ntp.servers track by $index">
+                      <dd>
+                        <div>
+                          <input required type="text"
+                                class="input-inq2"
+                                id="ntpservers{{$index}}"
+                                name="ntpservers{{$index}}"
+                                ng-if="$index === 0"
+                                ng-class="{'has-error': pages.rdboxUserdataEnvinfo.ntpservers{{$index}}.$invalid}"
+                                ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
+                                ng-model="modal.formDatas.ntp.servers[$index]">
+                          <input required type="text"
+                                class="input-inq3"
+                                id="ntpservers{{$index}}"
+                                name="ntpservers{{$index}}"
+                                ng-if="$index !== 0"
+                                ng-class="{'has-error': pages.rdboxUserdataEnvinfo.ntpservers{{$index}}.$invalid}"
+                                ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
+                                ng-model="modal.formDatas.ntp.servers[$index]">
+                          <button ng-if="$index === 0"
+                                  ng-click="modal.addInputOfNtpServers()">
+                            Add
+                          </button>
+                          <button ng-if="$index !== 0"
+                                  ng-click="modal.delInputOfNtpServers($index)">
+                            Del
+                          </button>
+                        </div>
+                      </dd>
+                    </dl>
+                  </div>
                 </dd>
               </dl>
             </div>

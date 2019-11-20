@@ -6525,8 +6525,18 @@ body {
       color: #FFC100; }
     .modal-body .rdbox-userdata pre {
       width: 460px; }
-    .modal-body .rdbox-userdata .ntp-form {
-      height: 80px; }
+    .modal-body .rdbox-userdata .ntp-form .ntp-servers {
+      height: 80px;
+      overflow: auto;
+      overflow-x: hidden; }
+      .modal-body .rdbox-userdata .ntp-form .ntp-servers dd {
+        height: 25px; }
+    .modal-body .rdbox-userdata .ntp-form .ntp-pools {
+      height: 80px;
+      overflow: auto;
+      overflow-x: hidden; }
+      .modal-body .rdbox-userdata .ntp-form .ntp-pools dd {
+        height: 25px; }
     .modal-body .rdbox-userdata .input-inq1 {
       width: 460px;
       border: 1px solid #ccc;
@@ -6567,6 +6577,11 @@ body {
       width: 400px;
       border: 1px solid #ccc; }
     .modal-body .rdbox-userdata .input-inq2:focus {
+      border: 1px solid #64BCC1; }
+    .modal-body .rdbox-userdata .input-inq3 {
+      width: 357px;
+      border: 1px solid #ccc; }
+    .modal-body .rdbox-userdata .input-inq3:focus {
       border: 1px solid #64BCC1; }
     .modal-body .rdbox-userdata dd.authorized-keys {
       display: table-cell;
@@ -6620,41 +6635,60 @@ body {
       height: 100%; }
     .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment {
       height: 88%; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .inner-table-1line tr {
+      width: 100%;
+      height: 100%; }
+      .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .inner-table-1line tr td {
+        width: 100%;
+        height: 100%; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .inner-table-2line tr {
+      width: 100%;
+      height: 100%; }
+      .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .inner-table-2line tr td {
+        width: 100%;
+        height: 100%; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment button {
+      border: none;
+      cursor: pointer;
+      outline: none;
+      padding: 0;
+      appearance: none;
+      width: 100%;
+      height: 100%; }
     .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment table {
       width: 100%;
       height: 100%;
       table-layout: fixed;
       word-wrap: break-word; }
-    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.rdbox-role {
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .rdbox-role {
       border: 2px solid #ddd;
       border-color: #ddd #ddd #ddd #ddd;
       border-width: 2px 2px 2px 2px;
       text-align: center;
-      padding: 10px;
       cursor: pointer; }
-    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.rdbox-roleexp {
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .rdbox-roleexp {
       border: 2px solid #ddd;
       border-color: #ddd #ddd #ddd #ddd;
       border-width: 0px 2px 2px 2px;
       text-align: center;
       padding: 10px; }
-    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.rdbox-role:hover {
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .rdbox-role:hover {
       background-color: #ddd; }
-      .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.rdbox-role:hover p {
+      .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .rdbox-role:hover p {
         color: #64BCC1; }
-    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.selectRole1Line {
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .hoverRole {
+      background-color: #ddd; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .selectRole1Line {
       border-color: #64BCC1;
       border-width: 3px 3px 0px 3px;
       background-color: #E0F2F3; }
-    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.unSelectRole1Line {
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .unSelectRole1Line {
       border-color: #ddd #ddd #64BCC1 #ddd;
-      border-width: 2px 2px 6px 2px; }
-    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment td.selectRole2Line {
+      border-width: 2px 2px 2px 2px; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .selectRole2Line {
       border-color: #64BCC1;
       border-width: 0px 3px 3px 3px;
       background-color: #E0F2F3; }
-    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .hoverRole {
-      background-color: #ddd; }
     .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .role-name {
       margin: 5px 0px 0px 0px;
       padding: 0px;
@@ -6673,9 +6707,9 @@ body {
       .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .roleexp-exp .roleexp-li-box {
         text-align: left; }
     .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .inner-table-1line {
-      height: 28.2%; }
+      height: 35.2%; }
     .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .inner-table-2line {
-      height: 71.8%; }
+      height: 64.8%; }
 
 svg-icon {
   display: inline-block; }

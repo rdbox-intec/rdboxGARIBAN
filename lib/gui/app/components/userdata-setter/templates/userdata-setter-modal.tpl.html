@@ -100,7 +100,7 @@
                       ng-click="modal.selectPreviouslyCluster(cluster, $index)">
                     <div class="tooltip2">
                     <div class="list-group-item-section list-group-item-section-expanded">
-                      <h4 class="list-group-item-heading">{{ cluster.clusterData.id }}
+                      <h4 class="list-group-item-heading"><span style="font-weight: bold;">{{ cluster.clusterData.id }}</span>
                         <span class="word-keep"> - {{ modal.getStringMeshModePreviouslyCluster(cluster) }} - Leader: {{ modal.getCountPreviouslyClusterLeder(cluster) }} Branch: {{ modal.getCountPreviouslyClusterBranch(cluster) }} Slave: {{ modal.getCountPreviouslyClusterSlave(cluster) }}</span>
                       </h4>
                       <p class="list-group-item-text">Update: {{ cluster.info.updateDate }}</p>
@@ -509,6 +509,7 @@
         </ng-form>
 
         <div class="rdbox-userdata">
+          <!-- UserInfo -->
           <ng-form name="rdboxUserdataUserinfo">
             <div class="rdbox-userdata-userinfo" ng-show="modal.currentPage === 8">
               <h3 class="sub-title">Enter User info.</h3>
@@ -585,6 +586,7 @@
             </div>
           </ng-form>
 
+          <!-- EnvInfo -->
           <ng-form name="rdboxUserdataEnvinfo">
             <div class="rdbox-userdata-envinfo" ng-show="modal.currentPage === 9">
               <h3 class="sub-title">Enter environment info.</h3>
@@ -694,6 +696,7 @@
             </div>
           </ng-form>
 
+          <!-- NetworkConnection -->
           <ng-form name="rdboxNetworkConnection">
             <div class="rdbox-network-connection" ng-show="modal.currentPage === 10">
               <h3 class="sub-title">Select the connection method from RDBOX to the existing network.</h3>

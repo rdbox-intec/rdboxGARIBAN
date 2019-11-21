@@ -6363,6 +6363,9 @@ body {
 .modal-body {
   /*
    * cluster welcome
+   */
+  /*
+   * cluster apply
    */ }
   .modal-body #contents {
     width: 650px;
@@ -6460,7 +6463,7 @@ body {
         outline-width: 2px 2px 2px 2px;
         background-color: #E0F2F3; }
       .modal-body .rdbox-cluster-previously .outer-div .list-group-item:hover {
-        background-color: #E0E0E0; }
+        background-color: #EBFDFF; }
       .modal-body .rdbox-cluster-previously .outer-div .list-group-item-heading {
         font-size: 13px; }
       .modal-body .rdbox-cluster-previously .outer-div .list-group-item-text {
@@ -6523,6 +6526,36 @@ body {
       padding: 0px;
       font-size: 11px;
       color: #FFC100; }
+    .modal-body .rdbox-userdata .radio {
+      display: none; }
+    .modal-body .rdbox-userdata .radio + label {
+      padding-left: 20px;
+      position: relative;
+      margin-right: 20px; }
+    .modal-body .rdbox-userdata .radio + label::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      border: 1px solid #ccc;
+      border-radius: 50%; }
+    .modal-body .rdbox-userdata .radio:checked + label {
+      color: #64BCC1; }
+    .modal-body .rdbox-userdata .radio:checked + label::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 9px;
+      height: 9px;
+      background: #64BCC1;
+      border-radius: 50%; }
+    .modal-body .rdbox-userdata .radio-label {
+      display: block; }
     .modal-body .rdbox-userdata pre {
       width: 460px; }
     .modal-body .rdbox-userdata .ntp-form .ntp-servers {
@@ -6553,9 +6586,13 @@ body {
     .modal-body .rdbox-userdata .select-inq1:focus {
       box-shadow: none;
       outline: 1px solid #64BCC1; }
+    .modal-body .rdbox-userdata .clustercomment {
+      width: 485px;
+      height: 120px;
+      font-size: 14px; }
     .modal-body .rdbox-userdata .inputarea-inq1 {
       width: 460px;
-      height: 150px;
+      height: 80px;
       border: 1px solid #ccc;
       border-radius: 4px;
       padding: 2px 8px; }
@@ -6612,7 +6649,7 @@ body {
     padding: 10px;
     cursor: pointer; }
   .modal-body .rdbox-type-hw .rdbox-type-equipment td.rdbox-hardware:hover {
-    background-color: #ddd; }
+    background-color: #EBFDFF; }
   .modal-body .rdbox-type-hw .rdbox-type-equipment td.selectedHW {
     border-color: #64BCC1;
     border-width: 2px 2px 2px 3px;
@@ -6660,30 +6697,36 @@ body {
       height: 100%;
       table-layout: fixed;
       word-wrap: break-word; }
-    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .rdbox-role {
-      border: 2px solid #ddd;
-      border-color: #ddd #ddd #ddd #ddd;
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .rdboxRole {
+      border: 2px solid #E0F2F3;
+      border-color: #E0F2F3 #E0F2F3 #E0F2F3 #E0F2F3;
       border-width: 2px 2px 2px 2px;
       text-align: center;
       cursor: pointer; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .rdboxRoleDisable {
+      border: 2px solid #E0F2F3;
+      border-color: #E0F2F3 #E0F2F3 #E0F2F3 #E0F2F3;
+      border-width: 2px 2px 2px 2px;
+      text-align: center;
+      cursor: auto; }
     .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .rdbox-roleexp {
-      border: 2px solid #ddd;
-      border-color: #ddd #ddd #ddd #ddd;
+      border: 2px solid #E0F2F3;
+      border-color: #E0F2F3 #E0F2F3 #E0F2F3 #E0F2F3;
       border-width: 0px 2px 2px 2px;
       text-align: center;
       padding: 10px; }
-    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .rdbox-role:hover {
-      background-color: #ddd; }
-      .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .rdbox-role:hover p {
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .rdboxRole:hover {
+      background-color: #EBFDFF; }
+      .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .rdboxRole:hover p {
         color: #64BCC1; }
     .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .hoverRole {
-      background-color: #ddd; }
+      background-color: #EBFDFF; }
     .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .selectRole1Line {
       border-color: #64BCC1;
       border-width: 3px 3px 0px 3px;
       background-color: #E0F2F3; }
     .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .unSelectRole1Line {
-      border-color: #ddd #ddd #64BCC1 #ddd;
+      border-color: #E0F2F3 #E0F2F3 #64BCC1 #E0F2F3;
       border-width: 2px 2px 2px 2px; }
     .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .selectRole2Line {
       border-color: #64BCC1;
@@ -6694,6 +6737,10 @@ body {
       padding: 0px;
       font-size: 11px;
       color: #666; }
+    .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment button:disabled {
+      cursor: auto;
+      background-color: #d5d5d5;
+      color: #787c7f; }
     .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .roleexp-exp {
       height: 100%; }
       .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .roleexp-exp .roleexp-icon-box {
@@ -6710,6 +6757,24 @@ body {
       height: 35.2%; }
     .modal-body .rdbox-type-role .outer-table-div .rdbox-role-equipment .inner-table-2line {
       height: 64.8%; }
+  .modal-body .rdbox-cluster-apply {
+    height: 100%; }
+    .modal-body .rdbox-cluster-apply .sub-title-div {
+      height: 15%; }
+    .modal-body .rdbox-cluster-apply .outer-div {
+      width: 100%;
+      height: 85%;
+      display: table;
+      align-items: center; }
+    .modal-body .rdbox-cluster-apply .inner-div {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center; }
+      .modal-body .rdbox-cluster-apply .inner-div .icon {
+        height: 150px;
+        margin: 10px; }
+      .modal-body .rdbox-cluster-apply .inner-div .button-div {
+        margin: 10px; }
 
 svg-icon {
   display: inline-block; }

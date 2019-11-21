@@ -30,7 +30,7 @@
                 </div>
                 <div class="button-div">
                   <button class="button button-primary"
-                    ng-disabled="modal.isFirstSetup()"
+                    ng-disabled="modal.isThisSoftwareFirstBoot()"
                     ng-click="modal.nextModal(modal.INDEX_OF_PAGE.rdboxClusterPreviously)">Apply previously ></button>
                 </div>
               </div>
@@ -65,7 +65,7 @@
               </dl>
               <dl>
                 <dt>comment</dt>
-                <dd>
+                <dd class="clustercomment">
                   <textarea required
                         class="inputarea-inq1 input-inq1"
                         id="clustercomment"
@@ -197,8 +197,10 @@
                                 <td>
                                   <button ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.LeaderMaster,
                                               selectRole1Line: modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.LeaderMaster,
+                                              rdboxRole: !modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.LeaderMaster),
+                                              rdboxRoleDisable: modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.LeaderMaster),
                                               unSelectRole1Line: modal.formDatas.rdboxRole != modal.INDEX_OF_RDBOX_ROLE.LeaderMaster && modal.formDatas.rdboxRole !== ''}"
-                                          class="rdbox-role"
+                                          ng-disabled="modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.LeaderMaster)"
                                           ng-click="modal.selectRole1Line(modal.INDEX_OF_RDBOX_ROLE.LeaderMaster)"
                                           ng-mouseover="modal.hoverRole1Line(modal.INDEX_OF_RDBOX_ROLE.LeaderMaster)">
                                     <svg-icon paths="[ '../../assets/00.svg' ]"></svg-icon>
@@ -207,9 +209,11 @@
                                 </td>
                                 <td>
                                   <button ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.BranchMaster,
+                                              rdboxRole: !modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.BranchMaster),
+                                              rdboxRoleDisable: modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.BranchMaster),
                                               selectRole1Line: modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.BranchMaster,
                                               unSelectRole1Line: modal.formDatas.rdboxRole != modal.INDEX_OF_RDBOX_ROLE.BranchMaster && modal.formDatas.rdboxRole !== ''}"
-                                          class="rdbox-role"
+                                          ng-disabled="modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.BranchMaster)"
                                           ng-click="modal.selectRole1Line(modal.INDEX_OF_RDBOX_ROLE.BranchMaster)"
                                           ng-mouseover="modal.hoverRole1Line(modal.INDEX_OF_RDBOX_ROLE.BranchMaster)">
                                     <svg-icon paths="[ '../../assets/synapse.svg' ]"></svg-icon>
@@ -219,8 +223,10 @@
                                 <td>
                                   <button ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.Slave,
                                               selectRole1Line: modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.Slave,
+                                              rdboxRole: !modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.Slave),
+                                              rdboxRoleDisable: modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.Slave),
                                               unSelectRole1Line: modal.formDatas.rdboxRole != modal.INDEX_OF_RDBOX_ROLE.Slave && modal.formDatas.rdboxRole !== ''}"
-                                          class="rdbox-role"
+                                          ng-disabled="modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.Slave)"
                                           ng-click="modal.selectRole1Line(modal.INDEX_OF_RDBOX_ROLE.Slave)"
                                           ng-mouseover="modal.hoverRole1Line(modal.INDEX_OF_RDBOX_ROLE.Slave)">
                                     <svg-icon paths="[ '../../assets/wave.svg' ]"></svg-icon>
@@ -230,8 +236,10 @@
                                 <td>
                                   <button ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.Other,
                                               selectRole1Line: modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.Other,
+                                              rdboxRole: !modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.Other),
+                                              rdboxRoleDisable: modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.Other),
                                               unSelectRole1Line: modal.formDatas.rdboxRole != modal.INDEX_OF_RDBOX_ROLE.Other && modal.formDatas.rdboxRole !== ''}"
-                                          class="rdbox-role"
+                                          ng-disabled="modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.Other)"
                                           ng-click="modal.selectRole1Line(modal.INDEX_OF_RDBOX_ROLE.Other)"
                                           ng-mouseover="modal.hoverRole1Line(modal.INDEX_OF_RDBOX_ROLE.Other)">
                                     <svg-icon paths="[ '../../assets/robot.svg' ]"></svg-icon>
@@ -240,9 +248,12 @@
                                 </td>
                                 <td>
                                   <button ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.VPNBridge,
+                                              rdboxRole: !modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.VPNBridge),
+                                              rdboxRoleDisable: modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.VPNBridge),
                                               selectRole1Line: modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.VPNBridge,
                                               unSelectRole1Line: modal.formDatas.rdboxRole != modal.INDEX_OF_RDBOX_ROLE.VPNBridge && modal.formDatas.rdboxRole !== ''}"
                                           class="rdbox-role"
+                                          ng-disabled="modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.VPNBridge)"
                                           ng-click="modal.selectRole1Line(modal.INDEX_OF_RDBOX_ROLE.VPNBridge)"
                                           ng-mouseover="modal.hoverRole1Line(modal.INDEX_OF_RDBOX_ROLE.VPNBridge)">
                                     <svg-icon paths="[ '../../assets/vpn.svg' ]"></svg-icon>
@@ -412,8 +423,8 @@
           </div>
         </ng-form>
 
-        <div class="rdbox-userdata">
-          <ng-form name="rdboxClusterSuffix">
+        <ng-form name="rdboxClusterSuffix">
+          <div class="rdbox-userdata">
             <div class="rdbox-cluster-suffix" ng-show="modal.currentPage === 5">
               <h3 ng-show="modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.BranchMaster" class="sub-title">Enter and Check the installation location.</h3>
               <h3 ng-show="modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.Slave" class="sub-title">Enter and Check the identifier suffix of hostname.</h3>
@@ -448,9 +459,11 @@
                 </dd>
               </dl>
             </div>
-          </ng-form>
+          </div>
+        </ng-form>
 
-          <ng-form name="rdboxClusterHostname">
+        <ng-form name="rdboxClusterHostname">
+          <div class="rdbox-userdata">
             <div class="rdbox-cluster-hostname" ng-show="modal.currentPage === 6">
               <h3 ng-show="modal.formDatas.hostname === ''" class="sub-title">Enter hostname.</h3>
               <h3 ng-show="modal.formDatas.hostname !== ''" class="sub-title">Check hostname.</h3>
@@ -471,10 +484,33 @@
                 </dd>
               </dl>
             </div>
-          </ng-form>
+          </div>
+        </ng-form>
 
+        <!-- Apply previously Settings -->
+        <ng-form name="rdboxClusterApply">
+          <div class="rdbox-cluster-apply" ng-show="modal.currentPage === 7">
+            <div class="sub-title-div">
+              <h3 class="sub-title">Apply the previous settings as they are?</h3>
+            </div>
+            <div class="outer-div">
+              <div class="inner-div">
+                <div class="button-div">
+                  <button class="button button-primary"
+                    ng-click="modal.nextModal(modal.INDEX_OF_PAGE.rdboxUserdataUserinfo)">Some changes. ></button>
+                </div>
+                <div class="button-div">
+                  <button class="button button-primary"
+                    ng-click="modal.nextModal(modal.INDEX_OF_PAGE.rdboxAllFinish)">Apply previously >></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-form>
+
+        <div class="rdbox-userdata">
           <ng-form name="rdboxUserdataUserinfo">
-            <div class="rdbox-userdata-userinfo" ng-show="modal.currentPage === 7">
+            <div class="rdbox-userdata-userinfo" ng-show="modal.currentPage === 8">
               <h3 class="sub-title">Enter User info.</h3>
               <dl>
                 <dt>root user</dt>
@@ -550,7 +586,7 @@
           </ng-form>
 
           <ng-form name="rdboxUserdataEnvinfo">
-            <div class="rdbox-userdata-envinfo" ng-show="modal.currentPage === 8">
+            <div class="rdbox-userdata-envinfo" ng-show="modal.currentPage === 9">
               <h3 class="sub-title">Enter environment info.</h3>
               <dl>
                 <dt>time zone</dt>
@@ -561,7 +597,7 @@
                         name="timezone"
                         ng-class="{'has-error': pages.rdboxUserdataEnvinfo.timezone.$invalid}"
                         ng-model="modal.formDatas.timezone"
-                        ng-change="modal.monitorRdboxForm()"
+                        ng-change="modal.changeCtrlTimezone()"
                         required>
                   </select>
                   <p ng-show="pages.rdboxUserdataEnvinfo.timezone.$error.required">Required fields.</p>
@@ -653,6 +689,74 @@
                       </dd>
                     </dl>
                   </div>
+                </dd>
+              </dl>
+            </div>
+          </ng-form>
+
+          <ng-form name="rdboxNetworkConnection">
+            <div class="rdbox-network-connection" ng-show="modal.currentPage === 10">
+              <h3 class="sub-title">Select the connection method from RDBOX to the existing network.</h3>
+              <dl>
+                <dt>connection method</dt>
+                <dd>
+                  <input required
+                        class="radio"
+                        type="radio"
+                        name="connectionMethod"
+                        value="ethernet"
+                        id="ethernet"
+                        ng-model="modal.formDatas.connectionMethod"
+                        ng-change="modal.monitorRdboxForm()">
+                  <label class="radio-label" for="ethernet">Ethernet</label>
+                  <input class="radio"
+                        type="radio"
+                        name="connectionMethod"
+                        value="wifi"
+                        id="wifi"
+                        ng-model="modal.formDatas.connectionMethod"
+                        ng-change="modal.monitorRdboxForm()">
+                  <label class="radio-label" for="wifi">Wi-Fi</label>
+                </dd>
+              </dl>
+              <dl ng-if="modal.formDatas.connectionMethod === 'wifi'">
+                <dt>SSID</dt>
+                <dd>
+                  <input required type="text"
+                        class="input-inq1"
+                        id="ssid"
+                        name="ssid"
+                        ng-class="{'has-error': pages.rdboxNetworkConnection.ssid.$invalid}"
+                        ng-model="modal.formDatas.ssid">
+                  <p ng-show="pages.rdboxNetworkConnection.ssid.$error.required">Required fields.</p>
+                </dd>
+                </dd>
+              </dl>
+              <dl ng-if="modal.formDatas.connectionMethod === 'wifi'">
+                <dt>passphrase</dt>
+                <dd>
+                  <input required type="password"
+                        class="input-inq1"
+                        id="passphrase"
+                        name="passphrase"
+                        ng-class="{'has-error': pages.rdboxNetworkConnection.passphrase.$invalid}"
+                        ng-model="modal.formDatas.passphrase">
+                  <p ng-show="pages.rdboxNetworkConnection.passphrase.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+              <dl ng-if="modal.formDatas.connectionMethod === 'wifi'">
+                <dt>country</dt>
+                <dd>
+                  <select ng-options="country as country for country in modal.getAllCountryCodes()"
+                        class="select-inq1"
+                        id="country"
+                        name="country"
+                        ng-class="{'has-error': pages.rdboxNetworkConnection.country.$invalid}"
+                        ng-model="modal.formDatas.country"
+                        ng-change="modal.monitorRdboxForm()"
+                        required>
+                  </select>
+                  <p ng-show="pages.rdboxNetworkConnection.country.$error.required">Required fields.</p>
                 </dd>
               </dl>
             </div>

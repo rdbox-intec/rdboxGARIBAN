@@ -151,7 +151,7 @@ describe('Browser: MainPage', function () {
           isSizeEstimated: false
         })
 
-        m.chai.expect(controller.shouldFlashStepBeDisabled()).to.be.false
+        m.chai.expect(controller.shouldFlashStepBeDisabled()).to.be.true
       })
     })
   })

@@ -64,11 +64,11 @@ const SelectImageButton = (props) => {
   return (
     <ThemedProvider>
       <StepSelection>
-        <StepButton
+        <button className="button button-primary"
           onClick={props.openImageSelector}
         >
           Select image
-        </StepButton>
+        </button>
         <Footer>
           { props.mainSupportedExtensions.join(', ') }, and{' '}
           <Underline

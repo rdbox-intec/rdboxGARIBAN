@@ -21,34 +21,52 @@
 // eslint-disable-next-line no-unused-vars
 const React = require('react')
 const propTypes = require('prop-types')
-const { default: styled } = require('styled-components')
 const {
   ChangeButton,
-  DetailsText,
-  StepButton,
   StepNameButton,
   ThemedProvider
 } = require('../../styled-components')
-const { Txt } = require('rendition')
 const middleEllipsis = require('../../utils/middle-ellipsis')
-const { bytesToClosestUnit } = require('../../../../shared/units')
 
-
-
-const InputSetter = (props) => {
+const UdSetter = (props) => {
+  if (props.hasUserdata) {
+    return (
+      <ThemedProvider>
+        <StepNameButton
+          plain
+        >
+          {/* eslint-disable no-magic-numbers */}
+          { middleEllipsis('OK', 20) }
+        </StepNameButton>
+        { !props.flashing &&
+          <ChangeButton
+            plain
+            mb={14}
+            onClick={props.reselectUserdata}
+          >
+            Change
+          </ChangeButton>
+        }
+      </ThemedProvider>
+    )
+  }
   return (
     <ThemedProvider>
-      <StepButton
-        onClick={props.openConfigSetter}
+      <button className="button button-primary"
+        disabled={props.disabled}
+        onClick={props.openUserdataSetter}
       >
-        Configure
-      </StepButton>
+        Set user-data
+      </button>
     </ThemedProvider>
   )
 }
 
-InputSetter.propTypes = {
-  openConfigSetter: propTypes.func
+UdSetter.propTypes = {
+  disabled: propTypes.bool,
+  openUserdataSetter: propTypes.func,
+  reselectUserdata: propTypes.func,
+  hasUserdata: propTypes.bool
 }
 
-module.exports = InputSetter
+module.exports = UdSetter

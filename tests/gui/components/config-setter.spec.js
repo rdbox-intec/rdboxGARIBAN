@@ -22,12 +22,12 @@ const angular = require('angular')
 require('angular-mocks')
 const utils = require('../../../lib/shared/utils')
 
-describe('Browser: ConfigSetter', function () {
+describe('Browser: UserdataSetter', function () {
   beforeEach(angular.mock.module(
-    require('../../../lib/gui/app/components/config-setter/config-setter')
+    require('../../../lib/gui/app/components/userdata-setter/userdata-setter')
   ))
 
-  describe('ConfigSetterController', function () {
+  describe('UserdataSetterController', function () {
     describe('.memoize()', function () {
       it('should handle equal angular objects with different hashes', function () {
         const memoizedParameter = utils.memoize(_.identity, angular.equals)

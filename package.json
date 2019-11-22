@@ -1,7 +1,7 @@
 {
-  "name": "balena-etcher",
+  "name": "flash-gui",
   "private": true,
-  "displayName": "balenaEtcher",
+  "displayName": "flashGUI",
   "version": "1.5.56",
   "packageType": "local",
   "updates": {
@@ -11,12 +11,12 @@
   },
   "main": "lib/start.js",
   "description": "Flash OS images to SD cards and USB drives, safely and easily.",
-  "productDescription": "Etcher is a powerful OS image flasher built with web technologies to ensure flashing an SDCard or USB drive is a pleasant and safe experience. It protects you from accidentally writing to your hard-drives, ensures every byte of data was written correctly and much more.",
-  "homepage": "https://github.com/balena-io/etcher",
+  "productDescription": "performs two processes of creating the configuration file of RDBOX and writing the SD image file to the SD card",
+  "homepage": "https://github.com/rdbox-intec/flashGUI",
   "gypfile": true,
   "repository": {
     "type": "git",
-    "url": "git@github.com:balena-io/etcher.git"
+    "url": "git@github.com:rdbox-intec/flashGUI.git"
   },
   "scripts": {
     "test": "make lint test sanity-checks",
@@ -32,7 +32,7 @@
     "concourse-test": "npx npm@6.7.0 test",
     "concourse-test-electron": "npx npm@6.7.0 test"
   },
-  "author": "Balena Inc. <hello@etcher.io>",
+  "author": "INTEC Inc. <info-rdbox@intec.co.jp>",
   "license": "Apache-2.0",
   "platformSpecificDependencies": [
     "fsevents",
@@ -50,14 +50,19 @@
     "bluebird": "^3.5.3",
     "bootstrap-sass": "^3.3.6",
     "color": "^2.0.1",
+    "countries-and-timezones": "^2.0.3",
+    "country-list": "^2.2.0",
     "d3": "^4.13.0",
     "debug": "^3.1.0",
     "electron-is-running-in-asar": "^1.0.0",
     "electron-updater": "4.0.6",
     "etcher-sdk": "^2.0.13",
+    "file-loader": "^4.2.0",
     "flexboxgrid": "^6.3.0",
     "immutable": "^3.8.1",
     "inactivity-timer": "^1.0.0",
+    "js-yaml": "^3.13.1",
+    "locale-codes": "^1.1.0",
     "lodash": "^4.17.10",
     "mime-types": "^2.1.18",
     "nan": "^2.9.2",
@@ -74,6 +79,7 @@
     "resin-corvus": "^2.0.3",
     "roboto-fontface": "^0.9.0",
     "semver": "^5.1.1",
+    "sha512crypt-node": "^0.1.0",
     "styled-components": "^4.2.0",
     "styled-system": "^4.1.0",
     "sudo-prompt": "^9.0.0",

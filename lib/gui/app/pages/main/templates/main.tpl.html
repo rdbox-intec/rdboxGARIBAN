@@ -54,26 +54,25 @@
     </div>
   </div>
 
-
-
-  <div class="col-xs" ng-controller="ConfigSettingController as config">
+  <div class="col-xs" ng-controller="UserdataSettingController as userdata">
     <div class="box text-center relative">
-      <div class="step-border-right" ng-disabled="main.shouldFlashStepBeDisabled()" ng-hide="main.state.isFlashing() && main.isWebviewShowing"></div>
+      <div class="step-border-left" ng-disabled="main.shouldUserdataStepBeDisabled()" ng-hide="main.state.isFlashing() && main.isWebviewShowing"></div>
       <div class="step-border-right" ng-disabled="main.shouldFlashStepBeDisabled()" ng-hide="main.state.isFlashing() && main.isWebviewShowing"></div>
       <div class="center-block">
-        <svg-icon paths="[ '../../assets/config.svg' ]"
-          disabled="main.shouldDriveStepBeDisabled()"></svg-icon>
+        <svg-icon paths="[ '../../assets/userdata.svg' ]"
+          disabled="main.shouldUserdataStepBeDisabled()"></svg-icon>
       </div>
       <div class="space-vertical-large">
-        <input-setter
-          open-config-setter="config.openConfigSetter"
+        <ud-setter
+          has-userdata="main.selection.hasUserdata()"
+          disabled="main.shouldUserdataStepBeDisabled()"
+          open-userdata-setter="userdata.openUserdataSetter"
+          reselect-userdata="userdata.reselectUserdata"
         >
-        </input-setter>
+        </ud-setter>
       </div>
     </div>
   </div>
-
-
 
   <div>
     <featured-project

@@ -137,12 +137,12 @@ class ProgressButton extends React.Component {
     return (
       <Provider>
         <StepSelection>
-          <StepButton
+          <button className="button button-primary"
             onClick= { this.props.callback }
             disabled= { this.props.disabled }
           >
             {this.props.label}
-          </StepButton>
+          </button>
         </StepSelection>
       </Provider>
     )

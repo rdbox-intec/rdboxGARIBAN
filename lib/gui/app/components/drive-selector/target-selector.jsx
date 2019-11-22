@@ -141,13 +141,12 @@ const TargetSelector = (props) => {
 
   return (
     <ThemedProvider>
-      <StepButton
-        tabindex={(targets.length > 0) ? -1 : 2 }
+      <button className="button button-primary"
         disabled={props.disabled}
         onClick={props.openDriveSelector}
       >
         Select target
-      </StepButton>
+      </button>
     </ThemedProvider>
   )
 }

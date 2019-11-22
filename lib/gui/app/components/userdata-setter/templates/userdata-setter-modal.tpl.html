@@ -709,7 +709,7 @@
                         name="connectionMethod"
                         value="ethernet"
                         id="ethernet"
-                        ng-model="modal.formDatas.connectionMethod"
+                        ng-model="modal.formDatas.connection.method"
                         ng-change="modal.monitorRdboxForm()">
                   <label class="radio-label" for="ethernet">Ethernet</label>
                   <input class="radio"
@@ -717,12 +717,12 @@
                         name="connectionMethod"
                         value="wifi"
                         id="wifi"
-                        ng-model="modal.formDatas.connectionMethod"
+                        ng-model="modal.formDatas.connection.method"
                         ng-change="modal.monitorRdboxForm()">
                   <label class="radio-label" for="wifi">Wi-Fi</label>
                 </dd>
               </dl>
-              <dl ng-if="modal.formDatas.connectionMethod === 'wifi'">
+              <dl ng-if="modal.formDatas.connection.method === 'wifi'">
                 <dt>SSID</dt>
                 <dd>
                   <input required type="text"
@@ -730,12 +730,12 @@
                         id="ssid"
                         name="ssid"
                         ng-class="{'has-error': pages.rdboxNetworkConnection.ssid.$invalid}"
-                        ng-model="modal.formDatas.ssid">
+                        ng-model="modal.formDatas.connection.wpa.network.ssid">
                   <p ng-show="pages.rdboxNetworkConnection.ssid.$error.required">Required fields.</p>
                 </dd>
                 </dd>
               </dl>
-              <dl ng-if="modal.formDatas.connectionMethod === 'wifi'">
+              <dl ng-if="modal.formDatas.connection.method === 'wifi'">
                 <dt>passphrase</dt>
                 <dd>
                   <input required type="password"
@@ -743,11 +743,11 @@
                         id="passphrase"
                         name="passphrase"
                         ng-class="{'has-error': pages.rdboxNetworkConnection.passphrase.$invalid}"
-                        ng-model="modal.formDatas.passphrase">
+                        ng-model="modal.formDatas.connection.wpa.network.psk">
                   <p ng-show="pages.rdboxNetworkConnection.passphrase.$error.required">Required fields.</p>
                 </dd>
               </dl>
-              <dl ng-if="modal.formDatas.connectionMethod === 'wifi'">
+              <dl ng-if="modal.formDatas.connection.method === 'wifi'">
                 <dt>country</dt>
                 <dd>
                   <select ng-options="country as country for country in modal.getAllCountryCodes()"
@@ -755,7 +755,7 @@
                         id="country"
                         name="country"
                         ng-class="{'has-error': pages.rdboxNetworkConnection.country.$invalid}"
-                        ng-model="modal.formDatas.country"
+                        ng-model="modal.formDatas.connection.wpa.country"
                         ng-change="modal.monitorRdboxForm()"
                         required>
                   </select>

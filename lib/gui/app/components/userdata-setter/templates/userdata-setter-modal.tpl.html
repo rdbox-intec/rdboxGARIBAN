@@ -12,8 +12,8 @@
       <div class="rdbox-userdatas">
 
         <!-- Welcom -->
-        <ng-form name="rdboxClusterWelcom">
-          <div class="rdbox-cluster-welcom" ng-show="modal.currentPage === 0">
+        <ng-form name="pageClusterWelcom">
+          <div class="page-cluster-welcom" ng-show="modal.currentPage === 0">
             <div class="sub-title-div">
               <h3 class="sub-title">Welcome to the user-data.yml generate wizard.</h3>
             </div>
@@ -26,12 +26,12 @@
               -->
                 <div class="button-div">
                   <button class="button button-primary"
-                    ng-click="modal.nextModal(modal.INDEX_OF_PAGE.rdboxClusterNew)">Create New ></button>
+                    ng-click="modal.nextModal(modal.INDEX_OF_PAGE.pageClusterNew)">Create New ></button>
                 </div>
                 <div class="button-div">
                   <button class="button button-primary"
                     ng-disabled="modal.isThisSoftwareFirstBoot()"
-                    ng-click="modal.nextModal(modal.INDEX_OF_PAGE.rdboxClusterPreviously)">Apply previously ></button>
+                    ng-click="modal.nextModal(modal.INDEX_OF_PAGE.pageClusterPreviously)">Apply previously ></button>
                 </div>
               </div>
             </div>
@@ -39,8 +39,8 @@
         </ng-form>
 
         <!-- new -->
-        <ng-form name="rdboxClusterNew">
-          <div class="rdbox-cluster-new" ng-show="modal.currentPage === 1">
+        <ng-form name="pageClusterNew">
+          <div class="page-cluster-new" ng-show="modal.currentPage === 1">
             <div class="sub-title-div">
               <h3 class="sub-title">Enter the cluster name.</h3>
             </div>
@@ -52,15 +52,15 @@
                         class="input-inq1"
                         id="clustername"
                         name="clustername"
-                        ng-class="{'has-error': pages.rdboxClusterNew.clustername.$invalid}"
+                        ng-class="{'has-error': pages.pageClusterNew.clustername.$invalid}"
                         ng-maxlength="8"
                         ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
                         ng-model="modal.formDatas.clustername"
                         valid-exist>
-                  <p ng-show="pages.rdboxClusterNew.clustername.$error.required">Required fields.</p>
-                  <p ng-show="pages.rdboxClusterNew.clustername.$error.pattern">invalid pattern.</p>
-                  <p ng-show="pages.rdboxClusterNew.clustername.$error.maxlength">Enter within 8 characters.</p>
-                  <p ng-show="pages.rdboxClusterNew.clustername.$error.validExist">Already exist this cluster name.</p>
+                  <p ng-show="pages.pageClusterNew.clustername.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageClusterNew.clustername.$error.pattern">invalid pattern.</p>
+                  <p ng-show="pages.pageClusterNew.clustername.$error.maxlength">Enter within 8 characters.</p>
+                  <p ng-show="pages.pageClusterNew.clustername.$error.validExist">Already exist this cluster name.</p>
                 </dd>
               </dl>
               <dl>
@@ -71,11 +71,11 @@
                         id="clustercomment"
                         name="clustercomment"
                         ng-maxlength="30"
-                        ng-class="{'has-error': pages.rdboxClusterNew.clustercomment.$invalid}"
+                        ng-class="{'has-error': pages.pageClusterNew.clustercomment.$invalid}"
                         ng-model="modal.formDatas.clustercomment">
                   </textarea>
-                  <p ng-show="pages.rdboxClusterNew.clustercomment.$error.required">Required fields.</p>
-                  <p ng-show="pages.rdboxClusterNew.clustercomment.$error.maxlength">Enter within 30 characters.</p>
+                  <p ng-show="pages.pageClusterNew.clustercomment.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageClusterNew.clustercomment.$error.maxlength">Enter within 30 characters.</p>
                 </dd>
               </dl>
             </div>
@@ -83,8 +83,8 @@
         </ng-form>
 
         <!-- previously -->
-        <ng-form name="rdboxClusterPreviously">
-          <div class="rdbox-cluster-previously" ng-show="modal.currentPage === 2">
+        <ng-form name="pageClusterPreviously">
+          <div class="page-cluster-previously" ng-show="modal.currentPage === 2">
             <div class="sub-title-div">
               <h3 class="sub-title">Select the previously settings to be applied.</h3>
             </div>
@@ -123,8 +123,8 @@
         </ng-form>
 
         <!-- H/W Type -->
-        <ng-form name="rdboxTypeHw">
-          <div class="rdbox-type-hw" ng-show="modal.currentPage === 3">
+        <ng-form name="pageTypeHw">
+          <div class="page-type-hw" ng-show="modal.currentPage === 3">
             <div class="sub-title-div">
               <h3 class="sub-title">Select Hardware configuration of this RDBOX</h3>
             </div>
@@ -174,8 +174,8 @@
         </ng-form>
 
         <!-- Role Type -->
-        <ng-form name="rdboxTypeRole">
-          <div class="rdbox-type-role" ng-show="modal.currentPage === 4">
+        <ng-form name="pageTypeRole">
+          <div class="page-type-role" ng-show="modal.currentPage === 4">
             <div class="sub-title-div">
               <h3 class="sub-title">Select Role of this RDBOX</h3>
             </div>
@@ -423,9 +423,9 @@
           </div>
         </ng-form>
 
-        <ng-form name="rdboxClusterSuffix">
+        <ng-form name="pageClusterSuffix">
           <div class="rdbox-userdata">
-            <div class="rdbox-cluster-suffix" ng-show="modal.currentPage === 5">
+            <div class="page-cluster-suffix" ng-show="modal.currentPage === 5">
               <h3 ng-show="modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.BranchMaster" class="sub-title">Enter and Check the installation location.</h3>
               <h3 ng-show="modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.Slave" class="sub-title">Enter and Check the identifier suffix of hostname.</h3>
               <h3 ng-show="modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.VPNBridge" class="sub-title">Enter and Check the identifier suffix of hostname.</h3>
@@ -440,14 +440,14 @@
                         class="input-inq1"
                         id="suffix"
                         name="suffix"
-                        ng-class="{'has-error': pages.rdboxClusterSuffix.suffix.$invalid}"
+                        ng-class="{'has-error': pages.pageClusterSuffix.suffix.$invalid}"
                         ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
                         ng-maxlength="8"
                         ng-change="modal.changeHostnameSuffix()"
                         ng-model="modal.formDatas.hostnameSuffix">
-                  <p ng-show="pages.rdboxClusterSuffix.suffix.$error.required">Required fields.</p>
-                  <p ng-show="pages.rdboxClusterSuffix.suffix.$error.pattern">invalid pattern.</p>
-                  <p ng-show="pages.rdboxClusterSuffix.suffix.$error.maxlength">Enter within 8 characters.</p>
+                  <p ng-show="pages.pageClusterSuffix.suffix.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageClusterSuffix.suffix.$error.pattern">invalid pattern.</p>
+                  <p ng-show="pages.pageClusterSuffix.suffix.$error.maxlength">Enter within 8 characters.</p>
                 </dd>
               </dl>
               <dl>
@@ -462,9 +462,9 @@
           </div>
         </ng-form>
 
-        <ng-form name="rdboxClusterHostname">
+        <ng-form name="pageClusterHostname">
           <div class="rdbox-userdata">
-            <div class="rdbox-cluster-hostname" ng-show="modal.currentPage === 6">
+            <div class="page-cluster-hostname" ng-show="modal.currentPage === 6">
               <h3 ng-show="modal.formDatas.hostname === ''" class="sub-title">Enter hostname.</h3>
               <h3 ng-show="modal.formDatas.hostname !== ''" class="sub-title">Check hostname.</h3>
               <dl>
@@ -474,13 +474,13 @@
                         class="input-inq1"
                         id="hostname"
                         name="hostname"
-                        ng-class="{'has-error': pages.rdboxClusterHostname.hostname.$invalid}"
+                        ng-class="{'has-error': pages.pageClusterHostname.hostname.$invalid}"
                         ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
                         ng-change="modal.changeHostnameForOther()"
                         ng-disabled="modal.formDatas.rdboxHardWare === modal.INDEX_OF_RDBOX_HW.APOnly || modal.formDatas.rdboxRole !== modal.INDEX_OF_RDBOX_ROLE.Other"
                         ng-model="modal.formDatas.hostname">
-                  <p ng-show="pages.rdboxClusterHostname.hostname.$error.required">Required fields.</p>
-                  <p ng-show="pages.rdboxClusterHostname.hostname.$error.pattern">invalid pattern.</p>
+                  <p ng-show="pages.pageClusterHostname.hostname.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageClusterHostname.hostname.$error.pattern">invalid pattern.</p>
                 </dd>
               </dl>
             </div>
@@ -488,8 +488,8 @@
         </ng-form>
 
         <!-- Apply previously Settings -->
-        <ng-form name="rdboxClusterApply">
-          <div class="rdbox-cluster-apply" ng-show="modal.currentPage === 7">
+        <ng-form name="pageClusterApply">
+          <div class="page-cluster-apply" ng-show="modal.currentPage === 7">
             <div class="sub-title-div">
               <h3 class="sub-title">Apply the previous settings as they are?</h3>
             </div>
@@ -497,11 +497,11 @@
               <div class="inner-div">
                 <div class="button-div">
                   <button class="button button-primary"
-                    ng-click="modal.nextModal(modal.INDEX_OF_PAGE.rdboxUserdataUserinfo)">Some changes. ></button>
+                    ng-click="modal.nextModal(modal.INDEX_OF_PAGE.pageUserdataUserinfo)">Some changes. ></button>
                 </div>
                 <div class="button-div">
                   <button class="button button-primary"
-                    ng-click="modal.nextModal(modal.INDEX_OF_PAGE.rdboxAllFinish)">Apply previously >></button>
+                    ng-click="modal.nextModal(modal.INDEX_OF_PAGE.pageAllFinish)">Apply previously >></button>
                 </div>
               </div>
             </div>
@@ -510,8 +510,8 @@
 
         <div class="rdbox-userdata">
           <!-- UserInfo -->
-          <ng-form name="rdboxUserdataUserinfo">
-            <div class="rdbox-userdata-userinfo" ng-show="modal.currentPage === 8">
+          <ng-form name="pageUserdataUserinfo">
+            <div class="page-userdata-userinfo" ng-show="modal.currentPage === 8">
               <h3 class="sub-title">Enter User info.</h3>
               <dl>
                 <dt>root user</dt>
@@ -531,10 +531,10 @@
                         id="password"
                         name="password"
                         ng-minlength="8"
-                        ng-class="{'has-error': pages.rdboxUserdataUserinfo.password.$invalid}"
+                        ng-class="{'has-error': pages.pageUserdataUserinfo.password.$invalid}"
                         ng-model="modal.formDatas.password">
-                  <p ng-show="pages.rdboxUserdataUserinfo.password.$error.required">Required fields.</p>
-                  <p ng-show="pages.rdboxUserdataUserinfo.password.$error.minlength">Enter 8 characters or more.</p>
+                  <p ng-show="pages.pageUserdataUserinfo.password.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageUserdataUserinfo.password.$error.minlength">Enter 8 characters or more.</p>
                 </dd>
               </dl>
               <dl>
@@ -544,12 +544,12 @@
                         class="input-inq2"
                         id="publicKey"
                         name="publicKey"
-                        ng-class="{'has-error': pages.rdboxUserdataUserinfo.publicKey.$invalid}"
+                        ng-class="{'has-error': pages.pageUserdataUserinfo.publicKey.$invalid}"
                         ng-model="modal.formDatas.publicKey">
-                  <button ng-click="modal.openSecretSelector(this, 'publicKey')">
+                  <button class="next-textbox-button" ng-click="modal.openSecretSelector(this, 'publicKey')">
                     Select
                   </button>
-                  <p ng-show="pages.rdboxUserdataUserinfo.publicKey.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageUserdataUserinfo.publicKey.$error.required">Required fields.</p>
                 </dd>
               </dl>
               <dl>
@@ -559,12 +559,12 @@
                         class="input-inq2"
                         id="secretKey"
                         name="secretKey"
-                        ng-class="{'has-error': pages.rdboxUserdataUserinfo.secretKey.$invalid}"
+                        ng-class="{'has-error': pages.pageUserdataUserinfo.secretKey.$invalid}"
                         ng-model="modal.formDatas.secretKey">
-                  <button ng-click="modal.openSecretSelector(this, 'secretKey')">
+                  <button class="next-textbox-button" ng-click="modal.openSecretSelector(this, 'secretKey')">
                     Select
                   </button>
-                  <p ng-show="pages.rdboxUserdataUserinfo.secretKey.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageUserdataUserinfo.secretKey.$error.required">Required fields.</p>
                 </dd>
               </dl>
               <dl>
@@ -576,19 +576,19 @@
                         name="authorizedKeys"
                         wrap="off"
                         ng-pattern="/[ -~]+/"
-                        ng-class="{'has-error': pages.rdboxUserdataUserinfo.authorizedKeys.$invalid}"
+                        ng-class="{'has-error': pages.pageUserdataUserinfo.authorizedKeys.$invalid}"
                         ng-model="modal.formDatas.authorizedKeys">
                   </textarea>
-                  <p ng-show="pages.rdboxUserdataUserinfo.authorizedKeys.$error.required">Required fields.</p>
-                  <p ng-show="pages.rdboxUserdataUserinfo.authorizedKeys.$error.pattern">invalid pattern.</p>
+                  <p ng-show="pages.pageUserdataUserinfo.authorizedKeys.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageUserdataUserinfo.authorizedKeys.$error.pattern">invalid pattern.</p>
                 </dd>
               </dl>
             </div>
           </ng-form>
 
           <!-- EnvInfo -->
-          <ng-form name="rdboxUserdataEnvinfo">
-            <div class="rdbox-userdata-envinfo" ng-show="modal.currentPage === 9">
+          <ng-form name="pageUserdataEnvinfo">
+            <div class="page-userdata-envinfo" ng-show="modal.currentPage === 9">
               <h3 class="sub-title">Enter environment info.</h3>
               <dl>
                 <dt>time zone</dt>
@@ -597,12 +597,12 @@
                         class="select-inq1"
                         id="timezone"
                         name="timezone"
-                        ng-class="{'has-error': pages.rdboxUserdataEnvinfo.timezone.$invalid}"
+                        ng-class="{'has-error': pages.pageUserdataEnvinfo.timezone.$invalid}"
                         ng-model="modal.formDatas.timezone"
                         ng-change="modal.changeCtrlTimezone()"
                         required>
                   </select>
-                  <p ng-show="pages.rdboxUserdataEnvinfo.timezone.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageUserdataEnvinfo.timezone.$error.required">Required fields.</p>
                 </dd>
               </dl>
               <dl>
@@ -612,12 +612,12 @@
                         class="select-inq1"
                         id="locale"
                         name="locale"
-                        ng-class="{'has-error': pages.rdboxUserdataEnvinfo.locale.$invalid}"
+                        ng-class="{'has-error': pages.pageUserdataEnvinfo.locale.$invalid}"
                         ng-model="modal.formDatas.locale"
                         ng-change="modal.monitorRdboxForm()"
                         required>
                   </select>
-                  <p ng-show="pages.rdboxUserdataEnvinfo.locale.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageUserdataEnvinfo.locale.$error.required">Required fields.</p>
                 </dd>
               </dl>
               <dl class="ntp-form">
@@ -631,7 +631,7 @@
                               id="ntppools{{$index}}"
                               name="ntppools{{$index}}"
                               ng-if="$index === 0"
-                              ng-class="{'has-error': pages.rdboxUserdataEnvinfo.ntppools{{$index}}.$invalid}"
+                              ng-class="{'has-error': pages.pageUserdataEnvinfo.ntppools{{$index}}.$invalid}"
                               ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
                               ng-model="modal.formDatas.ntp.pools[$index]">
                         <input required type="text"
@@ -639,14 +639,14 @@
                               id="ntppools{{$index}}"
                               name="ntppools{{$index}}"
                               ng-if="$index !== 0"
-                              ng-class="{'has-error': pages.rdboxUserdataEnvinfo.ntppools{{$index}}.$invalid}"
+                              ng-class="{'has-error': pages.pageUserdataEnvinfo.ntppools{{$index}}.$invalid}"
                               ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
                               ng-model="modal.formDatas.ntp.pools[$index]">
-                        <button ng-if="$index === 0"
+                        <button class="next-textbox-button" ng-if="$index === 0"
                                 ng-click="modal.addInputOfNtpPools(modal)">
                           Add
                         </button>
-                        <button ng-if="$index !== 0"
+                        <button class="next-textbox-button" ng-if="$index !== 0"
                                 ng-click="modal.delInputOfNtpPools($index)">
                           Del
                         </button>
@@ -668,7 +668,7 @@
                                 id="ntpservers{{$index}}"
                                 name="ntpservers{{$index}}"
                                 ng-if="$index === 0"
-                                ng-class="{'has-error': pages.rdboxUserdataEnvinfo.ntpservers{{$index}}.$invalid}"
+                                ng-class="{'has-error': pages.pageUserdataEnvinfo.ntpservers{{$index}}.$invalid}"
                                 ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
                                 ng-model="modal.formDatas.ntp.servers[$index]">
                           <input required type="text"
@@ -676,14 +676,14 @@
                                 id="ntpservers{{$index}}"
                                 name="ntpservers{{$index}}"
                                 ng-if="$index !== 0"
-                                ng-class="{'has-error': pages.rdboxUserdataEnvinfo.ntpservers{{$index}}.$invalid}"
+                                ng-class="{'has-error': pages.pageUserdataEnvinfo.ntpservers{{$index}}.$invalid}"
                                 ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
                                 ng-model="modal.formDatas.ntp.servers[$index]">
-                          <button ng-if="$index === 0"
+                          <button class="next-textbox-button" ng-if="$index === 0"
                                   ng-click="modal.addInputOfNtpServers()">
                             Add
                           </button>
-                          <button ng-if="$index !== 0"
+                          <button class="next-textbox-button" ng-if="$index !== 0"
                                   ng-click="modal.delInputOfNtpServers($index)">
                             Del
                           </button>
@@ -697,8 +697,8 @@
           </ng-form>
 
           <!-- NetworkConnection -->
-          <ng-form name="rdboxNetworkConnection">
-            <div class="rdbox-network-connection" ng-show="modal.currentPage === 10">
+          <ng-form name="pageNetworkConnection">
+            <div class="page-network-connection" ng-show="modal.currentPage === 10">
               <h3 class="sub-title">Select the connection method from RDBOX to the existing network.</h3>
               <dl>
                 <dt>connection method</dt>
@@ -729,9 +729,9 @@
                         class="input-inq1"
                         id="ssid"
                         name="ssid"
-                        ng-class="{'has-error': pages.rdboxNetworkConnection.ssid.$invalid}"
+                        ng-class="{'has-error': pages.pageNetworkConnection.ssid.$invalid}"
                         ng-model="modal.formDatas.connection.wpa.network.ssid">
-                  <p ng-show="pages.rdboxNetworkConnection.ssid.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageNetworkConnection.ssid.$error.required">Required fields.</p>
                 </dd>
                 </dd>
               </dl>
@@ -742,9 +742,9 @@
                         class="input-inq1"
                         id="passphrase"
                         name="passphrase"
-                        ng-class="{'has-error': pages.rdboxNetworkConnection.passphrase.$invalid}"
+                        ng-class="{'has-error': pages.pageNetworkConnection.passphrase.$invalid}"
                         ng-model="modal.formDatas.connection.wpa.network.psk">
-                  <p ng-show="pages.rdboxNetworkConnection.passphrase.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageNetworkConnection.passphrase.$error.required">Required fields.</p>
                 </dd>
               </dl>
               <dl ng-if="modal.formDatas.connection.method === 'wifi'">
@@ -754,12 +754,106 @@
                         class="select-inq1"
                         id="country"
                         name="country"
-                        ng-class="{'has-error': pages.rdboxNetworkConnection.country.$invalid}"
+                        ng-class="{'has-error': pages.pageNetworkConnection.country.$invalid}"
                         ng-model="modal.formDatas.connection.wpa.country"
                         ng-change="modal.monitorRdboxForm()"
                         required>
                   </select>
-                  <p ng-show="pages.rdboxNetworkConnection.country.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageNetworkConnection.country.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+            </div>
+          </ng-form>
+
+          <!-- NetworkProxy -->
+          <ng-form name="pageNetworkProxy">
+            <div class="page-network-proxy" ng-show="modal.currentPage === 11">
+              <h3 class="sub-title">Set the HTTP proxy if necessary.</h3>
+              <dl class="proxy-selector">
+                <dt>proxy</dt>
+                <dd>
+                  <input required
+                        class="radio"
+                        type="radio"
+                        name="proxy"
+                        value="unnecessary"
+                        id="unnecessary"
+                        ng-model="modal.formDatas.proxy"
+                        ng-change="modal.monitorRdboxForm()">
+                  <label class="radio-label" for="unnecessary">Do not use a proxy</label>
+                  <input class="radio"
+                        type="radio"
+                        name="proxy"
+                        value="necessary"
+                        id="necessary"
+                        ng-model="modal.formDatas.proxy"
+                        ng-change="modal.monitorRdboxForm()">
+                  <label class="radio-label" for="necessary">Use a proxy</label>
+                  <input class="radio"
+                        type="radio"
+                        name="proxy"
+                        value="auth"
+                        id="auth"
+                        ng-model="modal.formDatas.proxy"
+                        ng-change="modal.monitorRdboxForm()">
+                  <label class="radio-label" for="auth">Use a proxy server that requires a password</label>
+                </dd>
+              </dl>
+              <dl>
+                <dt>server address</dt>
+                <dd>
+                  <input required type="text"
+                        class="input-inq4"
+                        id="proxyAddress"
+                        name="proxyAddress"
+                        ng-class="{'has-error': pages.pageNetworkProxy.proxyAddress.$invalid}"
+                        ng-pattern="/^(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)$/"
+                        ng-model="modal.formDatas.proxyAddress">
+                  <span>:</span>
+                  <input required type="number"
+                        class="input-inq5"
+                        id="proxyPort"
+                        name="proxyPort"
+                        ng-class="{'has-error': pages.pageNetworkProxy.proxyPort.$invalid}"
+                        ng-model="modal.formDatas.proxyPort">
+                  <p ng-show="pages.pageNetworkProxy.proxyAddress.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageNetworkProxy.proxyAddress.$error.pattern">invalid pattern.</p>
+                </dd>
+              </dl>
+              <dl>
+                <dt>no proxy</dt>
+                <dd>
+                  <input required type="text"
+                        class="input-inq1"
+                        id="noProxyAddress"
+                        name="noProxyAddress"
+                        ng-class="{'has-error': pages.pageNetworkProxy.noProxyAddress.$invalid}"
+                        ng-model="modal.formDatas.noProxyAddress">
+                  <p ng-show="pages.pageNetworkProxy.noProxyAddress.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+              <dl>
+                <dt>auth user</dt>
+                <dd>
+                  <input required type="text"
+                        class="input-inq4"
+                        id="proxyAuthUser"
+                        name="proxyAuthUser"
+                        ng-class="{'has-error': pages.pageNetworkProxy.proxyAuthUser.$invalid}"
+                        ng-model="modal.formDatas.proxyAuthUser">
+                  <p ng-show="pages.pageNetworkProxy.proxyAuthUser.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+              <dl>
+                <dt>auth password</dt>
+                <dd>
+                  <input required type="password"
+                        class="input-inq4"
+                        id="proxyAuthPassword"
+                        name="proxyAuthPassword"
+                        ng-class="{'has-error': pages.pageNetworkProxy.proxyAuthPassword.$invalid}"
+                        ng-model="modal.formDatas.proxyAuthPassword">
+                  <p ng-show="pages.pageNetworkProxy.proxyAuthPassword.$error.required">Required fields.</p>
                 </dd>
               </dl>
             </div>

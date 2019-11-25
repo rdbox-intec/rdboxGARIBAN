@@ -914,14 +914,26 @@
               <h3 class="sub-title-nospace">Enter the Wi-Fi settings for the Access Point.</h3>
               <p class="sub-title-supplement">Used for access from robots, IoT devices, and other Wi-Fi clients.</p>
               <dl>
-                <dt>SSID</dt>
+                <dt>SSID(2.4GHz)</dt>
                 <dd>
-                  <input required type="text"
-                        class="input-inq1"
+                  {{modal.formDatas.clustername}}-<input required type="text"
+                        class="input-inq5"
                         id="ssid"
                         name="ssid"
                         ng-class="{'has-error': pages.pageWifiApbg.ssid.$invalid}"
-                        ng-model="modal.formDatas.apbg.hostapd.ssid">
+                        ng-model="modal.formDatas.apbg.hostapd.ssid">-g
+                  <p ng-show="pages.pageWifiApbg.ssid.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+              <dl>
+                <dt>SSID(5.0GHz)</dt>
+                <dd>
+                  {{modal.formDatas.clustername}}-<input required type="text"
+                        class="input-inq5"
+                        id="ssid"
+                        name="ssid"
+                        ng-class="{'has-error': pages.pageWifiApbg.ssid.$invalid}"
+                        ng-model="modal.formDatas.apbg.hostapd.ssid">-a
                   <p ng-show="pages.pageWifiApbg.ssid.$error.required">Required fields.</p>
                 </dd>
               </dl>

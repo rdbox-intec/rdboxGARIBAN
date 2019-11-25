@@ -733,7 +733,6 @@
                         ng-model="modal.formDatas.connection.wpa.network.ssid">
                   <p ng-show="pages.pageNetworkConnection.ssid.$error.required">Required fields.</p>
                 </dd>
-                </dd>
               </dl>
               <dl ng-if="modal.formDatas.connection.method === 'wifi'">
                 <dt>passphrase</dt>
@@ -799,7 +798,8 @@
                   <label class="radio-label" for="auth">Use a proxy server that requires a password</label>
                 </dd>
               </dl>
-              <dl>
+              <dl ng-if="modal.formDatas.proxy === modal.INDEX_OF_TYPE_PROXY.necessary ||
+                          modal.formDatas.proxy === modal.INDEX_OF_TYPE_PROXY.auth">
                 <dt>server address</dt>
                 <dd>
                   <input required type="text"
@@ -820,7 +820,8 @@
                   <p ng-show="pages.pageNetworkProxy.proxyAddress.$error.pattern">invalid pattern.</p>
                 </dd>
               </dl>
-              <dl>
+              <dl ng-if="modal.formDatas.proxy === modal.INDEX_OF_TYPE_PROXY.necessary ||
+                          modal.formDatas.proxy === modal.INDEX_OF_TYPE_PROXY.auth">
                 <dt>no proxy</dt>
                 <dd>
                   <input required type="text"
@@ -832,7 +833,7 @@
                   <p ng-show="pages.pageNetworkProxy.noProxyAddress.$error.required">Required fields.</p>
                 </dd>
               </dl>
-              <dl>
+              <dl ng-if="modal.formDatas.proxy === modal.INDEX_OF_TYPE_PROXY.auth">
                 <dt>auth user</dt>
                 <dd>
                   <input required type="text"
@@ -844,7 +845,7 @@
                   <p ng-show="pages.pageNetworkProxy.proxyAuthUser.$error.required">Required fields.</p>
                 </dd>
               </dl>
-              <dl>
+              <dl ng-if="modal.formDatas.proxy === modal.INDEX_OF_TYPE_PROXY.auth">
                 <dt>auth password</dt>
                 <dd>
                   <input required type="password"
@@ -854,6 +855,101 @@
                         ng-class="{'has-error': pages.pageNetworkProxy.proxyAuthPassword.$invalid}"
                         ng-model="modal.formDatas.proxyAuthPassword">
                   <p ng-show="pages.pageNetworkProxy.proxyAuthPassword.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+            </div>
+          </ng-form>
+
+          <!-- Wi-Fi Backend -->
+          <ng-form name="pageWifiBackend">
+            <div class="page-wifi-backend" ng-show="modal.currentPage === 12">
+              <h3 class="sub-title-nospace">Enter the Wi-Fi settings for the Mesh Network.</h3>
+              <p class="sub-title-supplement">This setting for communication between the base station and the base station.</p>
+              <dl>
+                <dt>SSID</dt>
+                <dd>
+                  <input required type="text"
+                        class="input-inq1"
+                        id="ssid"
+                        name="ssid"
+                        ng-class="{'has-error': pages.pageWifiBackend.ssid.$invalid}"
+                        ng-model="modal.formDatas.backend.hostapd.ssid">
+                  <p ng-show="pages.pageWifiBackend.ssid.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+              <dl>
+                <dt>passphrase</dt>
+                <dd>
+                  <input required type="password"
+                        class="input-inq1"
+                        id="passphrase"
+                        name="passphrase"
+                        ng-class="{'has-error': pages.pageWifiBackend.passphrase.$invalid}"
+                        ng-model="modal.formDatas.backend.hostapd.wpa_psk">
+                  <p ng-show="pages.pageWifiBackend.passphrase.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+              <dl>
+                <dt>country</dt>
+                <dd>
+                  <select ng-options="country as country for country in modal.getAllCountryCodes()"
+                        class="select-inq1"
+                        id="country"
+                        name="country"
+                        ng-class="{'has-error': pages.pageWifiBackend.country.$invalid}"
+                        ng-model="modal.formDatas.backend.hostapd.country_code"
+                        ng-change="modal.monitorRdboxForm()"
+                        required>
+                  </select>
+                  <p ng-show="pages.pageWifiBackend.country.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+
+            </div>
+          </ng-form>
+
+          <!-- Wi-Fi AP 11g(2.4GHz) -->
+          <ng-form name="pageWifiApbg">
+            <div class="page-wifi-apbg" ng-show="modal.currentPage === 13">
+              <h3 class="sub-title-nospace">Enter the Wi-Fi settings for the Access Point.</h3>
+              <p class="sub-title-supplement">Used for access from robots, IoT devices, and other Wi-Fi clients.</p>
+              <dl>
+                <dt>SSID</dt>
+                <dd>
+                  <input required type="text"
+                        class="input-inq1"
+                        id="ssid"
+                        name="ssid"
+                        ng-class="{'has-error': pages.pageWifiApbg.ssid.$invalid}"
+                        ng-model="modal.formDatas.apbg.hostapd.ssid">
+                  <p ng-show="pages.pageWifiApbg.ssid.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+              <dl>
+                <dt>passphrase</dt>
+                <dd>
+                  <input required type="password"
+                        class="input-inq1"
+                        id="passphrase"
+                        name="passphrase"
+                        ng-class="{'has-error': pages.pageWifiBackend.passphrase.$invalid}"
+                        ng-model="modal.formDatas.apbg.hostapd.wpa_psk">
+                  <p ng-show="pages.pageWifiApbg.passphrase.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+              <dl>
+                <dt>country</dt>
+                <dd>
+                  <select ng-options="country as country for country in modal.getAllCountryCodes()"
+                        class="select-inq1"
+                        id="country"
+                        name="country"
+                        ng-class="{'has-error': pages.pageWifiApbg.country.$invalid}"
+                        ng-model="modal.formDatas.apbg.hostapd.country_code"
+                        ng-change="modal.monitorRdboxForm()"
+                        required>
+                  </select>
+                  <p ng-show="pages.pageWifiApbg.country.$error.required">Required fields.</p>
                 </dd>
               </dl>
             </div>

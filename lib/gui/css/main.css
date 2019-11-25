@@ -6373,6 +6373,8 @@ body {
     margin: 10px auto 0; }
   .modal-body .sub-title {
     padding: 10px 0px 20px 0px; }
+  .modal-body .sub-title-nospace {
+    padding: 10px 0px 5px 0px; }
   .modal-body .form-all {
     height: 100%;
     cursor: default; }
@@ -6526,6 +6528,9 @@ body {
       padding: 0px;
       font-size: 11px;
       color: #FFC100; }
+    .modal-body .rdbox-userdata .sub-title-supplement {
+      padding: 0px 0px 20px 0px;
+      color: #d74c77; }
     .modal-body .rdbox-userdata .radio {
       display: none; }
     .modal-body .rdbox-userdata .radio + label {

@@ -117,6 +117,9 @@
   .sub-title {
     padding: 10px 0px 20px 0px;
   }
+  .sub-title-nospace {
+    padding: 10px 0px 5px 0px;
+  }
   .form-all {
     height: 100%;
     cursor: default;
@@ -315,6 +318,10 @@
       padding: 0px;
       font-size: 11px;
       color: #FFC100;
+    }
+    .sub-title-supplement {
+      padding: 0px 0px 20px 0px;
+      color: #d74c77;
     }
     .radio {
       display: none;

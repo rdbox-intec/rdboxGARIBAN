@@ -117,6 +117,9 @@
   .sub-title {
     padding: 10px 0px 20px 0px;
   }
+  .sub-title-nospace {
+    padding: 10px 0px 5px 0px;
+  }
   .form-all {
     height: 100%;
     cursor: default;
@@ -127,7 +130,7 @@
   /*
    * cluster welcome
    */
-  .rdbox-cluster-welcom {
+  .page-cluster-welcom {
     height: 100%;
     .sub-title-div {
       height: 15%;
@@ -151,7 +154,7 @@
       }
     }
   }
-  .rdbox-cluster-previously {
+  .page-cluster-previously {
     height: 100%;
     .list-group-item[disabled] {
       cursor: not-allowed;
@@ -316,6 +319,10 @@
       font-size: 11px;
       color: #FFC100;
     }
+    .sub-title-supplement {
+      padding: 0px 0px 20px 0px;
+      color: #d74c77;
+    }
     .radio {
       display: none;
     }
@@ -398,6 +405,9 @@
       height: 120px;
       font-size: 14px;
     }
+    .proxy-selector {
+      height: 80px;
+    }
     .inputarea-inq1 {
       width: 460px;
       height: 80px;
@@ -423,17 +433,43 @@
       box-shadow: 0 0 0px #64BCC1;
     }
     .input-inq2 {
+      box-shadow: none;
       width: 400px;
       border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
     }
     .input-inq2:focus {
       border: 1px solid #64BCC1;
     }
     .input-inq3 {
+      box-shadow: none;
       width: 357px;
       border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
     }
     .input-inq3:focus {
+      border: 1px solid #64BCC1;
+    }
+    .input-inq4 {
+      box-shadow: none;
+      width: 340px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+    }
+    .input-inq4:focus {
+      border: 1px solid #64BCC1;
+    }
+    .input-inq5 {
+      box-shadow: none;
+      width: 107px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+    }
+    .input-inq5:focus {
       border: 1px solid #64BCC1;
     }
     dd.authorized-keys {
@@ -448,14 +484,25 @@
     .has-error:focus {
       border: 1px solid #FFC100;
     }
+    .next-textbox-button {
+      border: none;
+      outline: none;
+      border: 1px solid #64BCC1;
+      border-radius: 4px;
+      background-color: #64BCC1;
+      color: #fff;
+    }
+    .next-textbox-button:hover {
+      background-color: #45a7ad;
+    }
   }
 
 
 
-  .rdbox-type-hw {
+  .page-type-hw {
     height: 100%;
   }
-  .rdbox-type-hw {
+  .page-type-hw {
     .sub-title-div {
       height: 15%;
     }
@@ -500,10 +547,10 @@
     }
   }
 
-  .rdbox-type-role {
+  .page-type-role {
     height: 100%;
   }
-  .rdbox-type-role {
+  .page-type-role {
     .sub-title-div {
       height: 15%;
     }
@@ -636,7 +683,7 @@
   /*
    * cluster apply
    */
-   .rdbox-cluster-apply {
+   .page-cluster-apply {
     height: 100%;
     .sub-title-div {
       height: 15%;

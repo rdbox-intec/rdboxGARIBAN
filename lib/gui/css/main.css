@@ -6595,6 +6595,10 @@ body {
       width: 485px;
       height: 120px;
       font-size: 14px; }
+    .modal-body .rdbox-userdata .kubeadmn-args {
+      width: 485px;
+      height: 160px;
+      font-size: 14px; }
     .modal-body .rdbox-userdata .proxy-selector {
       height: 80px; }
     .modal-body .rdbox-userdata .inputarea-inq1 {
@@ -6614,6 +6618,16 @@ body {
       border-radius: 4px;
       padding: 2px 8px; }
     .modal-body .rdbox-userdata .inputarea-inq2:focus {
+      outline: none !important;
+      border: 1px solid #64BCC1;
+      box-shadow: 0 0 0px #64BCC1; }
+    .modal-body .rdbox-userdata .inputarea-inq3 {
+      width: 460px;
+      height: 160px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px; }
+    .modal-body .rdbox-userdata .inputarea-inq3:focus {
       outline: none !important;
       border: 1px solid #64BCC1;
       box-shadow: 0 0 0px #64BCC1; }

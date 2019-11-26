@@ -497,11 +497,11 @@
               <div class="inner-div">
                 <div class="button-div">
                   <button class="button button-primary"
-                    ng-click="modal.nextModal(modal.INDEX_OF_PAGE.pageUserdataUserinfo)">Some changes. ></button>
+                    ng-click="modal.nextModal(modal.INDEX_OF_PAGE.pageUserdataUserinfo)">Some changes ></button>
                 </div>
                 <div class="button-div">
                   <button class="button button-primary"
-                    ng-click="modal.nextModal(modal.INDEX_OF_PAGE.pageAllFinish)">Apply previously >></button>
+                    ng-click="modal.nextModal(modal.INDEX_OF_PAGE.pageAllFinish)">Apply previously >>></button>
                 </div>
               </div>
             </div>
@@ -869,11 +869,15 @@
                 <dt>SSID</dt>
                 <dd>
                   <input required type="text"
-                        class="input-inq1"
+                        class="input-inq3"
                         id="ssid"
                         name="ssid"
+                        ng-change="modal.changeInputBackendSSID()"
                         ng-class="{'has-error': pages.pageWifiBackend.ssid.$invalid}"
                         ng-model="modal.formDatas.backend.hostapd.ssid">
+                  <button class="next-textbox-button" ng-click="modal.generateRandomSSID('be')">
+                    Random Gen
+                  </button>
                   <p ng-show="pages.pageWifiBackend.ssid.$error.required">Required fields.</p>
                 </dd>
               </dl>
@@ -912,28 +916,20 @@
           <ng-form name="pageWifiApbg">
             <div class="page-wifi-apbg" ng-show="modal.currentPage === 13">
               <h3 class="sub-title-nospace">Enter the Wi-Fi settings for the Access Point.</h3>
-              <p class="sub-title-supplement">Used for access from robots, IoT devices, and other Wi-Fi clients.</p>
+              <p class="sub-title-supplement">[2.4GHz] Used for access from robots, IoT devices, and other Wi-Fi clients.</p>
               <dl>
                 <dt>SSID(2.4GHz)</dt>
                 <dd>
-                  {{modal.formDatas.clustername}}-<input required type="text"
-                        class="input-inq5"
+                  <input required type="text"
+                        class="input-inq3"
                         id="ssid"
                         name="ssid"
+                        ng-change="modal.changeInputAccessPointSSID()"
                         ng-class="{'has-error': pages.pageWifiApbg.ssid.$invalid}"
-                        ng-model="modal.formDatas.apbg.hostapd.ssid">-g
-                  <p ng-show="pages.pageWifiApbg.ssid.$error.required">Required fields.</p>
-                </dd>
-              </dl>
-              <dl>
-                <dt>SSID(5.0GHz)</dt>
-                <dd>
-                  {{modal.formDatas.clustername}}-<input required type="text"
-                        class="input-inq5"
-                        id="ssid"
-                        name="ssid"
-                        ng-class="{'has-error': pages.pageWifiApbg.ssid.$invalid}"
-                        ng-model="modal.formDatas.apbg.hostapd.ssid">-a
+                        ng-model="modal.formDatas.apbg.hostapd.ssid">
+                  <button class="next-textbox-button" ng-click="modal.generateRandomSSID('ap_bg')">
+                    Random Gen
+                  </button>
                   <p ng-show="pages.pageWifiApbg.ssid.$error.required">Required fields.</p>
                 </dd>
               </dl>
@@ -942,11 +938,12 @@
                 <dd>
                   <input required type="password"
                         class="input-inq1"
-                        id="passphrase"
-                        name="passphrase"
-                        ng-class="{'has-error': pages.pageWifiBackend.passphrase.$invalid}"
+                        id="wpa_psk"
+                        name="wpa_psk"
+                        ng-change="modal.changeInputAccessPointPassphrase()"
+                        ng-class="{'has-error': pages.pageWifiBackend.wpa_psk.$invalid}"
                         ng-model="modal.formDatas.apbg.hostapd.wpa_psk">
-                  <p ng-show="pages.pageWifiApbg.passphrase.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageWifiApbg.wpa_psk.$error.required">Required fields.</p>
                 </dd>
               </dl>
               <dl>
@@ -954,18 +951,161 @@
                 <dd>
                   <select ng-options="country as country for country in modal.getAllCountryCodes()"
                         class="select-inq1"
-                        id="country"
-                        name="country"
-                        ng-class="{'has-error': pages.pageWifiApbg.country.$invalid}"
+                        id="country_code"
+                        name="country_code"
+                        ng-change="modal.changeInputAccessPointCountry()"
+                        ng-class="{'has-error': pages.pageWifiApbg.country_code.$invalid}"
                         ng-model="modal.formDatas.apbg.hostapd.country_code"
-                        ng-change="modal.monitorRdboxForm()"
                         required>
                   </select>
-                  <p ng-show="pages.pageWifiApbg.country.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageWifiApbg.country_code.$error.required">Required fields.</p>
                 </dd>
               </dl>
             </div>
           </ng-form>
+
+          <!-- Wi-Fi AP 11a(5GHz) -->
+          <ng-form name="pageWifiApan">
+            <div class="page-wifi-apan" ng-show="modal.currentPage === 14">
+              <h3 class="sub-title-nospace">Check the Wi-Fi settings for the Access Point.</h3>
+              <p class="sub-title-supplement">[5.0GHz] Used for access from robots, IoT devices, and other Wi-Fi clients.</p>
+              <dl>
+                <dt>SSID(5.0GHz)</dt>
+                <dd>
+                  <input disabled required type="text"
+                        class="input-inq1"
+                        id="ssid"
+                        name="ssid"
+                        ng-class="{'has-error': pages.pageWifiApan.ssid.$invalid}"
+                        ng-model="modal.formDatas.apan.hostapd.ssid">
+                  <p ng-show="pages.pageWifiApan.ssid.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+              <dl>
+                <dt>passphrase</dt>
+                <dd>
+                  <input disabled required type="password"
+                        class="input-inq1"
+                        id="wpa_psk"
+                        name="wpa_psk"
+                        ng-class="{'has-error': pages.pageWifiBackend.wpa_psk.$invalid}"
+                        ng-model="modal.formDatas.apan.hostapd.wpa_psk">
+                  <p ng-show="pages.pageWifiApan.wpa_psk.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+              <dl>
+                <dt>country</dt>
+                <dd>
+                  <select disabled ng-options="country as country for country in modal.getAllCountryCodes()"
+                        class="select-inq1"
+                        id="country_code"
+                        name="country_code"
+                        ng-class="{'has-error': pages.pageWifiApan.country_code.$invalid}"
+                        ng-model="modal.formDatas.apan.hostapd.country_code"
+                        ng-change="modal.monitorRdboxForm()"
+                        required>
+                  </select>
+                  <p ng-show="pages.pageWifiApan.country_code.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+            </div>
+          </ng-form>
+
+          <!-- SoftEther VPN Bridge -->
+          <ng-form name="pageVpnBridge">
+            <div class="page-vpn-bridge" ng-show="modal.currentPage === 15">
+              <h3 class="sub-title">Enter VPN information.</h3>
+              <dl>
+                <dt>server address</dt>
+                <dd>
+                  <input required type="text"
+                        class="input-inq4"
+                        id="vpnAddress"
+                        name="vpnAddress"
+                        ng-class="{'has-error': pages.pageVpnBridge.vpnAddress.$invalid}"
+                        ng-pattern="/^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}$|^(([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/"
+                        ng-model="modal.formDatas.vpnbridge[modal.getIndexOfVpncmd('CascadeCreate')].hostname">
+                  <span>:</span>
+                  <input required type="number"
+                        class="input-inq5"
+                        id="vpnPort"
+                        name="vpnPort"
+                        ng-class="{'has-error': pages.pageVpnBridge.vpnPort.$invalid}"
+                        ng-model="modal.formDatas.vpnbridge[modal.getIndexOfVpncmd('CascadeCreate')].port">
+                  <p ng-show="pages.pageVpnBridge.vpnAddress.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageVpnBridge.vpnAddress.$error.pattern">invalid pattern.</p>
+                </dd>
+              </dl>
+              <dl>
+                <dt>HUBname</dt>
+                <dd>
+                  <input required type="text"
+                        class="input-inq1"
+                        id="hubname"
+                        name="hubname"
+                        ng-pattern="/^[a-zA-Z0-9!-/:-@¥[-`{-~]+$/"
+                        ng-class="{'has-error': pages.pageVpnBridge.hubname.$invalid}"
+                        ng-model="modal.formDatas.vpnbridge[modal.getIndexOfVpncmd('CascadeCreate')].hubname">
+                  <p ng-show="pages.pageVpnBridge.hubname.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageVpnBridge.hubname.$error.pattern">invalid pattern.</p>
+                </dd>
+              </dl>
+              <dl>
+                <dt>username</dt>
+                <dd>
+                  <input required type="text"
+                        class="input-inq1"
+                        id="username"
+                        name="username"
+                        ng-pattern="/^[a-zA-Z0-9!-/:-@¥[-`{-~]+$/"
+                        ng-class="{'has-error': pages.pageVpnBridge.username.$invalid}"
+                        ng-model="modal.formDatas.vpnbridge[modal.getIndexOfVpncmd('CascadeCreate')].username">
+                  <p ng-show="pages.pageVpnBridge.username.$error.required">Required fields.</p>
+                  <p ng-show="pages.pageVpnBridge.username.$error.pattern">invalid pattern.</p>
+                </dd>
+              </dl>
+              <dl>
+                <dt>password</dt>
+                <dd>
+                  <input required type="password"
+                        class="input-inq1"
+                        id="password"
+                        name="password"
+                        ng-class="{'has-error': pages.pageVpnBridge.password.$invalid}"
+                        ng-model="modal.formDatas.vpnbridge[modal.getIndexOfVpncmd('CascadePasswordSet')].password">
+                  <p ng-show="pages.pageVpnBridge.password.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+            </div>
+          </ng-form>
+
+          <!-- Join Kubernetes -->
+          <ng-form name="pageJoinKubernetes">
+            <div class="page-join-kubernetes" ng-show="modal.currentPage === 16">
+              <h3 class="sub-title">You join k8s cluster, you need strings from kubeadmn init.</h3>
+              <dl>
+                <dt>join args</dt>
+                  <dd class="kubeadmn-args">
+                  <textarea required type="text"
+                        class="inputarea-inq3"
+                        id="kubeadmn"
+                        name="kubeadmn"
+                        ng-class="{'has-error': pages.pageJoinKubernetes.kubeadmn.$invalid}"
+                        ng-model="modal.formDatas.kubeadmn.args">
+                  </textarea>
+                  <p ng-show="pages.pageJoinKubernetes.kubeadmn.$error.required">Required fields.</p>
+                </dd>
+              </dl>
+            </div>
+          </ng-form>
+
+          <!-- check and save -->
+          <ng-form name="pageAllFinish">
+            <div class="page-all-finish" ng-show="modal.currentPage === 17">
+              <h3 class="sub-title">Finish!!</h3>
+            </div>
+          </ng-form>
+
 
         </div>
       </div>

@@ -405,6 +405,11 @@
       height: 120px;
       font-size: 14px;
     }
+    .kubeadmn-args {
+      width: 485px;
+      height: 160px;
+      font-size: 14px;
+    }
     .proxy-selector {
       height: 80px;
     }
@@ -428,6 +433,18 @@
       padding: 2px 8px;
     }
     .inputarea-inq2:focus {
+      outline: none !important;
+      border: 1px solid #64BCC1;
+      box-shadow: 0 0 0px #64BCC1;
+    }
+    .inputarea-inq3 {
+      width: 460px;
+      height: 160px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+    }
+    .inputarea-inq3:focus {
       outline: none !important;
       border: 1px solid #64BCC1;
       box-shadow: 0 0 0px #64BCC1;

@@ -1102,7 +1102,17 @@
           <!-- check and save -->
           <ng-form name="pageAllFinish">
             <div class="page-all-finish" ng-show="modal.currentPage === 17">
-              <h3 class="sub-title">Finish!!</h3>
+              <h3 class="sub-title">
+                Finish!! Please check User-data.yml.
+              </h3>
+              <textarea required type="text"
+                        class="inputarea-finish"
+                        id="genedYaml"
+                        name="genedYaml"
+                        wrap="off"
+                        ng-class="{'has-error': pages.pageAllFinish.genedYaml.$invalid}"
+                        ng-model="modal.currentUserData.currentRawText">
+              </textarea>
             </div>
           </ng-form>
 

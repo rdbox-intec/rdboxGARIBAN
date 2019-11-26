@@ -6606,7 +6606,8 @@ body {
       height: 80px;
       border: 1px solid #ccc;
       border-radius: 4px;
-      padding: 2px 8px; }
+      padding: 2px 8px;
+      resize: none; }
     .modal-body .rdbox-userdata .inputarea-inq1:focus {
       outline: none !important;
       border: 1px solid #64BCC1;
@@ -6616,7 +6617,8 @@ body {
       height: 65px;
       border: 1px solid #ccc;
       border-radius: 4px;
-      padding: 2px 8px; }
+      padding: 2px 8px;
+      resize: none; }
     .modal-body .rdbox-userdata .inputarea-inq2:focus {
       outline: none !important;
       border: 1px solid #64BCC1;
@@ -6681,6 +6683,19 @@ body {
       color: #fff; }
     .modal-body .rdbox-userdata .next-textbox-button:hover {
       background-color: #45a7ad; }
+    .modal-body .rdbox-userdata .inputarea-finish {
+      width: 640px;
+      height: 270px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 10.5px;
+      resize: none;
+      font-family: Consolas, 'Courier New', Courier, Monaco, monospace; }
+    .modal-body .rdbox-userdata .inputarea-finish:focus {
+      outline: none !important;
+      border: 1px solid #64BCC1;
+      box-shadow: 0 0 0px #64BCC1; }
   .modal-body .page-type-hw {
     height: 100%; }
   .modal-body .page-type-hw .sub-title-div {

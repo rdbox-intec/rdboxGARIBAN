@@ -419,6 +419,7 @@
       border: 1px solid #ccc;
       border-radius: 4px;
       padding: 2px 8px;
+      resize: none;
     }
     .inputarea-inq1:focus {
       outline: none !important;
@@ -431,6 +432,7 @@
       border: 1px solid #ccc;
       border-radius: 4px;
       padding: 2px 8px;
+      resize: none;
     }
     .inputarea-inq2:focus {
       outline: none !important;
@@ -465,6 +467,7 @@
       border: 1px solid #ccc;
       border-radius: 4px;
       padding: 2px 8px;
+      resize: none;
     }
     .input-inq3:focus {
       border: 1px solid #64BCC1;
@@ -511,6 +514,21 @@
     }
     .next-textbox-button:hover {
       background-color: #45a7ad;
+    }
+    .inputarea-finish {
+      width: 640px;
+      height: 270px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 10.5px;
+      resize: none;
+      font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+    }
+    .inputarea-finish:focus {
+      outline: none !important;
+      border: 1px solid #64BCC1;
+      box-shadow: 0 0 0px #64BCC1;
     }
   }
 

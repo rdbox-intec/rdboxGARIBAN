@@ -6632,7 +6632,7 @@ body {
       border: 1px solid #ccc;
       border-radius: 4px;
       padding: 2px 8px;
-      padding-right: 80px; }
+      padding-right: 55px; }
     .modal-body .rdbox-userdata .password-inq1:focus {
       border: 1px solid #64BCC1; }
     .modal-body .rdbox-userdata .textarea-inq1 {
@@ -6721,14 +6721,16 @@ body {
     .modal-body .rdbox-userdata .password-div {
       position: relative; }
     .modal-body .rdbox-userdata .btn, .modal-body .rdbox-userdata .button {
-      display: flex;
+      display: table-cell;
+      vertical-align: middle;
       align-items: center; }
     .modal-body .rdbox-userdata .password-div .btn, .modal-body .rdbox-userdata .password-div .button {
       position: absolute;
       right: 30px;
       top: 0px;
       padding: 0px 5px;
-      border-radius: 5px; }
+      border-radius: 5px;
+      height: 100%; }
     .modal-body .rdbox-userdata .btn-input {
       position: absolute;
       z-index: -1;

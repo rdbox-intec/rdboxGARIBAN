@@ -40,7 +40,7 @@
 
         <!-- new -->
         <ng-form name="pageClusterNew">
-          <div class="page-cluster-new" ng-if="modal.currentPage === 1 && modal.isNewCluster === true">
+          <div class="page-cluster-new" ng-if="modal.currentPage === 1 && modal.isFirstSetupForThisCluster === true">
             <div class="sub-title-div">
               <h3 class="sub-title">Enter the cluster name.</h3>
             </div>
@@ -84,7 +84,7 @@
 
         <!-- previously -->
         <ng-form name="pageClusterPreviously">
-          <div class="page-cluster-previously" ng-if="modal.currentPage === 2 && modal.isNewCluster === false">
+          <div class="page-cluster-previously" ng-if="modal.currentPage === 2 && modal.isFirstSetupForThisCluster === false">
             <div class="sub-title-div">
               <h3 class="sub-title">Select the previously settings to be applied.</h3>
             </div>
@@ -542,17 +542,19 @@
                 <dt>password</dt>
                 <dd>
                   <div class="password-div">
-                  <input required type="password"
-                        class="password-inq1"
-                        id="password"
-                        name="password"
-                        ng-minlength="8"
-                        ng-class="{'has-error': pages.pageUserdataUserinfo.password.$invalid}"
-                        ng-model="modal.formDatas.password">
-                  <div class="btn">
-                    <input class="btn-input" id="eye" type="checkbox">
-                    <label class="btn-label" for="eye"><i class="fas fa-eye"></i></label>
-                  </div>
+                    <input required ng-attr-type="{{modal.visiblePassword.rootPassword? 'text' : 'password'}}"
+                          class="password-inq1"
+                          id="password"
+                          name="password"
+                          ng-minlength="8"
+                          ng-class="{'has-error': pages.pageUserdataUserinfo.password.$invalid}"
+                          ng-model="modal.formDatas.password">
+                    <div class="btn">
+                      <input class="btn-input" id="eye" type="checkbox" ng-model="modal.visiblePassword.rootPassword">
+                      <label class="btn-label" for="eye">
+                        <i class="fas fa-eye"></i>
+                      </label>
+                    </div>
                   </div>
                   <p ng-show="pages.pageUserdataUserinfo.password.$error.required">Required fields.</p>
                   <p ng-show="pages.pageUserdataUserinfo.password.$error.minlength">Enter 8 characters or more.</p>

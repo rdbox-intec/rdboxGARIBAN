@@ -451,7 +451,7 @@
       border: 1px solid #ccc;
       border-radius: 4px;
       padding: 2px 8px;
-      padding-right: 80px;
+      padding-right: 55px;
     }
     .password-inq1:focus {
       border: 1px solid #64BCC1;
@@ -562,8 +562,9 @@
       position: relative;
     }
     .btn {
-        display: flex;
-        align-items: center;
+      display: table-cell;
+      vertical-align: middle;
+      align-items: center;
     }
     .password-div .btn {
         position: absolute;
@@ -571,6 +572,7 @@
         top: 0px;
         padding: 0px 5px;
         border-radius: 5px;
+        height: 100%;
     }
     .btn-input {
         position: absolute;

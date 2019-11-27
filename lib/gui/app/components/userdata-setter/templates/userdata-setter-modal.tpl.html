@@ -1,6 +1,6 @@
 <div class="modal-header">
   <h4 class="modal-title">Generate user-data.yaml</h4>
-  <button class="close" ng-click="modal.closeModal()">&times;</button>
+  <button type="button" class="close" ng-click="modal.closeModal()">&times;</button>
 </div>
 
 <div class="modal-body">
@@ -25,11 +25,11 @@
                 </div>
               -->
                 <div class="button-div">
-                  <button class="button button-primary"
+                  <button type="button" class="button button-primary"
                     ng-click="modal.nextModal(modal.INDEX_OF_PAGE.pageClusterNew)">Create New ></button>
                 </div>
                 <div class="button-div">
-                  <button class="button button-primary"
+                  <button type="button" class="button button-primary"
                     ng-disabled="modal.isThisSoftwareFirstBoot()"
                     ng-click="modal.nextModal(modal.INDEX_OF_PAGE.pageClusterPreviously)">Apply previously ></button>
                 </div>
@@ -40,7 +40,7 @@
 
         <!-- new -->
         <ng-form name="pageClusterNew">
-          <div class="page-cluster-new" ng-show="modal.currentPage === 1">
+          <div class="page-cluster-new" ng-if="modal.currentPage === 1 && modal.isNewCluster === true">
             <div class="sub-title-div">
               <h3 class="sub-title">Enter the cluster name.</h3>
             </div>
@@ -67,7 +67,7 @@
                 <dt>comment</dt>
                 <dd class="clustercomment">
                   <textarea required
-                        class="inputarea-inq1 input-inq1"
+                        class="textarea-inq1 input-inq1"
                         id="clustercomment"
                         name="clustercomment"
                         ng-maxlength="30"
@@ -84,7 +84,7 @@
 
         <!-- previously -->
         <ng-form name="pageClusterPreviously">
-          <div class="page-cluster-previously" ng-show="modal.currentPage === 2">
+          <div class="page-cluster-previously" ng-if="modal.currentPage === 2 && modal.isNewCluster === false">
             <div class="sub-title-div">
               <h3 class="sub-title">Select the previously settings to be applied.</h3>
             </div>
@@ -95,24 +95,24 @@
             <div class="outer-div">
               <div class="inner-div">
                 <ul class="list-group">
-                  <li class="list-group-item" ng-repeat="cluster in modal.getListOfUserData() track by cluster.clusterData.id"
-                      ng-class="{ selectedCluster: modal.formDatas.clustername === cluster.clusterData.id }"
+                  <li class="list-group-items" ng-repeat="cluster in modal.getListOfUserData() track by cluster.clusterData.id"
                       ng-click="modal.selectPreviouslyCluster(cluster, $index)">
+                    <div class="list-group-item" 
+                      ng-class="{ selectedCluster: modal.formDatas.clustername === cluster.clusterData.id }">
                     <div class="tooltip2">
                     <div class="list-group-item-section list-group-item-section-expanded">
                       <h4 class="list-group-item-heading"><span style="font-weight: bold;">{{ cluster.clusterData.id }}</span>
-                        <span class="word-keep"> - {{ modal.getStringMeshModePreviouslyCluster(cluster) }} - Leader: {{ modal.getCountPreviouslyClusterLeder(cluster) }} Branch: {{ modal.getCountPreviouslyClusterBranch(cluster) }} Slave: {{ modal.getCountPreviouslyClusterSlave(cluster) }}</span>
+                        <span class="word-keep"> - {{ modal.getStringMeshModePreviouslyCluster(cluster) }} - Leader: {{ modal.getCountPreviouslyClusterLeder(cluster) }} Branch: {{ modal.getCountPreviouslyClusterBranch(cluster) }} Slave: {{ modal.getCountPreviouslyClusterSlave(cluster) }} Other: {{ modal.getCountPreviouslyClusterOther(cluster) }}</span>
                       </h4>
                       <p class="list-group-item-text">Update: {{ cluster.info.updateDate }}</p>
                       <p class="list-group-item-text">Create: {{ cluster.info.createDate }}</p>
-                      <footer class="list-group-item-footer">
-                      </footer>
                       <div class="description2">{{ cluster.clusterData.comment }}</div>
                       </div>
                     </div>
                     <div class="icon">
                       <span class="list-group-item-section tick tick--success"
                             ng-disabled="modal.historyUserData.currentCluster != $index"></span>
+                    </div>
                     </div>
                   </li>
                 </ul>
@@ -195,7 +195,7 @@
                             <table class="inner-table-rolerole" align="center">
                               <tr>
                                 <td>
-                                  <button ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.LeaderMaster,
+                                  <button type="button" ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.LeaderMaster,
                                               selectRole1Line: modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.LeaderMaster,
                                               rdboxRole: !modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.LeaderMaster),
                                               rdboxRoleDisable: modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.LeaderMaster),
@@ -208,7 +208,7 @@
                                   </button>
                                 </td>
                                 <td>
-                                  <button ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.BranchMaster,
+                                  <button type="button" ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.BranchMaster,
                                               rdboxRole: !modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.BranchMaster),
                                               rdboxRoleDisable: modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.BranchMaster),
                                               selectRole1Line: modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.BranchMaster,
@@ -221,7 +221,7 @@
                                   </button>
                                 </td>
                                 <td>
-                                  <button ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.Slave,
+                                  <button type="button" ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.Slave,
                                               selectRole1Line: modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.Slave,
                                               rdboxRole: !modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.Slave),
                                               rdboxRoleDisable: modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.Slave),
@@ -234,7 +234,7 @@
                                   </button>
                                 </td>
                                 <td>
-                                  <button ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.Other,
+                                  <button type="button" ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.Other,
                                               selectRole1Line: modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.Other,
                                               rdboxRole: !modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.Other),
                                               rdboxRoleDisable: modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.Other),
@@ -247,7 +247,7 @@
                                   </button>
                                 </td>
                                 <td>
-                                  <button ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.VPNBridge,
+                                  <button type="button" ng-class="{hoverRole: modal.lastHoverRole === modal.INDEX_OF_RDBOX_ROLE.VPNBridge,
                                               rdboxRole: !modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.VPNBridge),
                                               rdboxRoleDisable: modal.isSelectRoleButtonDisabled(modal.INDEX_OF_RDBOX_ROLE.VPNBridge),
                                               selectRole1Line: modal.formDatas.rdboxRole === modal.INDEX_OF_RDBOX_ROLE.VPNBridge,
@@ -483,6 +483,21 @@
                   <p ng-show="pages.pageClusterHostname.hostname.$error.pattern">invalid pattern.</p>
                 </dd>
               </dl>
+              <dl ng-if="modal.formDatas.rdboxRole >= modal.INDEX_OF_RDBOX_ROLE.Slave">
+                <dt>parent(location)</dt>
+                <dd>
+                  <select ng-options="parent as parent for parent in modal.getBranchParentArray()"
+                        class="select-inq1"
+                        id="parent"
+                        name="parent"
+                        ng-class="{'has-error': pages.pageClusterHostname.parent.$invalid}"
+                        ng-model="modal.formDatas.parent"
+                        ng-change="modal.monitorRdboxForm()"
+                        required>
+                  </select>
+                  <p ng-show="pages.pageClusterHostname.parent.$error.required">Required fields.</p>
+                </dd>
+              </dl>
             </div>
           </div>
         </ng-form>
@@ -496,11 +511,11 @@
             <div class="outer-div">
               <div class="inner-div">
                 <div class="button-div">
-                  <button class="button button-primary"
+                  <button type="button" class="button button-primary"
                     ng-click="modal.nextModal(modal.INDEX_OF_PAGE.pageUserdataUserinfo)">Some changes ></button>
                 </div>
                 <div class="button-div">
-                  <button class="button button-primary"
+                  <button type="button" class="button button-primary"
                     ng-click="modal.nextModal(modal.INDEX_OF_PAGE.pageAllFinish)">Apply previously >>></button>
                 </div>
               </div>
@@ -526,27 +541,33 @@
               <dl>
                 <dt>password</dt>
                 <dd>
+                  <div class="password-div">
                   <input required type="password"
-                        class="input-inq1"
+                        class="password-inq1"
                         id="password"
                         name="password"
                         ng-minlength="8"
                         ng-class="{'has-error': pages.pageUserdataUserinfo.password.$invalid}"
                         ng-model="modal.formDatas.password">
+                  <div class="btn">
+                    <input class="btn-input" id="eye" type="checkbox">
+                    <label class="btn-label" for="eye"><i class="fas fa-eye"></i></label>
+                  </div>
+                  </div>
                   <p ng-show="pages.pageUserdataUserinfo.password.$error.required">Required fields.</p>
                   <p ng-show="pages.pageUserdataUserinfo.password.$error.minlength">Enter 8 characters or more.</p>
                 </dd>
               </dl>
               <dl>
                 <dt>public key</dt>
-                <dd>
+                <dd ng-click="modal.openSecretSelector(this, 'publicKey')">
                   <input required disabled type="text"
                         class="input-inq2"
                         id="publicKey"
                         name="publicKey"
                         ng-class="{'has-error': pages.pageUserdataUserinfo.publicKey.$invalid}"
                         ng-model="modal.formDatas.publicKey">
-                  <button class="next-textbox-button" ng-click="modal.openSecretSelector(this, 'publicKey')">
+                  <button type="button" class="next-textbox-button" ng-click="modal.openSecretSelector(this, 'publicKey')">
                     Select
                   </button>
                   <p ng-show="pages.pageUserdataUserinfo.publicKey.$error.required">Required fields.</p>
@@ -554,14 +575,14 @@
               </dl>
               <dl>
                 <dt>secret key</dt>
-                <dd>
+                <dd ng-click="modal.openSecretSelector(this, 'secretKey')">
                   <input required disabled type="text"
                         class="input-inq2"
                         id="secretKey"
                         name="secretKey"
                         ng-class="{'has-error': pages.pageUserdataUserinfo.secretKey.$invalid}"
                         ng-model="modal.formDatas.secretKey">
-                  <button class="next-textbox-button" ng-click="modal.openSecretSelector(this, 'secretKey')">
+                  <button type="button" class="next-textbox-button" ng-click="modal.openSecretSelector(this, 'secretKey')">
                     Select
                   </button>
                   <p ng-show="pages.pageUserdataUserinfo.secretKey.$error.required">Required fields.</p>
@@ -571,7 +592,7 @@
                 <dt>authorized keys</dt>
                 <dd class="authorized-keys">
                   <textarea required type="text"
-                        class="inputarea-inq2"
+                        class="textarea-inq2"
                         id="authorizedKeys"
                         name="authorizedKeys"
                         wrap="off"
@@ -642,11 +663,11 @@
                               ng-class="{'has-error': pages.pageUserdataEnvinfo.ntppools{{$index}}.$invalid}"
                               ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
                               ng-model="modal.formDatas.ntp.pools[$index]">
-                        <button class="next-textbox-button" ng-if="$index === 0"
+                        <button type="button" class="next-textbox-button" ng-if="$index === 0"
                                 ng-click="modal.addInputOfNtpPools(modal)">
                           Add
                         </button>
-                        <button class="next-textbox-button" ng-if="$index !== 0"
+                        <button type="button" class="next-textbox-button" ng-if="$index !== 0"
                                 ng-click="modal.delInputOfNtpPools($index)">
                           Del
                         </button>
@@ -679,11 +700,11 @@
                                 ng-class="{'has-error': pages.pageUserdataEnvinfo.ntpservers{{$index}}.$invalid}"
                                 ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
                                 ng-model="modal.formDatas.ntp.servers[$index]">
-                          <button class="next-textbox-button" ng-if="$index === 0"
+                          <button type="button" class="next-textbox-button" ng-if="$index === 0"
                                   ng-click="modal.addInputOfNtpServers()">
                             Add
                           </button>
-                          <button class="next-textbox-button" ng-if="$index !== 0"
+                          <button type="button" class="next-textbox-button" ng-if="$index !== 0"
                                   ng-click="modal.delInputOfNtpServers($index)">
                             Del
                           </button>
@@ -875,7 +896,7 @@
                         ng-change="modal.changeInputBackendSSID()"
                         ng-class="{'has-error': pages.pageWifiBackend.ssid.$invalid}"
                         ng-model="modal.formDatas.backend.hostapd.ssid">
-                  <button class="next-textbox-button" ng-click="modal.generateRandomSSID('be')">
+                  <button type="button" class="next-textbox-button" ng-click="modal.generateRandomSSID('be')">
                     Random Gen
                   </button>
                   <p ng-show="pages.pageWifiBackend.ssid.$error.required">Required fields.</p>
@@ -927,7 +948,7 @@
                         ng-change="modal.changeInputAccessPointSSID()"
                         ng-class="{'has-error': pages.pageWifiApbg.ssid.$invalid}"
                         ng-model="modal.formDatas.apbg.hostapd.ssid">
-                  <button class="next-textbox-button" ng-click="modal.generateRandomSSID('ap_bg')">
+                  <button type="button" class="next-textbox-button" ng-click="modal.generateRandomSSID('ap_bg')">
                     Random Gen
                   </button>
                   <p ng-show="pages.pageWifiApbg.ssid.$error.required">Required fields.</p>
@@ -1023,7 +1044,7 @@
                         id="vpnAddress"
                         name="vpnAddress"
                         ng-class="{'has-error': pages.pageVpnBridge.vpnAddress.$invalid}"
-                        ng-pattern="/^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}$|^(([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/"
+                        ng-pattern="/^((?!-)[A-Za-z0-9-]{1,63}(?<!-)\.)+[A-Za-z]{2,6}$|^(([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/"
                         ng-model="modal.formDatas.vpnbridge[modal.getIndexOfVpncmd('CascadeCreate')].hostname">
                   <span>:</span>
                   <input required type="number"
@@ -1087,7 +1108,7 @@
                 <dt>join args</dt>
                   <dd class="kubeadmn-args">
                   <textarea required type="text"
-                        class="inputarea-inq3"
+                        class="textarea-inq3"
                         id="kubeadmn"
                         name="kubeadmn"
                         ng-class="{'has-error': pages.pageJoinKubernetes.kubeadmn.$invalid}"
@@ -1106,7 +1127,7 @@
                 Finish!! Please check User-data.yml.
               </h3>
               <textarea required type="text"
-                        class="inputarea-finish"
+                        class="textarea-finish"
                         id="genedYaml"
                         name="genedYaml"
                         wrap="off"
@@ -1124,22 +1145,33 @@
 </div>
 
 <div class="modal-footer">
-  <button class="button button-primary"
-    ng-click="modal.backModal()"
-    ng-disabled="modal.isBackButtonDisabled()"
-    ng-hide="modal.isBackButtonHidden()">
-    Back
-  </button>
-  <button class="button button-primary"
-    ng-click="modal.nextModal()"
-    ng-disabled="modal.isNextButtonDisabled()"
-    ng-hide="modal.isNextButtonHidden()">
-    Next
-  </button>
-  <button class="button button-primary"
-    ng-click="modal.saveUserdataAndClose()"
-    ng-disabled="modal.isCompleteButtonDisabled()"
-    ng-hide="modal.isCompleteButtonHidden()">
-    Complete
-  </button>
+  <div>
+    <button type="button" class="button button-primary"
+      ng-click="modal.backModal()"
+      ng-disabled="modal.isBackButtonDisabled()"
+      ng-hide="modal.isBackButtonHidden()">
+      Back
+    </button>
+    <button type="button" class="button button-primary"
+      ng-click="modal.nextModal()"
+      ng-disabled="modal.isNextButtonDisabled()"
+      ng-hide="modal.isNextButtonHidden()">
+      Next
+    </button>
+    <button type="button" class="button button-primary"
+      ng-click="modal.saveUserdataAndClose()"
+      ng-disabled="modal.isCompleteButtonDisabled()"
+      ng-hide="modal.isCompleteButtonHidden()">
+      Complete
+    </button>
+    <button type="button" class="button button-primary"
+      ng-click="modal.nextModal(modal.INDEX_OF_PAGE.pageAllFinish)"
+      ng-disabled="modal.isSkipButtonDisabled()"
+      ng-hide="modal.isSkipButtonHidden()">
+      Skip
+    </button>
+  </div>
+  <h6 class="percent" ng-if="modal.currentPage !== modal.INDEX_OF_PAGE.pageClusterWelcom">
+    Progress: {{ ((modal.currentPage + 1) / (modal.INDEX_OF_PAGE.pageAllFinish + 1)) * 100  | number:0}}%
+  </h6>
 </div>

@@ -6764,18 +6764,26 @@ body {
     width: 100%;
     table-layout: fixed;
     word-wrap: break-word; }
-  .modal-body .page-type-hw .rdbox-type-equipment td.rdbox-hardware {
+  .modal-body .page-type-hw .rdbox-type-equipment button {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+    width: 100%;
+    height: 100%; }
+  .modal-body .page-type-hw .rdbox-type-equipment .rdbox-hardware {
     border: 2px solid #ddd;
     border-color: #fff #ddd;
     border-width: 2px 2px 2px 2px;
     text-align: center;
     padding: 10px;
     cursor: pointer; }
-  .modal-body .page-type-hw .rdbox-type-equipment td.rdbox-hardware:hover {
+  .modal-body .page-type-hw .rdbox-type-equipment .rdbox-hardware:hover {
     background-color: #EBFDFF; }
-  .modal-body .page-type-hw .rdbox-type-equipment td.selectedHW {
+  .modal-body .page-type-hw .rdbox-type-equipment .selectedHW {
     border-color: #64BCC1;
-    border-width: 2px 2px 2px 3px;
+    border-width: 2px 2px 2px 2px;
     background-color: #E0F2F3; }
   .modal-body .page-type-hw .rdbox-type-equipment p {
     margin: 0px 0px 0px 0px;
@@ -6785,6 +6793,14 @@ body {
   .modal-body .page-type-hw .rdbox-type-equipment img {
     padding: 10px;
     width: 100%; }
+  .modal-body .page-type-hw .rdbox-type-equipment button:disabled {
+    cursor: auto;
+    background-color: #d5d5d5;
+    color: #787c7f; }
+  .modal-body .page-type-hw .rdbox-type-equipment button:disabled:hover {
+    cursor: auto;
+    background-color: #d5d5d5;
+    color: #787c7f; }
   .modal-body .page-type-role {
     height: 100%; }
   .modal-body .page-type-role .sub-title-div {

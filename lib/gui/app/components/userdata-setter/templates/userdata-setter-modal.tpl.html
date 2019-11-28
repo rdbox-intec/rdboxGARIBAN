@@ -139,29 +139,35 @@
                     <div class="rdbox-type-equipment">
                     <table class="inner-table" align="center">
                       <tr>
-                        <td class="rdbox-hardware"
-                            ng-click="modal.selectHW(modal.INDEX_OF_RDBOX_HW.APOnly)"
-                            ng-class="{selectedHW: modal.formDatas.rdboxHardWare === modal.INDEX_OF_RDBOX_HW.APOnly}"
-                            >
-                          <h5>Plan1: APOnly(No Mesh)</h5>
-                          <img src="../../../../assets/P1_ApOnly.png">
-                          <p>It's used only a RaspberryPi</p>
+                        <td>
+                          <button class="rdbox-hardware"
+                                  ng-disabled="modal.isHardwareButtonDisabled(modal.INDEX_OF_RDBOX_HW.APOnly)"
+                                  ng-click="modal.selectHW(modal.INDEX_OF_RDBOX_HW.APOnly)"
+                                  ng-class="{selectedHW: modal.formDatas.rdboxHardWare === modal.INDEX_OF_RDBOX_HW.APOnly}">
+                            <h5>Plan1: APOnly(No Mesh)</h5>
+                            <img src="../../../../assets/P1_ApOnly.png">
+                            <p>It's used only a RaspberryPi</p>
+                          </button>
                         </td>
-                        <td class="rdbox-hardware"
-                            ng-click="modal.selectHW(modal.INDEX_OF_RDBOX_HW.SimpleMesh)"
-                            ng-class="{selectedHW: modal.formDatas.rdboxHardWare === modal.INDEX_OF_RDBOX_HW.SimpleMesh}"
-                            >
-                          <h5>Plan2: SimpleMesh</h5>
-                          <img src="../../../../assets/P2_SimpleMesh.png">
-                          <p>Add one Wi-Fi USB Dongle</p>
+                        <td>
+                          <button class="rdbox-hardware"
+                                  ng-disabled="modal.isHardwareButtonDisabled(modal.INDEX_OF_RDBOX_HW.SimpleMesh)"
+                                  ng-click="modal.selectHW(modal.INDEX_OF_RDBOX_HW.SimpleMesh)"
+                                  ng-class="{selectedHW: modal.formDatas.rdboxHardWare === modal.INDEX_OF_RDBOX_HW.SimpleMesh}">
+                            <h5>Plan2: SimpleMesh</h5>
+                            <img src="../../../../assets/P2_SimpleMesh.png">
+                            <p>Add one Wi-Fi USB Dongle</p>
+                          </button>
                         </td>
-                        <td class="rdbox-hardware"
-                            ng-click="modal.selectHW(modal.INDEX_OF_RDBOX_HW.FullMesh)"
-                            ng-class="{selectedHW: modal.formDatas.rdboxHardWare === modal.INDEX_OF_RDBOX_HW.FullMesh}"
-                            >
-                          <h5>Plan3: FullMesh</h5>
-                          <img src="../../../../assets/P3_Full.png">
-                          <p>Add four Wi-Fi USB Dongles</p>
+                        <td>
+                          <button class="rdbox-hardware"
+                                  ng-disabled="modal.isHardwareButtonDisabled(modal.INDEX_OF_RDBOX_HW.FullMesh)"
+                                  ng-click="modal.selectHW(modal.INDEX_OF_RDBOX_HW.FullMesh)"
+                                  ng-class="{selectedHW: modal.formDatas.rdboxHardWare === modal.INDEX_OF_RDBOX_HW.FullMesh}">
+                            <h5>Plan3: FullMesh</h5>
+                            <img src="../../../../assets/P3_Full.png">
+                            <p>Add 4(four) Wi-Fi USB Dongles</p>
+                          </button>
                         </td>
                       </tr>
                     </table>

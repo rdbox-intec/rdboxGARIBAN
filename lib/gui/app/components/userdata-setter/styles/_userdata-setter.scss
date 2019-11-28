@@ -451,9 +451,20 @@
       border: 1px solid #ccc;
       border-radius: 4px;
       padding: 2px 8px;
-      padding-right: 55px;
+      padding-right: 50px;
     }
     .password-inq1:focus {
+      border: 1px solid #64BCC1;
+    }
+    .password-inq4 {
+      box-shadow: none;
+      width: 340px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+      padding-right: 50px;
+    }
+    .password-inq4:focus {
       border: 1px solid #64BCC1;
     }
     .textarea-inq1 {
@@ -558,34 +569,37 @@
       box-shadow: 0 0 0px #64BCC1;
     }
 
-    .password-div {
-      position: relative;
-    }
-    .btn {
-      display: table-cell;
-      vertical-align: middle;
-      align-items: center;
-    }
-    .password-div .btn {
-        position: absolute;
-        right: 30px;
-        top: 0px;
-        padding: 0px 5px;
-        border-radius: 5px;
-        height: 100%;
-    }
-    .btn-input {
-        position: absolute;
-        z-index: -1;
-        opacity: 0;
-    }
-    .btn-label {
-        font-size: 18px;
-        cursor: pointer;
-    }
-    .password-div .btn-label {
-        width: 30px;
-        text-align: center;
+    .password-wrap {
+      height: 100%;
+      .toggle {
+        position: relative;
+      }
+      .btn {
+        display: table-cell;
+        vertical-align: middle;
+        align-items: center;
+      }
+      .toggle .btn {
+          position: absolute;
+          right: 30px;
+          top: 0px;
+          padding: 0px 5px;
+          border-radius: 5px;
+          height: 100%;
+      }
+      .btn-input {
+          position: absolute;
+          z-index: -1;
+          opacity: 0;
+      }
+      .btn-label {
+          font-size: 18px;
+          cursor: pointer;
+      }
+      .toggle .btn-label {
+          width: 30px;
+          text-align: center;
+      }
     }
   }
 

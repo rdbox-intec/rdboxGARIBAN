@@ -6727,31 +6727,29 @@ body {
       outline: none !important;
       border: 1px solid #64BCC1;
       box-shadow: 0 0 0px #64BCC1; }
-    .modal-body .rdbox-userdata .password-wrap {
+    .modal-body .rdbox-userdata .password-wrap .toggle {
+      position: relative; }
+    .modal-body .rdbox-userdata .password-wrap .btn, .modal-body .rdbox-userdata .password-wrap .button {
+      display: table-cell;
+      vertical-align: middle;
+      align-items: center; }
+    .modal-body .rdbox-userdata .password-wrap .toggle .btn, .modal-body .rdbox-userdata .password-wrap .toggle .button {
+      position: absolute;
+      right: 30px;
+      top: 0px;
+      padding: 0px 5px;
+      border-radius: 5px;
       height: 100%; }
-      .modal-body .rdbox-userdata .password-wrap .toggle {
-        position: relative; }
-      .modal-body .rdbox-userdata .password-wrap .btn, .modal-body .rdbox-userdata .password-wrap .button {
-        display: table-cell;
-        vertical-align: middle;
-        align-items: center; }
-      .modal-body .rdbox-userdata .password-wrap .toggle .btn, .modal-body .rdbox-userdata .password-wrap .toggle .button {
-        position: absolute;
-        right: 30px;
-        top: 0px;
-        padding: 0px 5px;
-        border-radius: 5px;
-        height: 100%; }
-      .modal-body .rdbox-userdata .password-wrap .btn-input {
-        position: absolute;
-        z-index: -1;
-        opacity: 0; }
-      .modal-body .rdbox-userdata .password-wrap .btn-label {
-        font-size: 18px;
-        cursor: pointer; }
-      .modal-body .rdbox-userdata .password-wrap .toggle .btn-label {
-        width: 30px;
-        text-align: center; }
+    .modal-body .rdbox-userdata .password-wrap .btn-input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0; }
+    .modal-body .rdbox-userdata .password-wrap .btn-label {
+      font-size: 18px;
+      cursor: pointer; }
+    .modal-body .rdbox-userdata .password-wrap .toggle .btn-label {
+      width: 30px;
+      text-align: center; }
   .modal-body .page-type-hw {
     height: 100%; }
   .modal-body .page-type-hw .sub-title-div {

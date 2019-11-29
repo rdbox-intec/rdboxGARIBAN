@@ -1,7 +1,7 @@
 {
-  "name": "flash-gui",
+  "name": "rdbox-gariban",
   "private": true,
-  "displayName": "flashGUI",
+  "displayName": "rdboxGARIBAN",
   "version": "1.5.56",
   "packageType": "local",
   "updates": {
@@ -12,11 +12,11 @@
   "main": "lib/start.js",
   "description": "Flash OS images to SD cards and USB drives, safely and easily.",
   "productDescription": "performs two processes of creating the configuration file of RDBOX and writing the SD image file to the SD card",
-  "homepage": "https://github.com/rdbox-intec/flashGUI",
+  "homepage": "https://github.com/rdbox-intec/rdboxGARIBAN",
   "gypfile": true,
   "repository": {
     "type": "git",
-    "url": "git@github.com:rdbox-intec/flashGUI.git"
+    "url": "git@github.com:rdbox-intec/rdboxGARIBAN.git"
   },
   "scripts": {
     "test": "make lint test sanity-checks",

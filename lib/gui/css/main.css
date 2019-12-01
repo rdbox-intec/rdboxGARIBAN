@@ -10623,8 +10623,8 @@ featured-project webview {
   width: 0; }
 
 featured-project.fp-visible webview {
-  width: 480px;
-  height: 360px;
+  width: 650px;
+  height: 440px;
   position: absolute;
   z-index: 1;
   left: 30px;

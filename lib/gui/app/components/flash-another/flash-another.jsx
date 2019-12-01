@@ -21,7 +21,7 @@ const React = require('react')
 const PropTypes = require('prop-types')
 const styled = require('styled-components').default
 const { position, right } = require('styled-system')
-const { BaseButton, ThemedProvider } = require('../../styled-components')
+const { ThemedProvider } = require('../../styled-components')
 
 const Div = styled.div `
   ${position}
@@ -32,11 +32,11 @@ const FlashAnother = (props) => {
   return (
     <ThemedProvider>
       <Div position='absolute' right='152px'>
-        <BaseButton
+        <button className="button button-primary"
           primary
           onClick={props.onClick.bind(null, { preserveImage: true })}>
           Flash Another
-        </BaseButton>
+        </button>
       </Div>
     </ThemedProvider>
   )

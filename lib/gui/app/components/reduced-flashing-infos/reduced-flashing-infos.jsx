@@ -24,8 +24,8 @@ const SvgIcon = require('../svg-icon/svg-icon.jsx')
 
 const Div = styled.div `
   position: absolute;
-  top: 45px;
-  left: 545px;
+  top: 100px;
+  left: 750px;
 
   > span.step-name {
     justify-content: flex-start;

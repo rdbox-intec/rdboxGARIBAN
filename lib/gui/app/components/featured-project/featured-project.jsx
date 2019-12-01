@@ -34,7 +34,7 @@ class FeaturedProject extends React.Component {
   componentDidMount () {
     return settings.load()
       .then(() => {
-        const endpoint = settings.get('featuredProjectEndpoint') || 'https://assets.balena.io/etcher-featured/index.html'
+        const endpoint = settings.get('featuredProjectEndpoint') || 'https://rdbox-intec.github.io/rdboxGARIBAN/feature/flashing/'
         this.setState({ endpoint })
       })
       .catch(analytics.logException)

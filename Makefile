@@ -148,7 +148,7 @@ webpack:
 
 sass:
 	npm rebuild node-sass
-	node-sass lib/gui/app/scss/main.scss > lib/gui/css/main.css
+	./node_modules/.bin/node-sass lib/gui/app/scss/main.scss > lib/gui/css/main.css
 
 lint-ts:
 	resin-lint --typescript lib

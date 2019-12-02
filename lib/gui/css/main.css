@@ -6840,7 +6840,8 @@ body {
       border-color: #E0F2F3 #E0F2F3 #E0F2F3 #E0F2F3;
       border-width: 2px 2px 2px 2px;
       text-align: center;
-      cursor: pointer; }
+      cursor: pointer;
+      background-color: #fff; }
     .modal-body .page-type-role .outer-table-div .rdbox-role-equipment .rdboxRoleDisable {
       border: 2px solid #E0F2F3;
       border-color: #E0F2F3 #E0F2F3 #E0F2F3 #E0F2F3;

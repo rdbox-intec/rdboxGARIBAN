@@ -24,7 +24,7 @@ const SvgIcon = require('../svg-icon/svg-icon.jsx')
 
 const Div = styled.div `
   position: absolute;
-  top: 100px;
+  top: 90px;
   left: 750px;
 
   > span.step-name {

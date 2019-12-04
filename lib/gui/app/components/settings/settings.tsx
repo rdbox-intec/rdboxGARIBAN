@@ -73,7 +73,7 @@ const WarningModal = ({
 			done={done}
 			style={{
 				width: 420,
-				height: 300,
+				height: 500,
 			}}
 			primaryButtonProps={{ warning: true }}
 		>
@@ -191,7 +191,7 @@ export const SettingsModal: any = styled(
 				done={() => toggleModal(false)}
 				style={{
 					width: 780,
-					height: 420,
+					height: 490,
 				}}
 			>
 				<div>

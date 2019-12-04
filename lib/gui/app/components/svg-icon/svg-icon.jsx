@@ -17,7 +17,7 @@
 'use strict'
 
 /**
- * @module Etcher.Components.SVGIcon
+ * @module Gariban.Components.SVGIcon
  */
 
 const _ = require('lodash')

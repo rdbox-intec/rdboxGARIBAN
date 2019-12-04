@@ -72,6 +72,7 @@ UdSetter.propTypes = {
   reselectUserdata: propTypes.func,
   hasUserdata: propTypes.bool,
   hostName: propTypes.string,
+  flashing: propTypes.bool,
   clusterMode: propTypes.string
 }
 

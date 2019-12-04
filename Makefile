@@ -4,7 +4,7 @@
 
 RESIN_SCRIPTS ?= ./scripts/resin
 export NPM_VERSION ?= 6.7.0
-S3_BUCKET = artifacts.ci.balena-cloud.com
+S3_BUCKET = artifacts.ci.rdbox-cloud.com
 
 # This directory will be completely deleted by the `clean` rule
 BUILD_DIRECTORY ?= dist

@@ -1,19 +1,39 @@
-appId: io.balena.etcher
-copyright: Copyright 2016-2019 Balena Ltd
-productName: balenaEtcher
+appId: jp.co.intec.gariban
+copyright: Copyright 2019 INTEC Inc.
+productName: rdboxGARIBAN
 npmRebuild: true
 nodeGypRebuild: true
 publish: null
+afterPack: "./afterPack.js"
 files:
-  - lib
-  - lib/gui/app/index.html
+  - build/Release/elevator.node
   - generated
-  - build/**/*.node
+  - lib/shared/catalina-sudo/sudo-askpass.osascript.js
+  - lib/gui/app/index.html
+  - lib/gui/css/*.css
+  - lib/gui/css/fonts/*.woff2
+  - lib/gui/assets/*.svg
   - assets/icon.png
-  - node_modules/**/*
+  - "!node_modules/**/**"
+  - "node_modules/**/*.js"
+  - "node_modules/**/*.json"
+  - "node_modules/**/*.node"
+  - "node_modules/**/*.dll"
+  - node_modules/node-raspberrypi-usbboot/blobs/**
+  - node_modules/flexboxgrid/dist/flexboxgrid.css
+  - node_modules/roboto-fontface/fonts/roboto/Roboto-Thin.woff
+  - node_modules/roboto-fontface/fonts/roboto/Roboto-Light.woff
+  - node_modules/roboto-fontface/fonts/roboto/Roboto-Regular.woff
+  - node_modules/roboto-fontface/fonts/roboto/Roboto-Medium.woff
+  - node_modules/roboto-fontface/fonts/roboto/Roboto-Bold.woff
+  - node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2
 mac:
+  asar: false
   icon: assets/icon.icns
   category: public.app-category.developer-tools
+  hardenedRuntime: true
+  entitlements: "entitlements.mac.plist"
+  entitlementsInherit: "entitlements.mac.plist"
 dmg:
   background: assets/dmg/background.tiff
   icon: assets/icon.icns
@@ -44,8 +64,8 @@ portable:
 linux:
   category: Utility
   packageCategory: utils
-  executableName: balena-etcher-electron
-  synopsis: balenaEtcher is a powerful OS image flasher built with web technologies to ensure flashing an SDCard or USB drive is a pleasant and safe experience. It protects you from accidentally writing to your hard-drives, ensures every byte of data was written correctly and much more.
+  executableName: rdbox-gariban-electron
+  synopsis: rdboxGARIBAN is a powerful OS image flasher built with web technologies to ensure flashing an SDCard or USB drive is a pleasant and safe experience. It protects you from accidentally writing to your hard-drives, ensures every byte of data was written correctly and much more.
   icon: assets/iconset
 deb:
   priority: optional

@@ -15,8 +15,8 @@
  * limitations under the License.
  */
 /*!
- * Bootstrap v3.4.0 (https://getbootstrap.com/)
- * Copyright 2011-2018 Twitter, Inc.
+ * Bootstrap v3.4.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -6035,8 +6035,9 @@ body {
   outline: none;
   position: relative; }
   .button > .glyphicon, .button > .tick {
-    top: 2px;
-    margin-right: 2px; }
+    top: 0;
+    width: 24px;
+    height: 24px; }
   .button.button-primary {
     width: 200px;
     height: 48px; }
@@ -6367,6 +6368,20 @@ body {
   /*
    * cluster apply
    */ }
+  .modal-body input[disabled] {
+    background-color: #d5d5d5;
+    color: #787c7f; }
+  .modal-body input::placeholder {
+    color: #ccc; }
+  .modal-body input[disabled]::placeholder {
+    color: #fff; }
+  .modal-body select {
+    background-color: #fff; }
+  .modal-body select[disabled] {
+    background-color: #d5d5d5;
+    color: #787c7f; }
+  .modal-body textarea::placeholder {
+    color: #ccc; }
   .modal-body #contents {
     width: 650px;
     height: 340px;
@@ -6411,6 +6426,7 @@ body {
       border: 2px solid #ddd;
       border-color: #ddd #ddd #ddd #ddd;
       border-width: 2px 2px 2px 2px;
+      border-radius: 10px;
       overflow: auto; }
     .modal-body .page-cluster-previously .outer-div {
       width: 100%;
@@ -6429,12 +6445,15 @@ body {
         font-family: monospace; }
       .modal-body .page-cluster-previously .outer-div .list-group {
         margin: 10px; }
+      .modal-body .page-cluster-previously .outer-div .list-group-items {
+        padding: 1px; }
       .modal-body .page-cluster-previously .outer-div .list-group-item {
         cursor: pointer;
         display: flex;
         align-items: center;
         border-left: 0;
         border-right: 0;
+        border-top: 0;
         border-radius: 0;
         border-color: #ededed;
         padding: 12px 0; }
@@ -6459,13 +6478,13 @@ body {
         .modal-body .page-cluster-previously .outer-div .list-group-item progress::-webkit-progress-value {
           border-bottom: 1px solid #3e969b;
           background-color: #64BCC1; }
+      .modal-body .page-cluster-previously .outer-div .list-group-item:hover {
+        background-color: #EBFDFF; }
       .modal-body .page-cluster-previously .outer-div .selectedCluster {
         outline: 2px solid #64BCC1;
         outline-color: #64BCC1;
         outline-width: 2px 2px 2px 2px;
         background-color: #E0F2F3; }
-      .modal-body .page-cluster-previously .outer-div .list-group-item:hover {
-        background-color: #EBFDFF; }
       .modal-body .page-cluster-previously .outer-div .list-group-item-heading {
         font-size: 13px; }
       .modal-body .page-cluster-previously .outer-div .list-group-item-text {
@@ -6582,6 +6601,89 @@ body {
       padding: 2px 8px; }
     .modal-body .rdbox-userdata .input-inq1:focus {
       border: 1px solid #64BCC1; }
+    .modal-body .rdbox-userdata .input-inq2 {
+      box-shadow: none;
+      width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px; }
+    .modal-body .rdbox-userdata .input-inq2:focus {
+      border: 1px solid #64BCC1; }
+    .modal-body .rdbox-userdata .input-inq3 {
+      box-shadow: none;
+      width: 357px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+      resize: none; }
+    .modal-body .rdbox-userdata .input-inq3:focus {
+      border: 1px solid #64BCC1; }
+    .modal-body .rdbox-userdata .input-inq4 {
+      box-shadow: none;
+      width: 340px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px; }
+    .modal-body .rdbox-userdata .input-inq4:focus {
+      border: 1px solid #64BCC1; }
+    .modal-body .rdbox-userdata .input-inq5 {
+      box-shadow: none;
+      width: 107px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px; }
+    .modal-body .rdbox-userdata .input-inq5:focus {
+      border: 1px solid #64BCC1; }
+    .modal-body .rdbox-userdata .password-inq1 {
+      width: 460px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+      padding-right: 50px; }
+    .modal-body .rdbox-userdata .password-inq1:focus {
+      border: 1px solid #64BCC1; }
+    .modal-body .rdbox-userdata .password-inq4 {
+      box-shadow: none;
+      width: 340px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+      padding-right: 50px; }
+    .modal-body .rdbox-userdata .password-inq4:focus {
+      border: 1px solid #64BCC1; }
+    .modal-body .rdbox-userdata .textarea-inq1 {
+      width: 460px;
+      height: 80px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+      resize: none; }
+    .modal-body .rdbox-userdata .textarea-inq1:focus {
+      outline: none !important;
+      border: 1px solid #64BCC1;
+      box-shadow: 0 0 0px #64BCC1; }
+    .modal-body .rdbox-userdata .textarea-inq2 {
+      width: 460px;
+      height: 65px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+      resize: none; }
+    .modal-body .rdbox-userdata .textarea-inq2:focus {
+      outline: none !important;
+      border: 1px solid #64BCC1;
+      box-shadow: 0 0 0px #64BCC1; }
+    .modal-body .rdbox-userdata .textarea-inq3 {
+      width: 460px;
+      height: 160px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+      resize: none; }
+    .modal-body .rdbox-userdata .textarea-inq3:focus {
+      outline: none !important;
+      border: 1px solid #64BCC1;
+      box-shadow: 0 0 0px #64BCC1; }
     .modal-body .rdbox-userdata .select-inq1 {
       box-shadow: none;
       width: 460px;
@@ -6601,68 +6703,6 @@ body {
       font-size: 14px; }
     .modal-body .rdbox-userdata .proxy-selector {
       height: 80px; }
-    .modal-body .rdbox-userdata .inputarea-inq1 {
-      width: 460px;
-      height: 80px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 2px 8px; }
-    .modal-body .rdbox-userdata .inputarea-inq1:focus {
-      outline: none !important;
-      border: 1px solid #64BCC1;
-      box-shadow: 0 0 0px #64BCC1; }
-    .modal-body .rdbox-userdata .inputarea-inq2 {
-      width: 460px;
-      height: 65px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 2px 8px; }
-    .modal-body .rdbox-userdata .inputarea-inq2:focus {
-      outline: none !important;
-      border: 1px solid #64BCC1;
-      box-shadow: 0 0 0px #64BCC1; }
-    .modal-body .rdbox-userdata .inputarea-inq3 {
-      width: 460px;
-      height: 160px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 2px 8px; }
-    .modal-body .rdbox-userdata .inputarea-inq3:focus {
-      outline: none !important;
-      border: 1px solid #64BCC1;
-      box-shadow: 0 0 0px #64BCC1; }
-    .modal-body .rdbox-userdata .input-inq2 {
-      box-shadow: none;
-      width: 400px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 2px 8px; }
-    .modal-body .rdbox-userdata .input-inq2:focus {
-      border: 1px solid #64BCC1; }
-    .modal-body .rdbox-userdata .input-inq3 {
-      box-shadow: none;
-      width: 357px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 2px 8px; }
-    .modal-body .rdbox-userdata .input-inq3:focus {
-      border: 1px solid #64BCC1; }
-    .modal-body .rdbox-userdata .input-inq4 {
-      box-shadow: none;
-      width: 340px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 2px 8px; }
-    .modal-body .rdbox-userdata .input-inq4:focus {
-      border: 1px solid #64BCC1; }
-    .modal-body .rdbox-userdata .input-inq5 {
-      box-shadow: none;
-      width: 107px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 2px 8px; }
-    .modal-body .rdbox-userdata .input-inq5:focus {
-      border: 1px solid #64BCC1; }
     .modal-body .rdbox-userdata dd.authorized-keys {
       display: table-cell;
       width: 485px;
@@ -6681,6 +6721,42 @@ body {
       color: #fff; }
     .modal-body .rdbox-userdata .next-textbox-button:hover {
       background-color: #45a7ad; }
+    .modal-body .rdbox-userdata .textarea-finish {
+      width: 640px;
+      height: 270px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 10.5px;
+      resize: none;
+      font-family: Consolas, 'Courier New', Courier, Monaco, monospace; }
+    .modal-body .rdbox-userdata .textarea-finish:focus {
+      outline: none !important;
+      border: 1px solid #64BCC1;
+      box-shadow: 0 0 0px #64BCC1; }
+    .modal-body .rdbox-userdata .password-wrap .toggle {
+      position: relative; }
+    .modal-body .rdbox-userdata .password-wrap .btn, .modal-body .rdbox-userdata .password-wrap .button {
+      display: table-cell;
+      vertical-align: middle;
+      align-items: center; }
+    .modal-body .rdbox-userdata .password-wrap .toggle .btn, .modal-body .rdbox-userdata .password-wrap .toggle .button {
+      position: absolute;
+      right: 30px;
+      top: 0px;
+      padding: 0px 5px;
+      border-radius: 5px;
+      height: 100%; }
+    .modal-body .rdbox-userdata .password-wrap .btn-input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0; }
+    .modal-body .rdbox-userdata .password-wrap .btn-label {
+      font-size: 18px;
+      cursor: pointer; }
+    .modal-body .rdbox-userdata .password-wrap .toggle .btn-label {
+      width: 30px;
+      text-align: center; }
   .modal-body .page-type-hw {
     height: 100%; }
   .modal-body .page-type-hw .sub-title-div {
@@ -6693,18 +6769,27 @@ body {
     width: 100%;
     table-layout: fixed;
     word-wrap: break-word; }
-  .modal-body .page-type-hw .rdbox-type-equipment td.rdbox-hardware {
+  .modal-body .page-type-hw .rdbox-type-equipment button {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+    width: 100%;
+    height: 100%; }
+  .modal-body .page-type-hw .rdbox-type-equipment .rdbox-hardware {
     border: 2px solid #ddd;
     border-color: #fff #ddd;
     border-width: 2px 2px 2px 2px;
     text-align: center;
     padding: 10px;
-    cursor: pointer; }
-  .modal-body .page-type-hw .rdbox-type-equipment td.rdbox-hardware:hover {
+    cursor: pointer;
+    background-color: #fff; }
+  .modal-body .page-type-hw .rdbox-type-equipment .rdbox-hardware:hover {
     background-color: #EBFDFF; }
-  .modal-body .page-type-hw .rdbox-type-equipment td.selectedHW {
+  .modal-body .page-type-hw .rdbox-type-equipment .selectedHW {
     border-color: #64BCC1;
-    border-width: 2px 2px 2px 3px;
+    border-width: 2px 2px 2px 2px;
     background-color: #E0F2F3; }
   .modal-body .page-type-hw .rdbox-type-equipment p {
     margin: 0px 0px 0px 0px;
@@ -6714,6 +6799,14 @@ body {
   .modal-body .page-type-hw .rdbox-type-equipment img {
     padding: 10px;
     width: 100%; }
+  .modal-body .page-type-hw .rdbox-type-equipment button:disabled {
+    cursor: auto;
+    background-color: #d5d5d5;
+    color: #787c7f; }
+  .modal-body .page-type-hw .rdbox-type-equipment button:disabled:hover {
+    cursor: auto;
+    background-color: #d5d5d5;
+    color: #787c7f; }
   .modal-body .page-type-role {
     height: 100%; }
   .modal-body .page-type-role .sub-title-div {
@@ -6754,7 +6847,8 @@ body {
       border-color: #E0F2F3 #E0F2F3 #E0F2F3 #E0F2F3;
       border-width: 2px 2px 2px 2px;
       text-align: center;
-      cursor: pointer; }
+      cursor: pointer;
+      background-color: #fff; }
     .modal-body .page-type-role .outer-table-div .rdbox-role-equipment .rdboxRoleDisable {
       border: 2px solid #E0F2F3;
       border-color: #E0F2F3 #E0F2F3 #E0F2F3 #E0F2F3;
@@ -6827,6 +6921,11 @@ body {
         margin: 10px; }
       .modal-body .page-cluster-apply .inner-div .button-div {
         margin: 10px; }
+
+.modal-footer .percent {
+  font-size: 10.5px;
+  color: #ADCD5D;
+  margin-top: 5px; }
 
 svg-icon {
   display: inline-block; }
@@ -7001,7 +7100,7 @@ svg-icon > img[disabled] {
   padding-bottom: 2px; }
 
 .page-main .button.step-footer {
-  font-size: 14px;
+  font-size: 16px;
   color: #64BCC1;
   border-radius: 0;
   padding: 0;
@@ -7038,7 +7137,7 @@ svg-icon > img[disabled] {
 .page-main .step-size {
   color: #787c7f;
   margin: 0 0 8px 0;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   height: 21px;
   width: 100%; }
@@ -7060,7 +7159,7 @@ svg-icon > img[disabled] {
 .target-status-line {
   display: flex;
   align-items: baseline;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit; }
   .target-status-line > .target-status-dot {
     width: 12px;
@@ -7084,29 +7183,17 @@ svg-icon > img[disabled] {
 .space-vertical-large {
   position: relative; }
 
-/*
- * Copyright 2016 resin.io
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-.page-settings .checkbox input[type="checkbox"] + * {
-  color: #fff; }
+body.rendition-modal-open > div:last-child > div > div > div:last-child {
+  top: unset;
+  bottom: -200px; }
 
-.page-settings .checkbox input[type="checkbox"]:not(:checked) + * {
-  color: #ddd; }
-
-.page-settings .title {
-  color: #fff; }
+#app-logo {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 123px; }
 
 /*
  * Copyright 2016 resin.io
@@ -10522,10 +10609,16 @@ body {
 
 .section-header {
   text-align: right;
-  padding: 5px 8px; }
+  padding: 13px 14px; }
   .section-header > .button {
-    padding-left: 3px;
-    padding-right: 3px; }
+    padding: 0; }
+    .section-header > .button > .glyphicon, .section-header > .button > .tick {
+      font-size: 24px; }
+  .section-header > * {
+    display: inline-block;
+    vertical-align: middle;
+    height: 24px;
+    margin: 0 10px; }
 
 featured-project webview {
   flex: 0 1;
@@ -10533,8 +10626,8 @@ featured-project webview {
   width: 0; }
 
 featured-project.fp-visible webview {
-  width: 480px;
-  height: 360px;
+  width: 660px;
+  height: 440px;
   position: absolute;
   z-index: 1;
   left: 30px;

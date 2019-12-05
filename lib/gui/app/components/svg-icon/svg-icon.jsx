@@ -17,7 +17,7 @@
 'use strict'
 
 /**
- * @module Etcher.Components.SVGIcon
+ * @module Gariban.Components.SVGIcon
  */
 
 const _ = require('lodash')
@@ -132,15 +132,6 @@ class SVGIcon extends react.Component {
       src: svgData,
       disabled: this.props.disabled
     })
-  }
-
-  /**
-   * @summary Cause a re-render due to changed element properties
-   * @param {Object} nextProps - the new properties
-   */
-  componentWillReceiveProps (nextProps) {
-    // This will update the element if the properties change
-    this.setState(nextProps)
   }
 }
 

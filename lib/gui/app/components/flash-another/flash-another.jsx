@@ -32,8 +32,8 @@ const FlashAnother = (props) => {
   return (
     <ThemedProvider>
       <Div position='absolute' right='152px'>
-        <BaseButton
-          primary
+        <BaseButton className="button button-primary"
+          success
           onClick={props.onClick.bind(null, { preserveImage: true })}>
           Flash Another
         </BaseButton>

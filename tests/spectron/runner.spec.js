@@ -36,8 +36,7 @@ describe('Spectron', function () {
   before('app:start', function () {
     app = new spectron.Application({
       path: entrypoint,
-      port: 9995,
-      args: [ '.' ]
+      args: [ '--no-sandbox', '.' ]
     })
 
     return app.start()
@@ -64,7 +63,7 @@ describe('Spectron', function () {
 
     it('should set a proper title', function () {
       return app.client.getTitle().then((title) => {
-        m.chai.expect(title).to.equal('Etcher')
+        m.chai.expect(title).to.equal('RDBOX GARIBAN')
       })
     })
   })

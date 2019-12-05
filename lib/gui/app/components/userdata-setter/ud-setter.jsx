@@ -24,6 +24,7 @@ const propTypes = require('prop-types')
 const {
   ChangeButton,
   StepNameButton,
+  DetailsText,
   ThemedProvider
 } = require('../../styled-components')
 const middleEllipsis = require('../../utils/middle-ellipsis')
@@ -36,7 +37,7 @@ const UdSetter = (props) => {
           plain
         >
           {/* eslint-disable no-magic-numbers */}
-          { middleEllipsis('OK', 20) }
+          { middleEllipsis(props.hostName, 20) }
         </StepNameButton>
         { !props.flashing &&
           <ChangeButton
@@ -47,6 +48,9 @@ const UdSetter = (props) => {
             Change
           </ChangeButton>
         }
+        <DetailsText>
+          { props.clusterMode }
+        </DetailsText>
       </ThemedProvider>
     )
   }
@@ -66,7 +70,10 @@ UdSetter.propTypes = {
   disabled: propTypes.bool,
   openUserdataSetter: propTypes.func,
   reselectUserdata: propTypes.func,
-  hasUserdata: propTypes.bool
+  hasUserdata: propTypes.bool,
+  hostName: propTypes.string,
+  flashing: propTypes.bool,
+  clusterMode: propTypes.string
 }
 
 module.exports = UdSetter

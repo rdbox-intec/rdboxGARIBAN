@@ -109,6 +109,26 @@
 }
 
 .modal-body {
+  input[disabled]{
+    background-color:#d5d5d5;
+    color: #787c7f;
+  }
+  input::placeholder {
+    color: #ccc;
+  }
+  input[disabled]::placeholder {
+    color: #fff;
+  }
+  select {
+    background-color: #fff;
+  }
+  select[disabled]{
+    background-color:#d5d5d5;
+    color: #787c7f;
+  }
+  textarea::placeholder {
+    color: #ccc;
+  }
   #contents {
     width: 650px;
     height: 340px;
@@ -169,6 +189,7 @@
       border: 2px solid #ddd;
       border-color: #ddd #ddd #ddd #ddd;
       border-width: 2px 2px 2px 2px;
+      border-radius: 10px;
       overflow: auto;
     }
     .outer-div {
@@ -192,12 +213,16 @@
       .list-group {
         margin: 10px;
       }
+      .list-group-items {
+        padding: 1px;
+      }
       .list-group-item {
         cursor: pointer;
         display: flex;
         align-items: center;
         border-left: 0;
         border-right: 0;
+        border-top: 0;
         border-radius: 0;
         border-color: darken($palette-theme-light-background, 7%);
         padding: 12px 0;
@@ -231,14 +256,14 @@
           background-color: $palette-theme-primary-background;
         }
       }
+      .list-group-item:hover {
+        background-color: #EBFDFF;
+      }
       .selectedCluster {
         outline: 2px solid #64BCC1;
         outline-color: #64BCC1;
         outline-width: 2px 2px 2px 2px;
         background-color: #E0F2F3;
-      }
-      .list-group-item:hover {
-        background-color: #EBFDFF;
       }
       .list-group-item-heading {
         font-size: 13px;
@@ -389,66 +414,6 @@
     .input-inq1:focus {
       border: 1px solid #64BCC1;
     }
-    .select-inq1 {
-      box-shadow: none;
-      width: 460px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 2px 8px;
-    }
-    .select-inq1:focus {
-      box-shadow: none;
-      outline: 1px solid #64BCC1;
-    }
-    .clustercomment {
-      width: 485px;
-      height: 120px;
-      font-size: 14px;
-    }
-    .kubeadmn-args {
-      width: 485px;
-      height: 160px;
-      font-size: 14px;
-    }
-    .proxy-selector {
-      height: 80px;
-    }
-    .inputarea-inq1 {
-      width: 460px;
-      height: 80px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 2px 8px;
-    }
-    .inputarea-inq1:focus {
-      outline: none !important;
-      border: 1px solid #64BCC1;
-      box-shadow: 0 0 0px #64BCC1;
-    }
-    .inputarea-inq2 {
-      width: 460px;
-      height: 65px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 2px 8px;
-    }
-    .inputarea-inq2:focus {
-      outline: none !important;
-      border: 1px solid #64BCC1;
-      box-shadow: 0 0 0px #64BCC1;
-    }
-    .inputarea-inq3 {
-      width: 460px;
-      height: 160px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 2px 8px;
-    }
-    .inputarea-inq3:focus {
-      outline: none !important;
-      border: 1px solid #64BCC1;
-      box-shadow: 0 0 0px #64BCC1;
-    }
     .input-inq2 {
       box-shadow: none;
       width: 400px;
@@ -465,6 +430,7 @@
       border: 1px solid #ccc;
       border-radius: 4px;
       padding: 2px 8px;
+      resize: none;
     }
     .input-inq3:focus {
       border: 1px solid #64BCC1;
@@ -489,6 +455,90 @@
     .input-inq5:focus {
       border: 1px solid #64BCC1;
     }
+    .password-inq1 {
+      width: 460px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+      padding-right: 50px;
+    }
+    .password-inq1:focus {
+      border: 1px solid #64BCC1;
+    }
+    .password-inq4 {
+      box-shadow: none;
+      width: 340px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+      padding-right: 50px;
+    }
+    .password-inq4:focus {
+      border: 1px solid #64BCC1;
+    }
+    .textarea-inq1 {
+      width: 460px;
+      height: 80px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+      resize: none;
+    }
+    .textarea-inq1:focus {
+      outline: none !important;
+      border: 1px solid #64BCC1;
+      box-shadow: 0 0 0px #64BCC1;
+    }
+    .textarea-inq2 {
+      width: 460px;
+      height: 65px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+      resize: none;
+    }
+    .textarea-inq2:focus {
+      outline: none !important;
+      border: 1px solid #64BCC1;
+      box-shadow: 0 0 0px #64BCC1;
+    }
+    .textarea-inq3 {
+      width: 460px;
+      height: 160px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+      resize: none;
+    }
+    .textarea-inq3:focus {
+      outline: none !important;
+      border: 1px solid #64BCC1;
+      box-shadow: 0 0 0px #64BCC1;
+    }
+    .select-inq1 {
+      box-shadow: none;
+      width: 460px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+    }
+    .select-inq1:focus {
+      box-shadow: none;
+      outline: 1px solid #64BCC1;
+    }
+    .clustercomment {
+      width: 485px;
+      height: 120px;
+      font-size: 14px;
+    }
+    .kubeadmn-args {
+      width: 485px;
+      height: 160px;
+      font-size: 14px;
+    }
+    .proxy-selector {
+      height: 80px;
+    }
     dd.authorized-keys {
       display: table-cell;
       width: 485px;
@@ -511,6 +561,53 @@
     }
     .next-textbox-button:hover {
       background-color: #45a7ad;
+    }
+    .textarea-finish {
+      width: 640px;
+      height: 270px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 10.5px;
+      resize: none;
+      font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+    }
+    .textarea-finish:focus {
+      outline: none !important;
+      border: 1px solid #64BCC1;
+      box-shadow: 0 0 0px #64BCC1;
+    }
+
+    .password-wrap {
+      .toggle {
+        position: relative;
+      }
+      .btn {
+        display: table-cell;
+        vertical-align: middle;
+        align-items: center;
+      }
+      .toggle .btn {
+          position: absolute;
+          right: 30px;
+          top: 0px;
+          padding: 0px 5px;
+          border-radius: 5px;
+          height: 100%;
+      }
+      .btn-input {
+          position: absolute;
+          z-index: -1;
+          opacity: 0;
+      }
+      .btn-label {
+          font-size: 18px;
+          cursor: pointer;
+      }
+      .toggle .btn-label {
+          width: 30px;
+          text-align: center;
+      }
     }
   }
 
@@ -535,20 +632,33 @@
         table-layout: fixed;
         word-wrap: break-word;
       }
-      td.rdbox-hardware {
+      button {
+        border: none;
+        cursor: pointer;
+        outline: none;
+        padding: 0;
+        appearance: none;
+        width: 100%;
+        height: 100%;
+      }
+      .rdbox-hardware {
         border: 2px solid #ddd;
         border-color: #fff #ddd;
         border-width: 2px 2px 2px 2px;
         text-align: center;
         padding: 10px;
         cursor: pointer;
+        background-color: #fff
       }
-      td.rdbox-hardware:hover {
+      .rdbox-hardware:hover {
         background-color: #EBFDFF;
       }
-      td.selectedHW {
+      .selectedHW {
         border-color: #64BCC1;
-        border-width: 2px 2px 2px 3px;
+        border-width: 2px 2px 2px 2px;
+        // outline: 2px solid #64BCC1;
+        // outline-color: #64BCC1;
+        // outline-width: 2px 2px 2px 2px;
         background-color: #E0F2F3;
       }
       p {
@@ -560,6 +670,16 @@
       img {
         padding: 10px;
         width: 100%;
+      }
+      button:disabled {
+        cursor: auto;
+        background-color: #d5d5d5;
+        color: #787c7f;
+      }
+      button:disabled:hover {
+        cursor: auto;
+        background-color: #d5d5d5;
+        color: #787c7f;
       }
     }
   }
@@ -621,6 +741,7 @@
           border-width: 2px 2px 2px 2px;
           text-align: center;
           cursor: pointer;
+          background-color: #fff
         }
         .rdboxRoleDisable {
           border: 2px solid #E0F2F3;
@@ -725,3 +846,12 @@
     }
   }
 }
+
+.modal-footer {
+  .percent {
+    font-size: 10.5px;
+    color: #ADCD5D;
+    margin-top: 5px;
+  }
+}
+

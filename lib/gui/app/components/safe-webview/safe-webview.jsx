@@ -36,12 +36,12 @@ const packageJSON = require('../../../../../package.json')
 const ELECTRON_SESSION = 'persist:success-banner'
 
 /**
- * @summary Etcher version search-parameter key
+ * @summary Gariban version search-parameter key
  * @constant
  * @private
  * @type {String}
  */
-const ETCHER_VERSION_PARAM = 'etcher-version'
+const GARIBAN_VERSION_PARAM = 'gariban-version'
 
 /**
  * @summary API version search-parameter key
@@ -97,7 +97,7 @@ class SafeWebview extends react.PureComponent {
     const url = new window.URL(props.src)
 
     // We set the version GET parameters here.
-    url.searchParams.set(ETCHER_VERSION_PARAM, packageJSON.version)
+    url.searchParams.set(GARIBAN_VERSION_PARAM, packageJSON.version)
     url.searchParams.set(API_VERSION_PARAM, API_VERSION)
     url.searchParams.set(OPT_OUT_ANALYTICS_PARAM, !settings.get('errorReporting'))
 
@@ -107,9 +107,14 @@ class SafeWebview extends react.PureComponent {
     this.didFailLoad = _.bind(this.didFailLoad, this)
     this.didGetResponseDetails = _.bind(this.didGetResponseDetails, this)
 
+    const logWebViewMessage = (event) => {
+      console.log('Message from SafeWebview:', event.message);
+    };
+
     this.eventTuples = [
       [ 'did-fail-load', this.didFailLoad ],
-      [ 'new-window', this.constructor.newWindow ]
+      [ 'new-window', this.constructor.newWindow ],
+      [ 'console-message', logWebViewMessage ]
     ]
 
     // Make a persistent electron session for the webview
@@ -160,27 +165,6 @@ class SafeWebview extends react.PureComponent {
       this.refs.webview.removeEventListener(...tuple)
     })
     this.session.webRequest.onCompleted(null)
-  }
-
-  /**
-   * @summary Refresh the webview if we are navigating away from the success page
-   * @param {Object} nextProps - upcoming properties
-   */
-  componentWillReceiveProps (nextProps) {
-    if (nextProps.refreshNow && !this.props.refreshNow) {
-      // Reload the page if it hasn't changed, otherwise reset the source URL,
-      // because reload interferes with 'src' setting, resetting the 'src' attribute
-      // to what it was was just prior.
-      if (this.refs.webview.src === this.entryHref) {
-        this.refs.webview.reload()
-      } else {
-        this.refs.webview.src = this.entryHref
-      }
-
-      this.setState({
-        shouldShow: true
-      })
-    }
   }
 
   /**

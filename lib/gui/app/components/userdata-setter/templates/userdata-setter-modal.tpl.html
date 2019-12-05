@@ -54,9 +54,10 @@
                         class="input-inq1"
                         id="clustername"
                         name="clustername"
+                        placeholder="ex. production, staging, etc. within the 8 word limit and alphanumeric."
                         ng-class="{'has-error': pages.pageClusterNew.clustername.$invalid}"
                         ng-maxlength="8"
-                        ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
+                        ng-pattern="/^[A-Za-z0-9]*$/"
                         ng-model="modal.formDatas.clustername"
                         valid-exist>
                   <p ng-show="pages.pageClusterNew.clustername.$error.required">Required fields.</p>
@@ -72,6 +73,7 @@
                         class="textarea-inq1 input-inq1"
                         id="clustercomment"
                         name="clustercomment"
+                        placeholder="Feel free to write anything you want. within the 30 word limit"
                         ng-maxlength="30"
                         ng-class="{'has-error': pages.pageClusterNew.clustercomment.$invalid}"
                         ng-model="modal.formDatas.clustercomment">
@@ -450,6 +452,7 @@
                         class="input-inq1"
                         id="suffix"
                         name="suffix"
+                        placeholder="ex. tokyo, japan, america, etc. within the 8 word limit and alphanumeric."
                         ng-class="{'has-error': pages.pageClusterSuffix.suffix.$invalid}"
                         ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
                         ng-maxlength="8"
@@ -557,6 +560,7 @@
                             class="password-inq1"
                             id="rootPassword"
                             name="rootPassword"
+                            placeholder="Enter using more than 8 capital, small letters and alphabets."
                             ng-minlength="8"
                             ng-class="{'has-error': pages.pageUserdataUserinfo.rootPassword.$invalid}"
                             ng-model="modal.formDatas.password">
@@ -574,11 +578,12 @@
               </dl>
               <dl>
                 <dt>public key</dt>
-                <dd ng-click="modal.openSecretSelector(this, 'publicKey')">
+                <dd>
                   <input required disabled type="text"
                         class="input-inq2"
                         id="publicKey"
                         name="publicKey"
+                        placeholder="Public key created with ssh-keygen (ex. id_rsa.pub)"
                         ng-class="{'has-error': pages.pageUserdataUserinfo.publicKey.$invalid}"
                         ng-model="modal.formDatas.publicKey">
                   <button type="button" class="next-textbox-button" ng-click="modal.openSecretSelector(this, 'publicKey')">
@@ -589,11 +594,12 @@
               </dl>
               <dl>
                 <dt>secret key</dt>
-                <dd ng-click="modal.openSecretSelector(this, 'secretKey')">
+                <dd>
                   <input required disabled type="text"
                         class="input-inq2"
                         id="secretKey"
                         name="secretKey"
+                        placeholder="Secret key created with ssh-keygen (ex. id_rsa)"
                         ng-class="{'has-error': pages.pageUserdataUserinfo.secretKey.$invalid}"
                         ng-model="modal.formDatas.secretKey">
                   <button type="button" class="next-textbox-button" ng-click="modal.openSecretSelector(this, 'secretKey')">
@@ -609,6 +615,7 @@
                         class="textarea-inq2"
                         id="authorizedKeys"
                         name="authorizedKeys"
+                        placeholder="List of ssh keys to add to user’s authkeys file. (like ~/.ssh/authorized_keys)"
                         wrap="off"
                         ng-pattern="/[ -~]+/"
                         ng-class="{'has-error': pages.pageUserdataUserinfo.authorizedKeys.$invalid}"
@@ -665,6 +672,7 @@
                               class="input-inq2"
                               id="ntppools{{$index}}"
                               name="ntppools{{$index}}"
+                              placeholder="ex. ntp.nict.jp"
                               ng-if="$index === 0"
                               ng-class="{'has-error': pages.pageUserdataEnvinfo.ntppools{{$index}}.$invalid}"
                               ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
@@ -673,6 +681,7 @@
                               class="input-inq3"
                               id="ntppools{{$index}}"
                               name="ntppools{{$index}}"
+                              placeholder="ex. ntp.nict.jp"
                               ng-if="$index !== 0"
                               ng-class="{'has-error': pages.pageUserdataEnvinfo.ntppools{{$index}}.$invalid}"
                               ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
@@ -702,6 +711,7 @@
                                 class="input-inq2"
                                 id="ntpservers{{$index}}"
                                 name="ntpservers{{$index}}"
+                                placeholder="ex. ntp.nict.jp"
                                 ng-if="$index === 0"
                                 ng-class="{'has-error': pages.pageUserdataEnvinfo.ntpservers{{$index}}.$invalid}"
                                 ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
@@ -710,6 +720,7 @@
                                 class="input-inq3"
                                 id="ntpservers{{$index}}"
                                 name="ntpservers{{$index}}"
+                                placeholder="ex. ntp.nict.jp"
                                 ng-if="$index !== 0"
                                 ng-class="{'has-error': pages.pageUserdataEnvinfo.ntpservers{{$index}}.$invalid}"
                                 ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
@@ -851,6 +862,7 @@
                         class="input-inq4"
                         id="proxyAddress"
                         name="proxyAddress"
+                        placeholder="ex. http://proxy.xxxxx.co.jp, http://192.168.1.254 etc."
                         ng-class="{'has-error': pages.pageNetworkProxy.proxyAddress.$invalid}"
                         ng-pattern="/^(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)$/"
                         ng-model="modal.formDatas.proxyAddress">
@@ -859,6 +871,7 @@
                         class="input-inq5"
                         id="proxyPort"
                         name="proxyPort"
+                        placeholder="ex. 8080"
                         ng-class="{'has-error': pages.pageNetworkProxy.proxyPort.$invalid}"
                         ng-model="modal.formDatas.proxyPort">
                   <p ng-show="pages.pageNetworkProxy.proxyAddress.$error.required">Required fields.</p>
@@ -1097,6 +1110,7 @@
                         class="input-inq4"
                         id="vpnAddress"
                         name="vpnAddress"
+                        placeholder="ex. vpn.xxxxx.co.jp, 18.233.xxx.3 etc."
                         ng-class="{'has-error': pages.pageVpnBridge.vpnAddress.$invalid}"
                         ng-pattern="/^((?!-)[A-Za-z0-9-]{1,63}(?<!-)\.)+[A-Za-z]{2,6}$|^(([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/"
                         ng-model="modal.formDatas.vpnbridge[modal.getIndexOfVpncmd('CascadeCreate')].hostname">
@@ -1105,6 +1119,7 @@
                         class="input-inq5"
                         id="vpnPort"
                         name="vpnPort"
+                        placeholder="ex. 443"
                         ng-class="{'has-error': pages.pageVpnBridge.vpnPort.$invalid}"
                         ng-model="modal.formDatas.vpnbridge[modal.getIndexOfVpncmd('CascadeCreate')].port">
                   <p ng-show="pages.pageVpnBridge.vpnAddress.$error.required">Required fields.</p>
@@ -1118,6 +1133,7 @@
                         class="input-inq1"
                         id="hubname"
                         name="hubname"
+                        placeholder="ex. rdbox"
                         ng-pattern="/^[a-zA-Z0-9!-/:-@¥[-`{-~]+$/"
                         ng-class="{'has-error': pages.pageVpnBridge.hubname.$invalid}"
                         ng-model="modal.formDatas.vpnbridge[modal.getIndexOfVpncmd('CascadeCreate')].hubname">
@@ -1167,7 +1183,8 @@
           <!-- Join Kubernetes -->
           <ng-form name="pageJoinKubernetes">
             <div class="page-join-kubernetes" ng-show="modal.currentPage === 16">
-              <h3 class="sub-title">You join k8s cluster, you need strings from kubeadmn init.</h3>
+              <h3 class="sub-title-nospace">You join k8s cluster, you need strings from kubeadmn init.</h3>
+              <p class="sub-title-supplement">This args is string after "kubeadm join "</p>
               <dl>
                 <dt>join args</dt>
                   <dd class="kubeadmn-args">
@@ -1175,6 +1192,7 @@
                         class="textarea-inq3"
                         id="kubeadmn"
                         name="kubeadmn"
+                        placeholder="ex. 192.168.179.2:6443 --token 2tswmw.tf3q52bo2fs1pz24 --discovery-token-ca-cert-hash sha256:78c3ac3a493c0147b28e8b4b478e41f7e6493806099fa74545808384eca78b11"
                         ng-class="{'has-error': pages.pageJoinKubernetes.kubeadmn.$invalid}"
                         ng-model="modal.formDatas.kubeadmn.args">
                   </textarea>

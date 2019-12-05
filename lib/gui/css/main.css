@@ -6371,11 +6371,17 @@ body {
   .modal-body input[disabled] {
     background-color: #d5d5d5;
     color: #787c7f; }
+  .modal-body input::placeholder {
+    color: #ccc; }
+  .modal-body input[disabled]::placeholder {
+    color: #fff; }
   .modal-body select {
     background-color: #fff; }
   .modal-body select[disabled] {
     background-color: #d5d5d5;
     color: #787c7f; }
+  .modal-body textarea::placeholder {
+    color: #ccc; }
   .modal-body #contents {
     width: 650px;
     height: 340px;

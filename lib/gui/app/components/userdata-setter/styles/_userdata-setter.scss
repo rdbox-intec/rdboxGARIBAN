@@ -113,12 +113,21 @@
     background-color:#d5d5d5;
     color: #787c7f;
   }
+  input::placeholder {
+    color: #ccc;
+  }
+  input[disabled]::placeholder {
+    color: #fff;
+  }
   select {
     background-color: #fff;
   }
   select[disabled]{
     background-color:#d5d5d5;
     color: #787c7f;
+  }
+  textarea::placeholder {
+    color: #ccc;
   }
   #contents {
     width: 650px;

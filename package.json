@@ -2,7 +2,7 @@
   "name": "rdbox-gariban",
   "private": true,
   "displayName": "rdboxGARIBAN",
-  "version": "1.5.56",
+  "version": "0.1.0",
   "packageType": "local",
   "updates": {
     "enabled": true,

@@ -113,7 +113,7 @@ electron-build: assets/dmg/background.tiff | $(BUILD_TEMPORARY_DIRECTORY)
 		-b $(shell pwd) \
 		-r $(TARGET_ARCH) \
 		-s $(PLATFORM) \
-		-v production \
+		-v prerelease \
 		-n $(BUILD_TEMPORARY_DIRECTORY)/npm \
 		-w $(BUILD_TEMPORARY_DIRECTORY)
 

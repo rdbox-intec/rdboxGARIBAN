@@ -1,6 +1,5 @@
 {
-  "name": "rdbox-gariban",
-  "version": "1.5.56",
+  "name": "rdboxGARIBAN",
   "lockfileVersion": 1,
   "requires": true,
   "dependencies": {

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-.modal-userdata-setter-modal .modal-content {
+ .modal-userdata-setter-modal .modal-content {
   width: 720px;
   height: 500px;
 }
@@ -113,12 +113,21 @@
     background-color:#d5d5d5;
     color: #787c7f;
   }
+  input::placeholder {
+    color: #ccc;
+  }
+  input[disabled]::placeholder {
+    color: #fff;
+  }
   select {
     background-color: #fff;
   }
   select[disabled]{
     background-color:#d5d5d5;
     color: #787c7f;
+  }
+  textarea::placeholder {
+    color: #ccc;
   }
   #contents {
     width: 650px;
@@ -845,4 +854,3 @@
     margin-top: 5px;
   }
 }
-

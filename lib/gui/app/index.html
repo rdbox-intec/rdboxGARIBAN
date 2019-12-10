@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Etcher</title>
+    <title>RDBOX GARIBAN</title>
     <link rel="stylesheet" type="text/css" href="../../../node_modules/flexboxgrid/dist/flexboxgrid.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/desktop.css">
@@ -37,30 +37,26 @@
 
     <footer class="section-footer-main" ng-controller="StateController as state"
       ng-hide="state.currentName === 'success'">
-      <span os-open-external="https://www.balena.io/etcher?ref=etcher_footer"
+      <span os-open-external="https://rdbox-intec.github.io/homepage_en/"
         tabindex="100">
-        <svg-icon paths="[ '../../assets/etcher.svg' ]"
-          width="'123px'"
-          height="'22px'"></svg-icon>
+        <svg-icon paths="[ '../../assets/rdbox-yoko.svg' ]"
+          width="'90px'"
+          height="'42px'"></svg-icon>
       </span>
 
       <span class="caption">
         is <span class="caption"
           tabindex="101"
-          os-open-external="https://github.com/balena-io/etcher">an open source project</span> by
-      </span>
-
-      <span os-open-external="https://www.balena.io?ref=etcher"
-        tabindex="102">
-        <svg-icon paths="[ '../../assets/balena.svg' ]"
-          width="'79px'"
-          height="'23px'"></svg-icon>
+          os-open-external="https://github.com/rdbox-intec/rdbox">an open source project</span> by
+          <span class="caption"
+          tabindex="101"
+          os-open-external="https://www.intec.co.jp/english/">INTEC Inc.</span>
       </span>
 
       <span class="caption footer-right"
         tabindex="103"
         manifest-bind="version"
-        os-open-external="https://github.com/balena-io/etcher/blob/master/CHANGELOG.md"></span>
+        os-open-external="https://github.com/rdbox-intec/rdboxGARIBAN/releases"></span>
     </footer>
 
     <div class="section-loader"
@@ -69,7 +65,7 @@
         isFinish: state.currentName === 'success'
       }">
       <safe-webview
-        src="'https://www.balena.io/etcher/success-banner/'"
+        src="'https://rdbox-intec.github.io/rdboxGARIBAN/feature/fallback/'"
         refresh-now="state.previousName === 'success'"></safe-webview>
     </div>
   </body>

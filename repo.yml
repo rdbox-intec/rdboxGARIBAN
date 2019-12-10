@@ -2,8 +2,8 @@ type: electron
 release: github
 publishMetadata: true
 sentry:
-    org: balenaetcher
-    team: resinio
+    org: rdboxgariban
+    team: intec
     type: electron
 triggerNotification:
     version: 1.5.52

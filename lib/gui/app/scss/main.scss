@@ -33,6 +33,7 @@ $disabled-opacity: 0.2;
 @import "./components/tick";
 @import "../components/modal/styles/modal";
 @import "../components/drive-selector/styles/drive-selector";
+@import "../components/userdata-setter/styles/userdata-setter";
 @import "../components/svg-icon/styles/svg-icon";
 @import "../components/tooltip-modal/styles/tooltip-modal";
 @import "../components/warning-modal/styles/warning-modal";
@@ -228,8 +229,8 @@ featured-project {
   }
 
   &.fp-visible webview {
-    width: 480px;
-    height: 360px;
+    width: 660px;
+    height: 440px;
     position: absolute;
     z-index: 1;
     left: 30px;

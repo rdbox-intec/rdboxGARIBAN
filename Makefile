@@ -4,7 +4,7 @@
 
 RESIN_SCRIPTS ?= ./scripts/resin
 export NPM_VERSION ?= 6.7.0
-S3_BUCKET = artifacts.ci.balena-cloud.com
+S3_BUCKET = artifacts.ci.rdbox-cloud.com
 
 # This directory will be completely deleted by the `clean` rule
 BUILD_DIRECTORY ?= dist
@@ -113,7 +113,7 @@ electron-build: assets/dmg/background.tiff | $(BUILD_TEMPORARY_DIRECTORY)
 		-b $(shell pwd) \
 		-r $(TARGET_ARCH) \
 		-s $(PLATFORM) \
-		-v production \
+		-v prerelease \
 		-n $(BUILD_TEMPORARY_DIRECTORY)/npm \
 		-w $(BUILD_TEMPORARY_DIRECTORY)
 
@@ -148,7 +148,7 @@ webpack:
 
 sass:
 	npm rebuild node-sass
-	node-sass lib/gui/app/scss/main.scss > lib/gui/css/main.css
+	./node_modules/.bin/node-sass lib/gui/app/scss/main.scss > lib/gui/css/main.css
 
 lint-ts:
 	resin-lint --typescript lib

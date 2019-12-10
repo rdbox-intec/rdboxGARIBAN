@@ -13,9 +13,9 @@
       ]
     },
     "builder": {
-      "appId": "io.balena.etcher",
-      "copyright": "Copyright 2016-2019 Balena Ltd",
-      "productName": "balenaEtcher",
+      "appId": "jp.co.intec.gariban",
+      "copyright": "Copyright 2019 INTEC Inc.",
+      "productName": "rdboxGARIBAN",
       "nodeGypRebuild": true,
       "files": [
         "!node_modules/**/*.js.map",
@@ -103,7 +103,7 @@
       "linux": {
         "category": "Utility",
         "packageCategory": "utils",
-        "synopsis": "balenaEtcher is a powerful OS image flasher built with web technologies to ensure flashing an SDCard or USB drive is a pleasant and safe experience. It protects you from accidentally writing to your hard-drives, ensures every byte of data was written correctly and much more."
+        "synopsis": "rdboxGARIBAN is a powerful OS image flasher built with web technologies to ensure flashing an SDCard or USB drive is a pleasant and safe experience. It protects you from accidentally writing to your hard-drives, ensures every byte of data was written correctly and much more."
       },
       "deb": {
         "priority": "optional",

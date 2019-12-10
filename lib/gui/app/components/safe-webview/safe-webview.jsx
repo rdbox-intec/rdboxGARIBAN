@@ -36,12 +36,12 @@ const packageJSON = require('../../../../../package.json')
 const ELECTRON_SESSION = 'persist:success-banner'
 
 /**
- * @summary Etcher version search-parameter key
+ * @summary Gariban version search-parameter key
  * @constant
  * @private
  * @type {String}
  */
-const ETCHER_VERSION_PARAM = 'etcher-version'
+const GARIBAN_VERSION_PARAM = 'gariban-version'
 
 /**
  * @summary API version search-parameter key
@@ -97,7 +97,7 @@ class SafeWebview extends react.PureComponent {
     const url = new window.URL(props.src)
 
     // We set the version GET parameters here.
-    url.searchParams.set(ETCHER_VERSION_PARAM, packageJSON.version)
+    url.searchParams.set(GARIBAN_VERSION_PARAM, packageJSON.version)
     url.searchParams.set(API_VERSION_PARAM, API_VERSION)
     url.searchParams.set(OPT_OUT_ANALYTICS_PARAM, !settings.get('errorReporting'))
 

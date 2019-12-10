@@ -54,6 +54,29 @@
     </div>
   </div>
 
+  <div class="col-xs" ng-controller="UserdataSettingController as userdata">
+    <div class="box text-center relative">
+      <div class="step-border-left" ng-disabled="main.shouldUserdataStepBeDisabled()" ng-hide="main.state.isFlashing() && main.isWebviewShowing"></div>
+      <div class="step-border-right" ng-disabled="main.shouldFlashStepBeDisabled()" ng-hide="main.state.isFlashing() && main.isWebviewShowing"></div>
+      <div class="center-block">
+        <svg-icon paths="[ '../../assets/userdata.svg' ]"
+          disabled="main.shouldUserdataStepBeDisabled()"></svg-icon>
+      </div>
+      <div class="space-vertical-large">
+        <ud-setter
+          has-userdata="main.selection.hasUserdata()"
+          disabled="main.shouldUserdataStepBeDisabled()"
+          open-userdata-setter="userdata.openUserdataSetter"
+          reselect-userdata="userdata.reselectUserdata"
+          host-name="main.selection.getHostName()"
+          flashing="main.state.isFlashing()"
+          cluster-mode="main.selection.getClusterMode()"
+        >
+        </ud-setter>
+      </div>
+    </div>
+  </div>
+
   <div>
     <featured-project
       ng-if="main.state.isFlashing()"

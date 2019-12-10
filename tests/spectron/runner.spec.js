@@ -29,7 +29,7 @@ if (!entrypoint) {
 
 describe('Spectron', function () {
   // Mainly for CI jobs
-  this.timeout(40000)
+  this.timeout(400000)
 
   let app = null
 
@@ -64,7 +64,7 @@ describe('Spectron', function () {
 
     it('should set a proper title', function () {
       return app.client.getTitle().then((title) => {
-        m.chai.expect(title).to.equal('Etcher')
+        m.chai.expect(title).to.equal('RDBOX GARIBAN')
       })
     })
   })

@@ -7,4 +7,4 @@ The major design pattern of this software was abstracted from balena-io's etcher
 
 You can create an RDBOX's SD card easily by app. (Now offering Windows10 version. Mac and Linux versions will be released soon.)
 
-:arrow_down: [Download Windows10](https://github.com/balena-io/etcher/releases/download/v0.1.0/rdboxGARIBAN-Setup-0.1.0.exe) | :arrow_down: Download MacOS | :arrow_down: Download Linux
+:arrow_down: [Download Windows10](https://github.com/rdbox-intec/rdboxGARIBAN/releases/download/v0.1.0/rdboxGARIBAN-Setup-0.1.0.exe) | :arrow_down: Download MacOS | :arrow_down: Download Linux

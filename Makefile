@@ -170,7 +170,7 @@ lint-spell:
 		--dictionary - \
 		--dictionary dictionary.txt \
 		--skip *.svg *.gz,*.bz2,*.xz,*.zip,*.img,*.dmg,*.iso,*.rpi-sdcard,*.wic,.DS_Store,*.dtb,*.dtbo,*.dat,*.elf,*.bin,*.foo,xz-without-extension \
-		lib tests docs scripts Makefile *.md LICENSE
+		lib tests docs Makefile *.md LICENSE
 
 lint: lint-ts lint-js lint-sass lint-cpp lint-html lint-spell
 
@@ -182,11 +182,10 @@ test-spectron:
 	ETCHER_SPECTRON_ENTRYPOINT="$(ETCHER_SPECTRON_ENTRYPOINT)" mocha $(MOCHA_OPTIONS) tests/spectron
 
 test-gui:
-	electron-mocha $(MOCHA_OPTIONS) --renderer tests/gui
+	electron-mocha $(MOCHA_OPTIONS) --full-trace --no-sandbox --renderer tests/gui
 
 test-sdk:
-	electron-mocha $(MOCHA_OPTIONS) \
-		tests/shared
+	electron-mocha $(MOCHA_OPTIONS) --full-trace --no-sandbox tests/shared
 
 test: test-gui test-sdk test-spectron
 

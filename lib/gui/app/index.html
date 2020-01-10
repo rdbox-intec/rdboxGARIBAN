@@ -11,62 +11,35 @@
   </head>
   <body>
     <header class="section-header" ng-controller="HeaderController as header">
-      <button class="button button-link"
-        ng-if="header.shouldShowHelp()"
-        ng-click="header.openHelpPage()"
-        tabindex="4">
-        <span class="glyphicon glyphicon-question-sign"></span>
-      </button>
-
-      <button class="button button-link"
-        ui-sref="settings"
-        hide-if-state="settings"
-        tabindex="5">
-        <span class="glyphicon glyphicon-cog"></span>
-      </button>
-
-      <button class="button button-link"
-        tabindex="5"
-        ui-sref="main"
-        show-if-state="settings">
-        <span class="glyphicon glyphicon-chevron-left"></span> Back
-      </button>
-    </header>
-
-    <main class="wrapper" ui-view></main>
-
-    <footer class="section-footer-main" ng-controller="StateController as state"
-      ng-hide="state.currentName === 'success'">
-      <span os-open-external="https://rdbox-intec.github.io/homepage_en/"
+      <span
+        id="app-logo"
+        os-open-external="https://www.balena.io/etcher?ref=etcher_footer"
         tabindex="100">
         <svg-icon paths="[ '../../assets/rdbox-yoko.svg' ]"
           width="'90px'"
           height="'42px'"></svg-icon>
       </span>
 
-      <span class="caption">
-        is <span class="caption"
-          tabindex="101"
-          os-open-external="https://github.com/rdbox-intec/rdbox">an open source project</span> by
-          <span class="caption"
-          tabindex="101"
-          os-open-external="https://www.intec.co.jp/english/">INTEC Inc.</span>
-      </span>
+      <settings tabindex="4">
+      </settings>
 
-      <span class="caption footer-right"
-        tabindex="103"
-        manifest-bind="version"
-        os-open-external="https://github.com/rdbox-intec/rdboxGARIBAN/releases"></span>
-    </footer>
+      <button class="button button-link"
+        ng-if="header.shouldShowHelp()"
+        ng-click="header.openHelpPage()"
+        tabindex="5">
+        <span class="glyphicon glyphicon-question-sign"></span>
+      </button>
+    </header>
+
+    <main class="wrapper" ui-view></main>
 
     <div class="section-loader"
       ng-controller="StateController as state"
       ng-class="{
         isFinish: state.currentName === 'success'
       }">
-      <safe-webview
-        src="'https://rdbox-intec.github.io/rdboxGARIBAN/feature/fallback/'"
-        refresh-now="state.previousName === 'success'"></safe-webview>
+      <safe-webview src="'https://www.balena.io/etcher/success-banner/'">
+      </safe-webview>
     </div>
   </body>
 </html>

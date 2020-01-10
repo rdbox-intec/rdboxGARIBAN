@@ -13,11 +13,11 @@
     <header class="section-header" ng-controller="HeaderController as header">
       <span
         id="app-logo"
-        os-open-external="https://www.balena.io/etcher?ref=etcher_footer"
+        os-open-external="https://rdbox-intec.github.io/homepage_en/"
         tabindex="100">
         <svg-icon paths="[ '../../assets/rdbox-yoko.svg' ]"
           width="'90px'"
-          height="'42px'"></svg-icon>
+          height="'36px'"></svg-icon>
       </span>
 
       <settings tabindex="4">
@@ -38,8 +38,9 @@
       ng-class="{
         isFinish: state.currentName === 'success'
       }">
-      <safe-webview src="'https://www.balena.io/etcher/success-banner/'">
-      </safe-webview>
+      <safe-webview
+        src="'https://rdbox-intec.github.io/rdboxGARIBAN/feature/fallback/'"
+        refresh-now="state.previousName === 'success'"></safe-webview>
     </div>
   </body>
 </html>

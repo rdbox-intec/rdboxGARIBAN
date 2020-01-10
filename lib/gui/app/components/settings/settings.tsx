@@ -18,7 +18,6 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as _ from 'lodash';
-import * as os from 'os';
 import * as propTypes from 'prop-types';
 import * as React from 'react';
 import { Badge, Button, Checkbox, Modal, Provider } from 'rendition';
@@ -31,7 +30,6 @@ import { open as openExternal } from '../../os/open-external/services/open-exter
 import { colors } from '../../theme';
 
 const { useState } = React;
-const platform = os.platform();
 
 export const SettingsButton = () => {
 	const [hideModal, setHideModal] = useState(true);
@@ -96,16 +94,6 @@ const settingsList: Setting[] = [
 	{
 		name: 'errorReporting',
 		label: 'Anonymously report errors and usage statistics to balena.io',
-	},
-	{
-		name: 'unmountOnSuccess',
-		/**
-		 * On Windows, "Unmounting" basically means "ejecting".
-		 * On top of that, Windows users are usually not even
-		 * familiar with the meaning of "unmount", which comes
-		 * from the UNIX world.
-		 */
-		label: `${platform === 'win32' ? 'Eject' : 'Auto-unmount'} on success`,
 	},
 	{
 		name: 'validateWriteOnSuccess',
@@ -215,7 +203,7 @@ export const SettingsModal: any = styled(
 						<span
 							onClick={() =>
 								openExternal(
-									'https://github.com/balena-io/etcher/blob/master/CHANGELOG.md',
+									'https://github.com/rdbox-intec/rdboxGARIBAN/releases',
 								)
 							}
 						>

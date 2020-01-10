@@ -26,6 +26,7 @@
         "lib/gui/css/*.css",
         "lib/gui/css/fonts/*.woff2",
         "lib/gui/assets/*.svg",
+        "lib/start.js",
         "assets/icon.png",
         "!node_modules/**/**",
         "node_modules/**/*.js",

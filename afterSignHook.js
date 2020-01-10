@@ -15,7 +15,7 @@ async function main(context) {
     appBundleId: 'jp.co.intec.gariban',
     appPath: `${appOutDir}/${appName}.app`,
     appleId,
-    appleIdPassword: `@keychain:Application Loader: ${appleId}`
+    appleIdPassword: `@keychain:${appleId}`
   })
 }
 

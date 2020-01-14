@@ -9,7 +9,7 @@
     "sleepDays": 7,
     "semverRange": "<2.0.0"
   },
-  "main": "lib/start.js",
+  "main": "generated/etcher.js",
   "description": "Create an SD card for RDBOX using an easy-to-understand GUI.",
   "productDescription": "performs two processes of creating the configuration file of RDBOX and writing the SD image file to the SD card",
   "homepage": "https://github.com/rdbox-intec/rdboxGARIBAN",

@@ -490,7 +490,7 @@
                         ng-class="{'has-error': pages.pageClusterHostname.hostname.$invalid}"
                         ng-pattern="/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/"
                         ng-change="modal.changeHostnameForOther()"
-                        ng-disabled="modal.formDatas.rdboxHardWare === modal.INDEX_OF_RDBOX_HW.APOnly || modal.formDatas.rdboxRole !== modal.INDEX_OF_RDBOX_ROLE.Other"
+                        ng-disabled="modal.formDatas.rdboxRole !== modal.INDEX_OF_RDBOX_ROLE.Other"
                         ng-model="modal.formDatas.hostname">
                   <p ng-show="pages.pageClusterHostname.hostname.$error.required">Required fields.</p>
                   <p ng-show="pages.pageClusterHostname.hostname.$error.pattern">invalid pattern.</p>

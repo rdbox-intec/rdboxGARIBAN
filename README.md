@@ -7,7 +7,7 @@ The major design pattern of this software was abstracted from balena-io's etcher
 
 You can create an RDBOX's SD card easily by app. (Now offering Windows10 version. Mac and Linux versions will be released soon.)
 
-:arrow_down: [Download Windows10](https://github.com/rdbox-intec/rdboxGARIBAN/releases/download/v0.1.4/rdboxGARIBAN-Setup-0.1.4.exe) | :arrow_down: [Download MacOS](https://github.com/rdbox-intec/rdboxGARIBAN/releases/download/v0.1.4/rdboxGARIBAN-0.1.4.dmg) | :arrow_down: [Download Linux](https://github.com/rdbox-intec/rdboxGARIBAN/releases/download/v0.1.4/rdbox-gariban-electron_0.1.4_amd64.deb)
+:arrow_down: [Download Windows10](https://github.com/rdbox-intec/rdboxGARIBAN/releases/download/v0.1.6/rdboxGARIBAN-Setup-0.1.6.exe) | :arrow_down: [Download MacOS](https://github.com/rdbox-intec/rdboxGARIBAN/releases/download/v0.1.6/rdboxGARIBAN-0.1.6.dmg) | :arrow_down: [Download Linux](https://github.com/rdbox-intec/rdboxGARIBAN/releases/download/v0.1.6/rdbox-gariban-electron_0.1.6_amd64.deb)
 
 ## What's RDBOX Prj??
 <img src="https://github.com/rdbox-intec/rdbox/raw/master/images/you_can_easily_make_by_rdbox.png" width=720px></img>

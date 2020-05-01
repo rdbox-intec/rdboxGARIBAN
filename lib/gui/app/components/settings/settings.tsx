@@ -93,7 +93,7 @@ interface Setting {
 const settingsList: Setting[] = [
 	{
 		name: 'errorReporting',
-		label: 'Anonymously report errors and usage statistics to balena.io',
+		label: 'Anonymously report errors and usage statistics to RDBOX Prj',
 	},
 	{
 		name: 'validateWriteOnSuccess',

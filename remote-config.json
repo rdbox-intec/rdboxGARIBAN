@@ -4,7 +4,7 @@
     "mixpanel": {
       "HTTP_PROTOCOL": "https",
       "api_host": "api.mixpanel.com",
-      "probability": 1
+      "probability": 0.99
     }
   },
   "autoUpdates": {

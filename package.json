@@ -2,7 +2,7 @@
   "name": "rdbox-gariban",
   "private": true,
   "displayName": "rdboxGARIBAN",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "packageType": "local",
   "updates": {
     "enabled": true,
@@ -79,7 +79,7 @@
     "redux": "^3.5.2",
     "rendition": "^11.24.2",
     "request": "^2.81.0",
-    "resin-corvus": "^2.0.3",
+    "resin-corvus": "^2.0.5",
     "roboto-fontface": "^0.9.0",
     "semver": "^5.1.1",
     "sha512crypt-node": "^0.1.0",
